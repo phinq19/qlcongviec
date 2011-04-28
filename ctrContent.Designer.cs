@@ -51,6 +51,7 @@ namespace NewProject
             this.htmlEditor1.BodyHtml = null;
             this.htmlEditor1.BodyStyle = null;
             this.htmlEditor1.Charset = "unicode";
+            this.htmlEditor1.Cursor = System.Windows.Forms.Cursors.Default;
             this.htmlEditor1.DefaultForeColor = System.Drawing.Color.Black;
             this.htmlEditor1.DocumentHtml = resources.GetString("htmlEditor1.DocumentHtml");
             this.htmlEditor1.DocumentTitle = "";

@@ -80,6 +80,12 @@
     <Compile Include="ctrSendmail.Designer.cs">
       <DependentUpon>ctrSendmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaint.Designer.cs">
+      <DependentUpon>frmMaint.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRibbonForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctrSendmail.resx">
       <DependentUpon>ctrSendmail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaint.resx">
+      <DependentUpon>frmMaint.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRibbonForm.resx">
