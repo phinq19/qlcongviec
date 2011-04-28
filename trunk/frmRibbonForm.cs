@@ -13,7 +13,11 @@ namespace NewProject
     {
         public frmRibbonForm()
         {
+            DevExpress.Skins.SkinManager.EnableFormSkins();
             InitializeComponent();
+           // DevExpress.Skins.SkinManager.EnableFormSkins();
+
+            
         }
 
         private void frmRibbonForm_Load(object sender, EventArgs e)
