@@ -15,5 +15,13 @@ namespace NewProject
         {
             InitializeComponent();
         }
+        private void ctrSendmail_Load(object sender, EventArgs e)
+        {
+            ctrContent1.Visible = false;
+        }
+        private void btnContent_Click(object sender, EventArgs e)
+        {
+            ctrContent1.Visible = true;
+        }
     }
 }

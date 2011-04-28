@@ -30,10 +30,11 @@ namespace NewProject
         {
             this.btnContent = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPreview = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSendmail = new DevExpress.XtraEditors.SimpleButton();
             this.btnResult = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSendmail = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPreview = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.ctrContent1 = new NewProject.ctrContent();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +46,7 @@ namespace NewProject
             this.btnContent.Size = new System.Drawing.Size(184, 32);
             this.btnContent.TabIndex = 1;
             this.btnContent.Text = "Content";
+            this.btnContent.Click += new System.EventHandler(this.btnContent_Click);
             // 
             // groupControl1
             // 
@@ -58,21 +60,13 @@ namespace NewProject
             this.groupControl1.Size = new System.Drawing.Size(185, 409);
             this.groupControl1.TabIndex = 2;
             // 
-            // simpleButton2
+            // btnResult
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(1, 23);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(184, 32);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Recipients";
-            // 
-            // btnPreview
-            // 
-            this.btnPreview.Location = new System.Drawing.Point(1, 85);
-            this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(184, 32);
-            this.btnPreview.TabIndex = 3;
-            this.btnPreview.Text = "Preview";
+            this.btnResult.Location = new System.Drawing.Point(1, 147);
+            this.btnResult.Name = "btnResult";
+            this.btnResult.Size = new System.Drawing.Size(184, 32);
+            this.btnResult.TabIndex = 5;
+            this.btnResult.Text = "Result";
             // 
             // btnSendmail
             // 
@@ -82,21 +76,41 @@ namespace NewProject
             this.btnSendmail.TabIndex = 4;
             this.btnSendmail.Text = "Send Mail";
             // 
-            // btnResult
+            // btnPreview
             // 
-            this.btnResult.Location = new System.Drawing.Point(1, 147);
-            this.btnResult.Name = "btnResult";
-            this.btnResult.Size = new System.Drawing.Size(184, 32);
-            this.btnResult.TabIndex = 5;
-            this.btnResult.Text = "Result";
+            this.btnPreview.Location = new System.Drawing.Point(1, 85);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(184, 32);
+            this.btnPreview.TabIndex = 3;
+            this.btnPreview.Text = "Preview";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(1, 23);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(184, 32);
+            this.simpleButton2.TabIndex = 2;
+            this.simpleButton2.Text = "Recipients";
+            // 
+            // ctrContent1
+            // 
+            this.ctrContent1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrContent1.Location = new System.Drawing.Point(194, 26);
+            this.ctrContent1.Name = "ctrContent1";
+            this.ctrContent1.Size = new System.Drawing.Size(708, 386);
+            this.ctrContent1.TabIndex = 3;
             // 
             // ctrSendmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ctrContent1);
             this.Controls.Add(this.groupControl1);
             this.Name = "ctrSendmail";
             this.Size = new System.Drawing.Size(905, 415);
+            this.Load += new System.EventHandler(this.ctrSendmail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -111,6 +125,7 @@ namespace NewProject
         private DevExpress.XtraEditors.SimpleButton btnPreview;
         private DevExpress.XtraEditors.SimpleButton btnSendmail;
         private DevExpress.XtraEditors.SimpleButton btnResult;
+        private ctrContent ctrContent1;
 
     }
 }
