@@ -1,0 +1,9 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\bin\Debug\NewProject.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\bin\Debug\NewProject.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\bin\Debug\WinHTMLEditorControl.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.Form1.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.pdb
