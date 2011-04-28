@@ -64,6 +64,9 @@
     <Reference Include="WinHTMLEditorControl, Version=4.0.6.39, Culture=neutral, PublicKeyToken=e444157244638e02, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Customers.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ctrContent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +78,12 @@
     </Compile>
     <Compile Include="ctrSendmail.Designer.cs">
       <DependentUpon>ctrSendmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formLoaiKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLoaiKhachHang.designer.cs">
+      <DependentUpon>formLoaiKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRibbonForm.cs">
       <SubType>Form</SubType>
@@ -91,6 +100,9 @@
     <EmbeddedResource Include="ctrSendmail.resx">
       <DependentUpon>ctrSendmail.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formLoaiKhachHang.resx">
+      <DependentUpon>formLoaiKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRibbonForm.resx">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
@@ -117,9 +129,6 @@
     </Compile>
     <Compile Include="Provider.cs" />
     <Compile Include="SendMail.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
