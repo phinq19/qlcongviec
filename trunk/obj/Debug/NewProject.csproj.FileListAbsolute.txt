@@ -7,3 +7,14 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.csproj.GenerateResource.Cache
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.exe
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.pdb
+E:\Work\qlcongviec\obj\Debug\NewProject.exe
+E:\Work\qlcongviec\obj\Debug\NewProject.pdb
+E:\Work\qlcongviec\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrSendmail.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.Properties.Resources.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.csproj.GenerateResource.Cache
+E:\Work\qlcongviec\obj\Debug\NewProject.exe.licenses
+E:\Work\qlcongviec\bin\Debug\NewProject.exe
+E:\Work\qlcongviec\bin\Debug\NewProject.pdb
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrContent.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.frmRibbonForm.resources
