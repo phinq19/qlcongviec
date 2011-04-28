@@ -41,7 +41,6 @@
     <Reference Include="DevExpress.XtraReports.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
     <Reference Include="DevExpress.XtraRichTextEdit.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
     <Reference Include="DevExpress.XtraVerticalGrid.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
-    <Reference Include="GmailHelper, Version=1.0.1972.34943, Culture=neutral" />
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -62,10 +61,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WinHTMLEditorControl, Version=4.0.6.39, Culture=neutral, PublicKeyToken=e444157244638e02, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Sendmail\bin\Debug\WinHTMLEditorControl.dll</HintPath>
-    </Reference>
+    <Reference Include="WinHTMLEditorControl, Version=4.0.6.39, Culture=neutral, PublicKeyToken=e444157244638e02, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ctrContent.cs">
@@ -79,12 +75,6 @@
     </Compile>
     <Compile Include="ctrSendmail.Designer.cs">
       <DependentUpon>ctrSendmail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMaint.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMaint.Designer.cs">
-      <DependentUpon>frmMaint.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRibbonForm.cs">
       <SubType>Form</SubType>
@@ -100,10 +90,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctrSendmail.resx">
       <DependentUpon>ctrSendmail.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMaint.resx">
-      <DependentUpon>frmMaint.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRibbonForm.resx">
@@ -129,7 +115,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Provider.cs" />
     <Compile Include="SendMail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Class\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
