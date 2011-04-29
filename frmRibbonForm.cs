@@ -22,7 +22,7 @@ namespace NewProject
 
         private void frmRibbonForm_Load(object sender, EventArgs e)
         {
-           // _showControl(new ctrSendmail());
+            _showControl(new ctrSendmail());
            
             //Type myObjectType = typeof(Customers);
             //System.Reflection.FieldInfo[] fieldInfo = myObjectType.GetFields();
