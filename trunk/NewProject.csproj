@@ -67,10 +67,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Common.cs" />
+    <Compile Include="Class\MailConfig.cs" />
     <Compile Include="Class\Customers.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Class\CustomersType.cs" />
+    <Compile Include="ctrSender.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrSender.Designer.cs">
+      <DependentUpon>ctrSender.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrContent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +116,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ctrSender.resx">
+      <DependentUpon>ctrSender.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrContent.resx">
       <DependentUpon>ctrContent.cs</DependentUpon>
       <SubType>Designer</SubType>

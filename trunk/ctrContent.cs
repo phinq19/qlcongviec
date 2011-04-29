@@ -23,7 +23,14 @@ namespace NewProject
                 }
             }
         }
-
+        public string GetSubject()
+        {
+            return txtSubject.Text.Trim();
+        }
+        public string GetContent()
+        {
+            return htmlEditor1.BodyHtml;
+        }
         private void ctrContent_Load(object sender, EventArgs e)
         {
 
