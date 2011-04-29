@@ -19,7 +19,6 @@ namespace NewProject
         public frmCustomers()
         {
             InitializeComponent();
-            _cus = null;
             Saved = true;
         }
 
@@ -67,10 +66,10 @@ namespace NewProject
         private void _SetFormInfo()
         {
             txtMa.Text = _cus.Code;
-            lookUpEdit_Nhom.EditValue = _cus.Type;
             txtHo.Text = _cus.LastName;
             txtTen.Text = _cus.FirstName;
             txtTenGoi.Text = _cus.CallName;
+            lookUpEdit_Nhom.EditValue =int.Parse( _cus.Type.ToString());
             //checkEdit_KhachHang.Checked = _cus.KhachHang;
             //checkEdit_NhaCungCap.Checked = _cus.NhaCungCap;
 
@@ -155,7 +154,7 @@ namespace NewProject
                     {
                         temp.ID = _cus.ID;
                         _cus = temp;
-                        Customers.Insert(_cus);
+                        Customers.Update(_cus);
                         DialogResult = DialogResult.OK;
                         if (chkCloseAlterSave.Checked)
                         {
@@ -197,7 +196,7 @@ namespace NewProject
                         temp.Address = txtDiaChi.Text;
                         temp.Phone = txtDienThoai.Text;
                         temp.Fax = txtFax.Text;
-                       
+                        temp.Type = long.Parse(lookUpEdit_Nhom.EditValue.ToString());
                         temp.Email = txtEmail.Text;
                         temp.Note = txtGhiChu.Text;
 
@@ -257,17 +256,8 @@ namespace NewProject
 
         private void _setFormStatus(int p)//-1 new -saved ; 0 edited new - not save ;
         {
-            switch (p)
-            {
-                case -1:
-                    btnLuu.Enabled = false;
-                    Saved = true;
-                    break;
-                case 0:
-                    btnLuu.Enabled = true;
-                    Saved = false;
-                    break;             
-            }
+
+            btnLuu.Enabled = true;             
             if (_cus == null)
             {
                 btnXoa.Enabled = false;
@@ -278,75 +268,7 @@ namespace NewProject
             }
         }
 
-        private void txtMa_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void checkEdit_KhachHang_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void checkEdit_NhaCungCap_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void lookUpEdit_Nhom_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void txtTen_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void comboBoxEdit_GiaBan_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void txtDiaChi_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void txtDienThoai_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void txtMST_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void txtFax_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void txtEmail_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void txtTenNLH_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void txtDienThoaiTNLH_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
-
-        private void txtGhiChu_EditValueChanged(object sender, EventArgs e)
-        {
-            _setFormStatus(0);
-        }
+        
 
         private void txtMa_Leave(object sender, EventArgs e)
         {

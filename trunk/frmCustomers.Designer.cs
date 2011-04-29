@@ -76,8 +76,7 @@
             // 
             // btnThemMoi
             // 
-            this.btnThemMoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemMoi.Location = new System.Drawing.Point(196, 386);
+            this.btnThemMoi.Location = new System.Drawing.Point(196, 352);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(75, 23);
             this.btnThemMoi.TabIndex = 2;
@@ -86,8 +85,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.Location = new System.Drawing.Point(354, 386);
+            this.btnXoa.Location = new System.Drawing.Point(354, 352);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 3;
@@ -96,14 +94,11 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.groupBox2);
             this.groupControl1.Controls.Add(this.groupBox1);
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(498, 368);
+            this.groupControl1.Size = new System.Drawing.Size(498, 333);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin khách hàng";
             // 
@@ -132,7 +127,7 @@
             this.txtGhiChu.Location = new System.Drawing.Point(89, 98);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(365, 54);
-            this.txtGhiChu.TabIndex = 7;
+            this.txtGhiChu.TabIndex = 11;
             // 
             // txtDiaChi
             // 
@@ -140,7 +135,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(89, 20);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(365, 20);
-            this.txtDiaChi.TabIndex = 0;
+            this.txtDiaChi.TabIndex = 7;
             // 
             // labelControl6
             // 
@@ -156,7 +151,7 @@
             this.txtFax.Location = new System.Drawing.Point(274, 72);
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(180, 20);
-            this.txtFax.TabIndex = 2;
+            this.txtFax.TabIndex = 10;
             // 
             // txtEmail
             // 
@@ -164,7 +159,7 @@
             this.txtEmail.Location = new System.Drawing.Point(89, 46);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(365, 20);
-            this.txtEmail.TabIndex = 4;
+            this.txtEmail.TabIndex = 8;
             // 
             // txtDienThoai
             // 
@@ -172,7 +167,7 @@
             this.txtDienThoai.Location = new System.Drawing.Point(89, 72);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(155, 20);
-            this.txtDienThoai.TabIndex = 1;
+            this.txtDienThoai.TabIndex = 9;
             // 
             // labelControl5
             // 
@@ -233,7 +228,6 @@
             this.txtHo.Name = "txtHo";
             this.txtHo.Size = new System.Drawing.Size(179, 20);
             this.txtHo.TabIndex = 4;
-            this.txtHo.EditValueChanged += new System.EventHandler(this.txtTen_EditValueChanged);
             // 
             // lookUpEdit_Nhom
             // 
@@ -245,7 +239,6 @@
             this.lookUpEdit_Nhom.Properties.NullText = "<Chọn nhóm>";
             this.lookUpEdit_Nhom.Size = new System.Drawing.Size(342, 20);
             this.lookUpEdit_Nhom.TabIndex = 3;
-            this.lookUpEdit_Nhom.EditValueChanged += new System.EventHandler(this.lookUpEdit_Nhom_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -270,7 +263,6 @@
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(88, 20);
             this.txtMa.TabIndex = 0;
-            this.txtMa.EditValueChanged += new System.EventHandler(this.txtMa_EditValueChanged);
             this.txtMa.Leave += new System.EventHandler(this.txtMa_Leave);
             // 
             // btnNhom
@@ -293,8 +285,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLuu.Location = new System.Drawing.Point(277, 386);
+            this.btnLuu.Location = new System.Drawing.Point(277, 352);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(71, 23);
             this.btnLuu.TabIndex = 1;
@@ -303,8 +294,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.Location = new System.Drawing.Point(435, 386);
+            this.btnThoat.Location = new System.Drawing.Point(435, 352);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
             this.btnThoat.TabIndex = 4;
@@ -314,7 +304,7 @@
             // chkCloseAlterSave
             // 
             this.chkCloseAlterSave.EditValue = true;
-            this.chkCloseAlterSave.Location = new System.Drawing.Point(10, 387);
+            this.chkCloseAlterSave.Location = new System.Drawing.Point(10, 349);
             this.chkCloseAlterSave.Name = "chkCloseAlterSave";
             this.chkCloseAlterSave.Properties.Caption = "Đóng sau khi lưu";
             this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 18);
@@ -326,7 +316,7 @@
             this.txtTen.Location = new System.Drawing.Point(298, 66);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(133, 20);
-            this.txtTen.TabIndex = 7;
+            this.txtTen.TabIndex = 5;
             // 
             // labelControl4
             // 
@@ -342,7 +332,7 @@
             this.txtTenGoi.Location = new System.Drawing.Point(89, 92);
             this.txtTenGoi.Name = "txtTenGoi";
             this.txtTenGoi.Size = new System.Drawing.Size(342, 20);
-            this.txtTenGoi.TabIndex = 9;
+            this.txtTenGoi.TabIndex = 6;
             // 
             // labelControl8
             // 
@@ -356,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 421);
+            this.ClientSize = new System.Drawing.Size(522, 384);
             this.Controls.Add(this.chkCloseAlterSave);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThemMoi);

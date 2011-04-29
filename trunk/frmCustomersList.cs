@@ -82,7 +82,7 @@ namespace NewProject
                     int RowHandle = gridView1.GetSelectedRows()[k - 1];
                     if (RowHandle >= 0)
                     {
-                        long iDDT = (long)gridView1.GetRowCellValue(RowHandle, colID);
+                        long iDDT = long.Parse(gridView1.GetRowCellValue(RowHandle, colID).ToString());
                         Customers temp = Customers.Get(iDDT);
                         if (temp != null)
                         {
@@ -115,7 +115,7 @@ namespace NewProject
                     int[] arrSelect = gridView1.GetSelectedRows();
                     for (int i = 0; i < k; i++)
                     {
-                        long MaDT = (long)(gridView1.GetRowCellValue(arrSelect[i], colID));
+                        long MaDT = long.Parse(gridView1.GetRowCellValue(arrSelect[i], colID).ToString());
                         Customers temp = Customers.Get(MaDT);
                         if (temp != null)
                         {

@@ -130,6 +130,7 @@
             this.gridView1.GroupCount = 1;
             this.gridView1.GroupPanelText = "<Kéo cột để nhóm đối tác>";
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -165,7 +166,7 @@
             // 
             this.colNhom.Caption = "Nhóm";
             this.colNhom.ColumnEdit = this.ItemLookUp_Nhom;
-            this.colNhom.FieldName = "MaNhom";
+            this.colNhom.FieldName = "Type";
             this.colNhom.Name = "colNhom";
             this.colNhom.Width = 52;
             // 
