@@ -24,16 +24,16 @@ namespace NewProject
         {
            // _showControl(new ctrSendmail());
            
-            Type myObjectType = typeof(Customers);
-            System.Reflection.FieldInfo[] fieldInfo = myObjectType.GetFields();
-            string str = "";
-            foreach (System.Reflection.FieldInfo info in fieldInfo)
-            {
-                str = str + info.Name + ":" + info.FieldType.Name + "\n";
+            //Type myObjectType = typeof(Customers);
+            //System.Reflection.FieldInfo[] fieldInfo = myObjectType.GetFields();
+            //string str = "";
+            //foreach (System.Reflection.FieldInfo info in fieldInfo)
+            //{
+            //    str = str + info.Name + ":" + info.FieldType.Name + "\n";
                     
-            }
+            //}
 
-            MessageBox.Show(str);
+            //MessageBox.Show(str);
         }
         public void _showControl(Control obj)
         {
