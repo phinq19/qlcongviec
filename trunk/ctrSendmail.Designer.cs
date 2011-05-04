@@ -30,14 +30,15 @@ namespace NewProject
         {
             this.btnContent = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnSender = new DevExpress.XtraEditors.SimpleButton();
             this.btnResult = new DevExpress.XtraEditors.SimpleButton();
             this.btnSendmail = new DevExpress.XtraEditors.SimpleButton();
             this.btnPreview = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSender = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRecipients = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.ctrContent1 = new NewProject.ctrContent();
+            this.ctrRecipients1 = new NewProject.ctrRecipients();
             this.ctrSender1 = new NewProject.ctrSender();
+            this.ctrContent1 = new NewProject.ctrContent();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -59,12 +60,21 @@ namespace NewProject
             this.groupControl1.Controls.Add(this.btnResult);
             this.groupControl1.Controls.Add(this.btnSendmail);
             this.groupControl1.Controls.Add(this.btnPreview);
-            this.groupControl1.Controls.Add(this.simpleButton2);
+            this.groupControl1.Controls.Add(this.btnRecipients);
             this.groupControl1.Controls.Add(this.btnContent);
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(185, 409);
             this.groupControl1.TabIndex = 2;
+            // 
+            // btnSender
+            // 
+            this.btnSender.Location = new System.Drawing.Point(0, 40);
+            this.btnSender.Name = "btnSender";
+            this.btnSender.Size = new System.Drawing.Size(184, 32);
+            this.btnSender.TabIndex = 6;
+            this.btnSender.Text = "Sender";
+            this.btnSender.Click += new System.EventHandler(this.btnSender_Click);
             // 
             // btnResult
             // 
@@ -90,27 +100,21 @@ namespace NewProject
             this.btnPreview.TabIndex = 3;
             this.btnPreview.Text = "Preview";
             // 
-            // simpleButton2
+            // btnRecipients
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(0, 72);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(184, 32);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Recipients";
-            // 
-            // btnSender
-            // 
-            this.btnSender.Location = new System.Drawing.Point(0, 40);
-            this.btnSender.Name = "btnSender";
-            this.btnSender.Size = new System.Drawing.Size(184, 32);
-            this.btnSender.TabIndex = 6;
-            this.btnSender.Text = "Sender";
+            this.btnRecipients.Location = new System.Drawing.Point(0, 72);
+            this.btnRecipients.Name = "btnRecipients";
+            this.btnRecipients.Size = new System.Drawing.Size(184, 32);
+            this.btnRecipients.TabIndex = 2;
+            this.btnRecipients.Text = "Recipients";
+            this.btnRecipients.Click += new System.EventHandler(this.btnRecipients_Click);
             // 
             // panelControl1
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.ctrRecipients1);
             this.panelControl1.Controls.Add(this.ctrSender1);
             this.panelControl1.Controls.Add(this.ctrContent1);
             this.panelControl1.Location = new System.Drawing.Point(193, 26);
@@ -118,13 +122,13 @@ namespace NewProject
             this.panelControl1.Size = new System.Drawing.Size(709, 386);
             this.panelControl1.TabIndex = 4;
             // 
-            // ctrContent1
+            // ctrRecipients1
             // 
-            this.ctrContent1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctrContent1.Location = new System.Drawing.Point(2, 2);
-            this.ctrContent1.Name = "ctrContent1";
-            this.ctrContent1.Size = new System.Drawing.Size(705, 382);
-            this.ctrContent1.TabIndex = 3;
+            this.ctrRecipients1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrRecipients1.Location = new System.Drawing.Point(2, 2);
+            this.ctrRecipients1.Name = "ctrRecipients1";
+            this.ctrRecipients1.Size = new System.Drawing.Size(705, 382);
+            this.ctrRecipients1.TabIndex = 5;
             // 
             // ctrSender1
             // 
@@ -133,6 +137,14 @@ namespace NewProject
             this.ctrSender1.Name = "ctrSender1";
             this.ctrSender1.Size = new System.Drawing.Size(705, 382);
             this.ctrSender1.TabIndex = 4;
+            // 
+            // ctrContent1
+            // 
+            this.ctrContent1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrContent1.Location = new System.Drawing.Point(2, 2);
+            this.ctrContent1.Name = "ctrContent1";
+            this.ctrContent1.Size = new System.Drawing.Size(705, 382);
+            this.ctrContent1.TabIndex = 3;
             // 
             // ctrSendmail
             // 
@@ -155,7 +167,7 @@ namespace NewProject
 
         private DevExpress.XtraEditors.SimpleButton btnContent;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnRecipients;
         private DevExpress.XtraEditors.SimpleButton btnPreview;
         private DevExpress.XtraEditors.SimpleButton btnSendmail;
         private DevExpress.XtraEditors.SimpleButton btnResult;
@@ -163,6 +175,7 @@ namespace NewProject
         private DevExpress.XtraEditors.SimpleButton btnSender;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private ctrSender ctrSender1;
+        private ctrRecipients ctrRecipients1;
 
     }
 }
