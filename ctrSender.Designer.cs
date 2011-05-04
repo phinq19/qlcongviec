@@ -31,51 +31,51 @@ namespace NewProject
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrSender));
             this.htmlEditor1 = new SpiceLogic.WinHTMLEditor.HTMLEditor();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.lkProfile = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtFromEmail = new DevExpress.XtraEditors.TextEdit();
-            this.txtDislayName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.chkDefault = new DevExpress.XtraEditors.CheckEdit();
             this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.chkDefault = new DevExpress.XtraEditors.CheckEdit();
+            this.txtDislayName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtFromEmail = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnCheck = new DevExpress.XtraEditors.SimpleButton();
+            this.calTimeout = new DevExpress.XtraEditors.CalcEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.chkEnableSsl = new DevExpress.XtraEditors.CheckEdit();
+            this.calPort = new DevExpress.XtraEditors.CalcEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txtSPMT = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtPass = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtUser = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.calPort = new DevExpress.XtraEditors.CalcEdit();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.chkEnableSsl = new DevExpress.XtraEditors.CheckEdit();
-            this.calTimeout = new DevExpress.XtraEditors.CalcEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.btnCheck = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.htmlEditor1)).BeginInit();
             this.htmlEditor1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkProfile.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFromEmail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDislayName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDefault.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDislayName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFromEmail.Properties)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calTimeout.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEnableSsl.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calPort.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSPMT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calPort.Properties)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEnableSsl.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calTimeout.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // htmlEditor1
@@ -188,13 +188,25 @@ namespace NewProject
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profiles";
             // 
-            // labelControl2
+            // btnDelete
             // 
-            this.labelControl2.Location = new System.Drawing.Point(15, 21);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(63, 13);
-            this.labelControl2.TabIndex = 5;
-            this.labelControl2.Text = "Active profile";
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(671, 15);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(50, 23);
+            this.btnDelete.TabIndex = 23;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNew.Location = new System.Drawing.Point(627, 15);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(38, 23);
+            this.btnNew.TabIndex = 22;
+            this.btnNew.Text = "New";
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // lkProfile
             // 
@@ -208,6 +220,14 @@ namespace NewProject
             this.lkProfile.Size = new System.Drawing.Size(530, 20);
             this.lkProfile.TabIndex = 6;
             this.lkProfile.EditValueChanged += new System.EventHandler(this.lkProfile_EditValueChanged);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(15, 21);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(63, 13);
+            this.labelControl2.TabIndex = 5;
+            this.labelControl2.Text = "Active profile";
             // 
             // groupBox2
             // 
@@ -227,39 +247,14 @@ namespace NewProject
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sender infomation";
             // 
-            // labelControl3
+            // chkDefault
             // 
-            this.labelControl3.Location = new System.Drawing.Point(15, 48);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(66, 13);
-            this.labelControl3.TabIndex = 5;
-            this.labelControl3.Text = "From Address";
-            // 
-            // txtFromEmail
-            // 
-            this.txtFromEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFromEmail.Location = new System.Drawing.Point(91, 45);
-            this.txtFromEmail.Name = "txtFromEmail";
-            this.txtFromEmail.Size = new System.Drawing.Size(659, 20);
-            this.txtFromEmail.TabIndex = 6;
-            // 
-            // txtDislayName
-            // 
-            this.txtDislayName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDislayName.Location = new System.Drawing.Point(91, 71);
-            this.txtDislayName.Name = "txtDislayName";
-            this.txtDislayName.Size = new System.Drawing.Size(659, 20);
-            this.txtDislayName.TabIndex = 8;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(15, 74);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(58, 13);
-            this.labelControl4.TabIndex = 7;
-            this.labelControl4.Text = "Dislay Name";
+            this.chkDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkDefault.Location = new System.Drawing.Point(380, 21);
+            this.chkDefault.Name = "chkDefault";
+            this.chkDefault.Properties.Caption = "Default";
+            this.chkDefault.Size = new System.Drawing.Size(75, 18);
+            this.chkDefault.TabIndex = 11;
             // 
             // txtCode
             // 
@@ -278,14 +273,39 @@ namespace NewProject
             this.labelControl5.TabIndex = 9;
             this.labelControl5.Text = "Code";
             // 
-            // chkDefault
+            // txtDislayName
             // 
-            this.chkDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkDefault.Location = new System.Drawing.Point(380, 21);
-            this.chkDefault.Name = "chkDefault";
-            this.chkDefault.Properties.Caption = "Default";
-            this.chkDefault.Size = new System.Drawing.Size(75, 18);
-            this.chkDefault.TabIndex = 11;
+            this.txtDislayName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDislayName.Location = new System.Drawing.Point(91, 71);
+            this.txtDislayName.Name = "txtDislayName";
+            this.txtDislayName.Size = new System.Drawing.Size(659, 20);
+            this.txtDislayName.TabIndex = 8;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(15, 74);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(58, 13);
+            this.labelControl4.TabIndex = 7;
+            this.labelControl4.Text = "Dislay Name";
+            // 
+            // txtFromEmail
+            // 
+            this.txtFromEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFromEmail.Location = new System.Drawing.Point(91, 45);
+            this.txtFromEmail.Name = "txtFromEmail";
+            this.txtFromEmail.Size = new System.Drawing.Size(659, 20);
+            this.txtFromEmail.TabIndex = 6;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(15, 48);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(66, 13);
+            this.labelControl3.TabIndex = 5;
+            this.labelControl3.Text = "From Address";
             // 
             // groupBox3
             // 
@@ -309,6 +329,64 @@ namespace NewProject
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mail Server Options";
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCheck.Location = new System.Drawing.Point(640, 43);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(110, 23);
+            this.btnCheck.TabIndex = 21;
+            this.btnCheck.Text = "Check Connection";
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
+            // calTimeout
+            // 
+            this.calTimeout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.calTimeout.Location = new System.Drawing.Point(627, 20);
+            this.calTimeout.Name = "calTimeout";
+            this.calTimeout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.calTimeout.Size = new System.Drawing.Size(123, 20);
+            this.calTimeout.TabIndex = 20;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl9.Location = new System.Drawing.Point(583, 23);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(38, 13);
+            this.labelControl9.TabIndex = 19;
+            this.labelControl9.Text = "Timeout";
+            // 
+            // chkEnableSsl
+            // 
+            this.chkEnableSsl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkEnableSsl.Location = new System.Drawing.Point(490, 22);
+            this.chkEnableSsl.Name = "chkEnableSsl";
+            this.chkEnableSsl.Properties.Caption = "Enable SSL";
+            this.chkEnableSsl.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chkEnableSsl.Size = new System.Drawing.Size(75, 18);
+            this.chkEnableSsl.TabIndex = 12;
+            // 
+            // calPort
+            // 
+            this.calPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.calPort.Location = new System.Drawing.Point(369, 20);
+            this.calPort.Name = "calPort";
+            this.calPort.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.calPort.Size = new System.Drawing.Size(115, 20);
+            this.calPort.TabIndex = 18;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl8.Location = new System.Drawing.Point(343, 23);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(20, 13);
+            this.labelControl8.TabIndex = 17;
+            this.labelControl8.Text = "Port";
             // 
             // txtSPMT
             // 
@@ -361,25 +439,6 @@ namespace NewProject
             this.labelControl7.TabIndex = 11;
             this.labelControl7.Text = "Username";
             // 
-            // labelControl8
-            // 
-            this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Location = new System.Drawing.Point(343, 23);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(20, 13);
-            this.labelControl8.TabIndex = 17;
-            this.labelControl8.Text = "Port";
-            // 
-            // calPort
-            // 
-            this.calPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.calPort.Location = new System.Drawing.Point(369, 20);
-            this.calPort.Name = "calPort";
-            this.calPort.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calPort.Size = new System.Drawing.Size(115, 20);
-            this.calPort.TabIndex = 18;
-            // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -394,35 +453,6 @@ namespace NewProject
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Signature";
             // 
-            // chkEnableSsl
-            // 
-            this.chkEnableSsl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkEnableSsl.Location = new System.Drawing.Point(490, 22);
-            this.chkEnableSsl.Name = "chkEnableSsl";
-            this.chkEnableSsl.Properties.Caption = "Enable SSL";
-            this.chkEnableSsl.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chkEnableSsl.Size = new System.Drawing.Size(75, 18);
-            this.chkEnableSsl.TabIndex = 12;
-            // 
-            // calTimeout
-            // 
-            this.calTimeout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.calTimeout.Location = new System.Drawing.Point(627, 20);
-            this.calTimeout.Name = "calTimeout";
-            this.calTimeout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calTimeout.Size = new System.Drawing.Size(123, 20);
-            this.calTimeout.TabIndex = 20;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Location = new System.Drawing.Point(583, 23);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(38, 13);
-            this.labelControl9.TabIndex = 19;
-            this.labelControl9.Text = "Timeout";
-            // 
             // labelControl10
             // 
             this.labelControl10.Location = new System.Drawing.Point(15, 29);
@@ -430,16 +460,6 @@ namespace NewProject
             this.labelControl10.Size = new System.Drawing.Size(46, 13);
             this.labelControl10.TabIndex = 21;
             this.labelControl10.Text = "Signature";
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCheck.Location = new System.Drawing.Point(640, 43);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(110, 23);
-            this.btnCheck.TabIndex = 21;
-            this.btnCheck.Text = "Check Connection";
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // btnSave
             // 
@@ -450,26 +470,6 @@ namespace NewProject
             this.btnSave.TabIndex = 22;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnNew
-            // 
-            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNew.Location = new System.Drawing.Point(627, 15);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(38, 23);
-            this.btnNew.TabIndex = 22;
-            this.btnNew.Text = "New";
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(671, 15);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(50, 23);
-            this.btnDelete.TabIndex = 23;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // ctrSender
             // 
@@ -491,20 +491,20 @@ namespace NewProject
             ((System.ComponentModel.ISupportInitialize)(this.lkProfile.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFromEmail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDislayName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDefault.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDislayName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFromEmail.Properties)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calTimeout.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEnableSsl.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calPort.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSPMT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calPort.Properties)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEnableSsl.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calTimeout.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
