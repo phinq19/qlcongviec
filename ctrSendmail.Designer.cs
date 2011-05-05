@@ -39,6 +39,7 @@ namespace NewProject
             this.ctrRecipients1 = new NewProject.ctrRecipients();
             this.ctrSender1 = new NewProject.ctrSender();
             this.ctrContent1 = new NewProject.ctrContent();
+            this.ctrPreview1 = new NewProject.ctrPreview();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -99,6 +100,7 @@ namespace NewProject
             this.btnPreview.Size = new System.Drawing.Size(184, 32);
             this.btnPreview.TabIndex = 3;
             this.btnPreview.Text = "Preview";
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // btnRecipients
             // 
@@ -114,6 +116,7 @@ namespace NewProject
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.ctrPreview1);
             this.panelControl1.Controls.Add(this.ctrRecipients1);
             this.panelControl1.Controls.Add(this.ctrSender1);
             this.panelControl1.Controls.Add(this.ctrContent1);
@@ -146,6 +149,14 @@ namespace NewProject
             this.ctrContent1.Size = new System.Drawing.Size(705, 382);
             this.ctrContent1.TabIndex = 3;
             // 
+            // ctrPreview1
+            // 
+            this.ctrPreview1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrPreview1.Location = new System.Drawing.Point(2, 2);
+            this.ctrPreview1.Name = "ctrPreview1";
+            this.ctrPreview1.Size = new System.Drawing.Size(705, 382);
+            this.ctrPreview1.TabIndex = 6;
+            // 
             // ctrSendmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +187,7 @@ namespace NewProject
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private ctrSender ctrSender1;
         private ctrRecipients ctrRecipients1;
+        private ctrPreview ctrPreview1;
 
     }
 }
