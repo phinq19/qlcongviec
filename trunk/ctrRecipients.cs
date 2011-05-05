@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Collections;
 
 namespace NewProject
 {
@@ -18,6 +19,7 @@ namespace NewProject
             
         }
         private DataTable DTbCTPN;
+        private DataTable DTbCustomer;
         private void _InitData()
         {
 
@@ -44,13 +46,17 @@ namespace NewProject
             string str = "";
             for (int j = 0; j < gridView1.RowCount; j++)
             {
-                str=str+gridView1.GetRowCellValue(j,colID1).ToString()+",";
+                if (gridView1.GetRow(j) != null)
+                {
+                    str = str + gridView1.GetRowCellValue(j, colID1).ToString() + ",";
+                }
             }
             if (str != "")
             {
                 str = "(" + str.Trim(',') + ")";
             }
-            gridControl2.DataSource = Customers.GetNotIn(str);
+            DTbCustomer = Customers.GetNotIn(str);
+            gridControl2.DataSource = DTbCustomer;
 
 
             gridView2.FocusedRowHandle = k;
@@ -73,36 +79,76 @@ namespace NewProject
         
         private void AddRowGridView( int rowHandle)
         {
-            gridView1.AddNewRow();
-            gridView1.SetRowCellValue(gridView1.RowCount - 1, colID1, gridView2.GetRowCellValue(rowHandle, colID));
-            gridView1.SetRowCellValue(gridView1.RowCount - 1, colHo1, gridView2.GetRowCellValue(rowHandle, colHo));
-            gridView1.SetRowCellValue(gridView1.RowCount - 1, colTen1, gridView2.GetRowCellValue(rowHandle, colTen));
-            gridView1.SetRowCellValue(gridView1.RowCount - 1, colTenGoi1, gridView2.GetRowCellValue(rowHandle, colTenGoi));
-            gridView1.SetRowCellValue(gridView1.RowCount - 1, colEmail1, gridView2.GetRowCellValue(rowHandle, colEmail));
-            gridView1.SetRowCellValue(gridView1.RowCount - 1, colNhom1, gridView2.GetRowCellValue(rowHandle, colNhom));
-            gridView2.DeleteRow(rowHandle);
+            if (rowHandle >= 0)
+            {
+                
+                int id = int.Parse(gridView2.GetRowCellValue(rowHandle, colID).ToString());
+                DataRow[] r = DTbCTPN.Select("ID="+id.ToString());
+                if (r.Length == 0)
+                {
+                    DataRow dtRow = DTbCTPN.NewRow();
+                    dtRow["ID"] = id;
+                    dtRow["LastName"] = gridView2.GetRowCellValue(rowHandle, colHo);
+                    dtRow["FirstName"] = gridView2.GetRowCellValue(rowHandle, colTen);
+                    dtRow["CallName"] = gridView2.GetRowCellValue(rowHandle, colTenGoi);
+                    dtRow["Email"] = gridView2.GetRowCellValue(rowHandle, colEmail);
+                    dtRow["Type"] = gridView2.GetRowCellValue(rowHandle, colNhom);
+                    DTbCTPN.Rows.Add(dtRow);
+                }
+            }
+            else
+            {
+                int type = int.Parse(gridView2.GetGroupRowValue(rowHandle).ToString());
+                DataRow[] rows = DTbCustomer.Select("Type=" + type.ToString());
+                foreach (DataRow dtR in rows)
+                {
+                    int id = int.Parse(dtR["ID"].ToString());
+                    DataRow[] r = DTbCTPN.Select("ID=" + id.ToString());
+                    if (r.Length == 0)
+                    {
+                        DataRow dtRow = DTbCTPN.NewRow();
+                        dtRow["ID"] = dtR["ID"];
+                        dtRow["LastName"] = dtR["LastName"];
+                        dtRow["FirstName"] = dtR["FirstName"];
+                        dtRow["CallName"] = dtR["CallName"];
+                        dtRow["Email"] = dtR["Email"];
+                        dtRow["Type"] = dtR["Type"];
+                        DTbCTPN.Rows.Add(dtRow);
+                    }
+                }
+                
+
+            }
+            //gridView2.DeleteRow(rowHandle);
         }
         private void btnGet_Click(object sender, EventArgs e)
         {
            int[]rows= gridView2.GetSelectedRows();
             for(int i=0;i<rows.Length;i++)
             {
-                if (gridView2.IsRowVisible(rows[i]) == DevExpress.XtraGrid.Views.Grid.RowVisibleState.Visible)
+                object obj = gridView2.GetRow(rows[i]);
+                
+                if (gridView2.IsRowVisible(rows[i]) == DevExpress.XtraGrid.Views.Grid.RowVisibleState.Visible && obj != null)
                 {
                     AddRowGridView(rows[i]);
                 }
             }
+            //gridView2.DeleteSelectedRows();
+            _LoadDSDoiTac();
         }
 
         private void btnGetAll_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < gridView2.RowCount; i++)
             {
-                if (gridView2.IsRowVisible(i) == DevExpress.XtraGrid.Views.Grid.RowVisibleState.Visible)
+                object obj = gridView2.GetRow(i);
+                if (gridView2.IsRowVisible(i) == DevExpress.XtraGrid.Views.Grid.RowVisibleState.Visible&&obj!=null)
                 {
                     AddRowGridView(i);
                 }
             }
+            //DTbCustomer.Rows.Clear();
+            _LoadDSDoiTac();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -113,8 +159,24 @@ namespace NewProject
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = null;
+            DTbCTPN.Rows.Clear();
+            //gridControl1.DataSource = DTbCTPN;
             _LoadDSDoiTac();
+        }
+        public ArrayList  GetRecipients()
+        {
+            ArrayList arr = new ArrayList();
+            foreach (DataRow dtRow in DTbCTPN.Rows)
+            {
+                Customers cus = new Customers();
+                cus.ID = long.Parse(dtRow["ID"].ToString());
+                cus.Email = dtRow["Email"].ToString();
+                cus.LastName = dtRow["LastName"].ToString();
+                cus.FirstName = dtRow["FirstName"].ToString();
+                cus.CallName = dtRow["CallName"].ToString();
+                arr.Add(cus);
+            }
+            return arr;
         }
         
     }

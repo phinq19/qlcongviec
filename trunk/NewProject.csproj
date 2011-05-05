@@ -72,6 +72,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Class\CustomersType.cs" />
+    <Compile Include="ctrPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrPreview.Designer.cs">
+      <DependentUpon>ctrPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrRecipients.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +128,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ctrPreview.resx">
+      <DependentUpon>ctrPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrRecipients.resx">
       <DependentUpon>ctrRecipients.cs</DependentUpon>
       <SubType>Designer</SubType>
