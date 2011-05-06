@@ -163,20 +163,21 @@ namespace NewProject
             //gridControl1.DataSource = DTbCTPN;
             _LoadDSDoiTac();
         }
-        public ArrayList  GetRecipients()
+        public DataTable  GetRecipients()
         {
-            ArrayList arr = new ArrayList();
-            foreach (DataRow dtRow in DTbCTPN.Rows)
-            {
-                Customers cus = new Customers();
-                cus.ID = long.Parse(dtRow["ID"].ToString());
-                cus.Email = dtRow["Email"].ToString();
-                cus.LastName = dtRow["LastName"].ToString();
-                cus.FirstName = dtRow["FirstName"].ToString();
-                cus.CallName = dtRow["CallName"].ToString();
-                arr.Add(cus);
-            }
-            return arr;
+            return DTbCTPN;
+            //ArrayList arr = new ArrayList();
+            //foreach (DataRow dtRow in DTbCTPN.Rows)
+            //{
+            //    Customers cus = new Customers();
+            //    cus.ID = long.Parse(dtRow["ID"].ToString());
+            //    cus.Email = dtRow["Email"].ToString();
+            //    cus.LastName = dtRow["LastName"].ToString();
+            //    cus.FirstName = dtRow["FirstName"].ToString();
+            //    cus.CallName = dtRow["CallName"].ToString();
+            //    arr.Add(cus);
+            //}
+            //return arr;
         }
         
     }

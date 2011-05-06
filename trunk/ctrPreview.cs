@@ -38,7 +38,7 @@ namespace NewProject
         {
             lblMailFrom.Text = mailConfig.DislayName+" <"+mailConfig.MailFrom+">";
         }
-        public void SetRecipients(ArrayList arr)
+        public void SetRecipients(DataTable arr)
         {
             lkMailTo.Properties.DataSource = arr;
             lkMailTo.Properties.DisplayMember = "Email";
