@@ -36,19 +36,23 @@ namespace NewProject
             this.btnPreview = new DevExpress.XtraEditors.SimpleButton();
             this.btnRecipients = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.ctrSend1 = new NewProject.ctrSend();
+            this.ctrPreview1 = new NewProject.ctrPreview();
             this.ctrRecipients1 = new NewProject.ctrRecipients();
             this.ctrSender1 = new NewProject.ctrSender();
             this.ctrContent1 = new NewProject.ctrContent();
-            this.ctrPreview1 = new NewProject.ctrPreview();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnContent
             // 
-            this.btnContent.Location = new System.Drawing.Point(0, 103);
+            this.btnContent.Location = new System.Drawing.Point(0, 86);
             this.btnContent.Name = "btnContent";
             this.btnContent.Size = new System.Drawing.Size(184, 32);
             this.btnContent.TabIndex = 1;
@@ -70,7 +74,7 @@ namespace NewProject
             // 
             // btnSender
             // 
-            this.btnSender.Location = new System.Drawing.Point(0, 40);
+            this.btnSender.Location = new System.Drawing.Point(0, 23);
             this.btnSender.Name = "btnSender";
             this.btnSender.Size = new System.Drawing.Size(184, 32);
             this.btnSender.TabIndex = 6;
@@ -79,7 +83,7 @@ namespace NewProject
             // 
             // btnResult
             // 
-            this.btnResult.Location = new System.Drawing.Point(0, 196);
+            this.btnResult.Location = new System.Drawing.Point(0, 179);
             this.btnResult.Name = "btnResult";
             this.btnResult.Size = new System.Drawing.Size(184, 32);
             this.btnResult.TabIndex = 5;
@@ -87,15 +91,16 @@ namespace NewProject
             // 
             // btnSendmail
             // 
-            this.btnSendmail.Location = new System.Drawing.Point(0, 165);
+            this.btnSendmail.Location = new System.Drawing.Point(0, 148);
             this.btnSendmail.Name = "btnSendmail";
             this.btnSendmail.Size = new System.Drawing.Size(184, 32);
             this.btnSendmail.TabIndex = 4;
             this.btnSendmail.Text = "Send Mail";
+            this.btnSendmail.Click += new System.EventHandler(this.btnSendmail_Click);
             // 
             // btnPreview
             // 
-            this.btnPreview.Location = new System.Drawing.Point(0, 134);
+            this.btnPreview.Location = new System.Drawing.Point(0, 117);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(184, 32);
             this.btnPreview.TabIndex = 3;
@@ -104,7 +109,7 @@ namespace NewProject
             // 
             // btnRecipients
             // 
-            this.btnRecipients.Location = new System.Drawing.Point(0, 72);
+            this.btnRecipients.Location = new System.Drawing.Point(0, 55);
             this.btnRecipients.Name = "btnRecipients";
             this.btnRecipients.Size = new System.Drawing.Size(184, 32);
             this.btnRecipients.TabIndex = 2;
@@ -113,24 +118,39 @@ namespace NewProject
             // 
             // panelControl1
             // 
-            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.ctrSend1);
             this.panelControl1.Controls.Add(this.ctrPreview1);
             this.panelControl1.Controls.Add(this.ctrRecipients1);
             this.panelControl1.Controls.Add(this.ctrSender1);
             this.panelControl1.Controls.Add(this.ctrContent1);
-            this.panelControl1.Location = new System.Drawing.Point(193, 26);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(2, 20);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(709, 386);
+            this.panelControl1.Size = new System.Drawing.Size(703, 387);
             this.panelControl1.TabIndex = 4;
+            // 
+            // ctrSend1
+            // 
+            this.ctrSend1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrSend1.Location = new System.Drawing.Point(2, 2);
+            this.ctrSend1.Name = "ctrSend1";
+            this.ctrSend1.Size = new System.Drawing.Size(699, 383);
+            this.ctrSend1.TabIndex = 7;
+            // 
+            // ctrPreview1
+            // 
+            this.ctrPreview1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrPreview1.Location = new System.Drawing.Point(2, 2);
+            this.ctrPreview1.Name = "ctrPreview1";
+            this.ctrPreview1.Size = new System.Drawing.Size(699, 383);
+            this.ctrPreview1.TabIndex = 6;
             // 
             // ctrRecipients1
             // 
             this.ctrRecipients1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrRecipients1.Location = new System.Drawing.Point(2, 2);
             this.ctrRecipients1.Name = "ctrRecipients1";
-            this.ctrRecipients1.Size = new System.Drawing.Size(705, 382);
+            this.ctrRecipients1.Size = new System.Drawing.Size(699, 383);
             this.ctrRecipients1.TabIndex = 5;
             // 
             // ctrSender1
@@ -138,7 +158,7 @@ namespace NewProject
             this.ctrSender1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrSender1.Location = new System.Drawing.Point(2, 2);
             this.ctrSender1.Name = "ctrSender1";
-            this.ctrSender1.Size = new System.Drawing.Size(705, 382);
+            this.ctrSender1.Size = new System.Drawing.Size(699, 383);
             this.ctrSender1.TabIndex = 4;
             // 
             // ctrContent1
@@ -146,22 +166,22 @@ namespace NewProject
             this.ctrContent1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrContent1.Location = new System.Drawing.Point(2, 2);
             this.ctrContent1.Name = "ctrContent1";
-            this.ctrContent1.Size = new System.Drawing.Size(705, 382);
+            this.ctrContent1.Size = new System.Drawing.Size(699, 383);
             this.ctrContent1.TabIndex = 3;
             // 
-            // ctrPreview1
+            // groupControl2
             // 
-            this.ctrPreview1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctrPreview1.Location = new System.Drawing.Point(2, 2);
-            this.ctrPreview1.Name = "ctrPreview1";
-            this.ctrPreview1.Size = new System.Drawing.Size(705, 382);
-            this.ctrPreview1.TabIndex = 6;
+            this.groupControl2.Controls.Add(this.panelControl1);
+            this.groupControl2.Location = new System.Drawing.Point(195, 2);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(707, 409);
+            this.groupControl2.TabIndex = 5;
             // 
             // ctrSendmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Name = "ctrSendmail";
             this.Size = new System.Drawing.Size(905, 415);
@@ -170,6 +190,8 @@ namespace NewProject
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -188,6 +210,8 @@ namespace NewProject
         private ctrSender ctrSender1;
         private ctrRecipients ctrRecipients1;
         private ctrPreview ctrPreview1;
+        private ctrSend ctrSend1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
 
     }
 }
