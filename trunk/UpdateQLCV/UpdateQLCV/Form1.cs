@@ -190,7 +190,7 @@ namespace UpdateWIN
         private void Download(string filePath, string fileName,string fileDown)
         {
             FtpWebRequest reqFTP;
-            lblStatus.Text = "Đang tải...";
+            lblStatus.Text = "Downloading...";
             lblStatus.Refresh();
             progressBar.Value = 0;
             try
@@ -235,7 +235,7 @@ namespace UpdateWIN
                 ftpStream.Close();
                 outputStream.Close();
                 response.Close();
-                lblStatus.Text = "Đang cập nhập...";
+                lblStatus.Text = "Updating...";
                 lblStatus.Refresh();
                 progressBar.Value = progressBar.Maximum;
 
@@ -314,7 +314,34 @@ namespace UpdateWIN
                 MessageBox.Show(ex.Message);
             }
         }
+        private void RunScript()
+        {
+            string path = Application.StartupPath + "\\" + "Script";
+            if (Directory.Exists(path))
+            {
+                string[] files = Directory.GetFiles(path);
+                if (files.Length > 0)
+                {
+                    if (Provider.Connect())
+                    {
+                        foreach (string file in files)
+                        {
+                            try
+                            {
+                                StreamReader fs = new StreamReader(file);
+                                string script = fs.ReadLine();
+                                fs.Close();
+                                Provider.ExecuteNonQuery(script);
+                            }
+                            catch { }
 
+                        }
+                        Provider.Close();
+                    }
+                }
+                Directory.Delete(path, true);
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -322,13 +349,61 @@ namespace UpdateWIN
                  ftpFileCreate = DateTime.Now.ToString("yyyyMMddhhmmss")+"";
                  Download(Application.StartupPath, ftpFileCreate, ftpFileName);
                  Unzip(Application.StartupPath, ftpFileCreate);
-                 MessageBox.Show("Cập nhập phần mềm thành công.");
-                 lblStatus.Text = "Hoàn thành";
+                 if (File.Exists("newversion.dll"))
+                 {
+                     StreamReader fsn = new StreamReader("newversion.dll");
+                     string newver=fsn.ReadLine();
+                     fsn.Close();
+                     if (File.Exists("version.dll"))
+                     {
+                         StreamReader fr = new StreamReader("version.dll");
+                         string ver = fr.ReadLine();
+                         fr.Close();
+                         if (newver != ver)
+                         {
+                             FileStream fs = new FileStream("version.dll", FileMode.OpenOrCreate);
+                             StreamWriter fw = new StreamWriter(fs);
+                             fw.WriteLine(newver);
+                             fw.Close();
+                             fs.Close();
+                             try
+                             {
+                                 RunScript();
+                                 
+                             }
+                             catch
+                             {
+                             }
+
+                         }
+
+                     }
+                     else
+                     {
+                         FileStream fs = new FileStream("version.dll", FileMode.OpenOrCreate);
+                         StreamWriter fw = new StreamWriter(fs);
+                         fw.WriteLine(newver);
+                         fw.Close();
+                         fs.Close();
+                         try
+                         {
+                             RunScript();
+                         }
+                         catch
+                         {
+                         }
+                     }
+                     File.Delete("newversion.dll");
+                 }
+
+
+                 MessageBox.Show("Update successful.","Infomation",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                 lblStatus.Text = "Finish";
                  //this.Close();
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Không cập nhập phần mềm thành công.Vui lòng thử lại."+ex.ToString());
+                MessageBox.Show("Update unsuccessful .Please try again." + ex.ToString(), "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void Unzip(string zipfilePath, string zipfileName)

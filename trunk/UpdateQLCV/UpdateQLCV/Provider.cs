@@ -18,7 +18,7 @@ namespace UpdateWIN
         //    myOleDbConnection = new OleDbConnection(ConnectString);
         //    //OleDbConnection myOleDbConnectionORAACB = new OleDbConnection(ConnectString.ORAACBConnectString);
         //}
-        public void Close()
+        public static void Close()
         {
             myOleDbConnection.Close();
         }
