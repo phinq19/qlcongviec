@@ -18,10 +18,6 @@ E:\Work\qlcongviec\bin\Debug\NewProject.exe
 E:\Work\qlcongviec\bin\Debug\NewProject.pdb
 E:\Work\qlcongviec\obj\Debug\NewProject.ctrContent.resources
 E:\Work\qlcongviec\obj\Debug\NewProject.frmRibbonForm.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.exe
-D:\Work\qlcongviec\obj\Debug\NewProject.pdb
-D:\Work\qlcongviec\bin\Debug\NewProject.exe
-D:\Work\qlcongviec\bin\Debug\NewProject.pdb
 D:\Work\qlcongviec\obj\Debug\ResolveAssemblyReference.cache
 D:\Work\qlcongviec\obj\Debug\NewProject.ctrPreview.resources
 D:\Work\qlcongviec\obj\Debug\NewProject.ctrRecipients.resources
@@ -34,5 +30,10 @@ D:\Work\qlcongviec\obj\Debug\NewProject.frmCustomersList.resources
 D:\Work\qlcongviec\obj\Debug\NewProject.frmRibbonForm.resources
 D:\Work\qlcongviec\obj\Debug\NewProject.Properties.Resources.resources
 D:\Work\qlcongviec\obj\Debug\NewProject.csproj.GenerateResource.Cache
-D:\Work\qlcongviec\obj\Debug\NewProject.exe.licenses
 D:\Work\qlcongviec\obj\Debug\NewProject.ctrSend.resources
+D:\Work\qlcongviec\obj\Debug\NewProject.frmRegister.resources
+D:\Work\qlcongviec\obj\Debug\WorkManagement.exe.licenses
+D:\Work\qlcongviec\bin\Debug\WorkManagement.exe
+D:\Work\qlcongviec\bin\Debug\WorkManagement.pdb
+D:\Work\qlcongviec\obj\Debug\WorkManagement.exe
+D:\Work\qlcongviec\obj\Debug\WorkManagement.pdb

@@ -253,7 +253,7 @@ namespace NewProject
             this.chkDefault.Location = new System.Drawing.Point(380, 21);
             this.chkDefault.Name = "chkDefault";
             this.chkDefault.Properties.Caption = "Default";
-            this.chkDefault.Size = new System.Drawing.Size(75, 19);
+            this.chkDefault.Size = new System.Drawing.Size(75, 18);
             this.chkDefault.TabIndex = 11;
             // 
             // txtCode
@@ -366,7 +366,7 @@ namespace NewProject
             this.chkEnableSsl.Name = "chkEnableSsl";
             this.chkEnableSsl.Properties.Caption = "Enable SSL";
             this.chkEnableSsl.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chkEnableSsl.Size = new System.Drawing.Size(75, 19);
+            this.chkEnableSsl.Size = new System.Drawing.Size(75, 18);
             this.chkEnableSsl.TabIndex = 12;
             // 
             // calPort
