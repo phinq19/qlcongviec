@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WorkManagement")]
+[assembly: AssemblyTitle("RegisterQLCV")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("DT : 0977 435 453")]
-[assembly: AssemblyProduct("WorkManagement")]
-[assembly: AssemblyCopyright("Copyright © by SONTT 2011")]
+[assembly: AssemblyCompany("DT: 0977 435 453")]
+[assembly: AssemblyProduct("RegisterQLCV")]
+[assembly: AssemblyCopyright("Copyright © SONTT")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("443023b4-8ff9-4edf-8dc9-bfe47fc2cc76")]
+[assembly: Guid("22525b55-99b6-49c7-aac2-1831450ba45a")]
 
 // Version information for an assembly consists of the following four values:
 //

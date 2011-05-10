@@ -15,7 +15,20 @@ namespace NewProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRibbonForm());
+            if (Common.CheckRegister() == false)
+            {
+                MessageBox.Show("Phần mềm chưa được đăng ký sử dụng.Vui lòng đăng ký sử dụng phần mềm", "Thông báo");
+                frmRegister frm = new frmRegister();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new frmRibbonForm());
+                }
+            }
+            else
+            {
+                Application.Run(new frmRibbonForm());
+            }
+            
         }
     }
 }
