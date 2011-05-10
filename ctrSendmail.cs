@@ -18,7 +18,7 @@ namespace NewProject
         private void ctrSendmail_Load(object sender, EventArgs e)
         {
             ctrContent1.Visible = false;
-            ctrSender1.Visible = false;
+            ctrSender1.Visible = true;
             ctrRecipients1.Visible = false;
             ctrPreview1.Visible = false;
             ctrSend1.Visible = false;

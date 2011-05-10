@@ -253,7 +253,7 @@ namespace NewProject
             this.chkDefault.Location = new System.Drawing.Point(380, 21);
             this.chkDefault.Name = "chkDefault";
             this.chkDefault.Properties.Caption = "Default";
-            this.chkDefault.Size = new System.Drawing.Size(75, 18);
+            this.chkDefault.Size = new System.Drawing.Size(75, 19);
             this.chkDefault.TabIndex = 11;
             // 
             // txtCode
@@ -366,7 +366,7 @@ namespace NewProject
             this.chkEnableSsl.Name = "chkEnableSsl";
             this.chkEnableSsl.Properties.Caption = "Enable SSL";
             this.chkEnableSsl.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chkEnableSsl.Size = new System.Drawing.Size(75, 18);
+            this.chkEnableSsl.Size = new System.Drawing.Size(75, 19);
             this.chkEnableSsl.TabIndex = 12;
             // 
             // calPort
@@ -403,13 +403,14 @@ namespace NewProject
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(61, 13);
             this.labelControl1.TabIndex = 15;
-            this.labelControl1.Text = "SPMT Server";
+            this.labelControl1.Text = "SMTP Server";
             // 
             // txtPass
             // 
             this.txtPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPass.Location = new System.Drawing.Point(399, 46);
             this.txtPass.Name = "txtPass";
+            this.txtPass.Properties.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(233, 20);
             this.txtPass.TabIndex = 14;
             // 
