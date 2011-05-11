@@ -16,11 +16,11 @@ namespace NewProject
             try
             {
                 bool existed = true;
-                //Regex regex = new Regex(FilterPattern.GetToPattern(control.Value));
+                Regex regex = new Regex(FilterPattern.GetToPattern(control.Value));
                 switch (control.Control.ToLower())
                 {
                     case ControlType.AHref:
-                        existed = ie.Link(Find.ByText(control.Value)).Exists;
+                        existed = ie.Link(Find.ByText(regex)).Exists;
                         break;
                     case ControlType.AHrefNoText:
                         try
@@ -66,9 +66,15 @@ namespace NewProject
                 case AttributeType.Class:
                     return Find.ByClass(regex);
                 case AttributeType.Text:
-                    return Find.ByText(regex);
+                    {
+                        Regex regexs = new Regex(FilterPattern.GetToPattern(control.Value));
+                        return Find.ByText(regexs);
+                    }
                 case AttributeType.Value:
-                    return Find.ByValue(regex);
+                    {
+                        Regex regexs = new Regex(FilterPattern.GetToPattern(control.Value));
+                        return Find.ByValue(regexs);
+                    }
                 default:
                     return Find.ByName(regex);
             }
