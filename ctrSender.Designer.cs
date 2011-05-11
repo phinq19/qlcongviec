@@ -253,7 +253,7 @@ namespace NewProject
             this.chkDefault.Location = new System.Drawing.Point(380, 21);
             this.chkDefault.Name = "chkDefault";
             this.chkDefault.Properties.Caption = "Default";
-            this.chkDefault.Size = new System.Drawing.Size(75, 18);
+            this.chkDefault.Size = new System.Drawing.Size(75, 19);
             this.chkDefault.TabIndex = 11;
             // 
             // txtCode
@@ -333,7 +333,7 @@ namespace NewProject
             // btnCheck
             // 
             this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCheck.Location = new System.Drawing.Point(640, 43);
+            this.btnCheck.Location = new System.Drawing.Point(640, 45);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(110, 23);
             this.btnCheck.TabIndex = 21;
@@ -366,7 +366,7 @@ namespace NewProject
             this.chkEnableSsl.Name = "chkEnableSsl";
             this.chkEnableSsl.Properties.Caption = "Enable SSL";
             this.chkEnableSsl.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chkEnableSsl.Size = new System.Drawing.Size(75, 18);
+            this.chkEnableSsl.Size = new System.Drawing.Size(75, 19);
             this.chkEnableSsl.TabIndex = 12;
             // 
             // calPort

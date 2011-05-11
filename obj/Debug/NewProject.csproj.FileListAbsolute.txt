@@ -1,39 +1,19 @@
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\bin\Debug\NewProject.exe
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\bin\Debug\NewProject.pdb
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\bin\Debug\WinHTMLEditorControl.dll
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.Form1.resources
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.Properties.Resources.resources
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.csproj.GenerateResource.Cache
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.exe
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\Sendmail\NewProject\obj\Debug\NewProject.pdb
-E:\Work\qlcongviec\obj\Debug\NewProject.exe
-E:\Work\qlcongviec\obj\Debug\NewProject.pdb
 E:\Work\qlcongviec\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrSend.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrPreview.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrRecipients.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrSender.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrContent.resources
 E:\Work\qlcongviec\obj\Debug\NewProject.ctrSendmail.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.frmCustomerType.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.frmCustomers.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.frmCustomersList.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.frmRibbonForm.resources
 E:\Work\qlcongviec\obj\Debug\NewProject.Properties.Resources.resources
 E:\Work\qlcongviec\obj\Debug\NewProject.csproj.GenerateResource.Cache
-E:\Work\qlcongviec\obj\Debug\NewProject.exe.licenses
-E:\Work\qlcongviec\bin\Debug\NewProject.exe
-E:\Work\qlcongviec\bin\Debug\NewProject.pdb
-E:\Work\qlcongviec\obj\Debug\NewProject.ctrContent.resources
-E:\Work\qlcongviec\obj\Debug\NewProject.frmRibbonForm.resources
-D:\Work\qlcongviec\obj\Debug\ResolveAssemblyReference.cache
-D:\Work\qlcongviec\obj\Debug\NewProject.ctrPreview.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.ctrRecipients.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.ctrSender.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.ctrContent.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.ctrSendmail.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.frmCustomerType.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.frmCustomers.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.frmCustomersList.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.frmRibbonForm.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.Properties.Resources.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.csproj.GenerateResource.Cache
-D:\Work\qlcongviec\obj\Debug\NewProject.ctrSend.resources
-D:\Work\qlcongviec\obj\Debug\NewProject.frmRegister.resources
-D:\Work\qlcongviec\obj\Debug\WorkManagement.exe.licenses
-D:\Work\qlcongviec\bin\Debug\WorkManagement.exe
-D:\Work\qlcongviec\bin\Debug\WorkManagement.pdb
-D:\Work\qlcongviec\obj\Debug\WorkManagement.exe
-D:\Work\qlcongviec\obj\Debug\WorkManagement.pdb
+E:\Work\qlcongviec\obj\Debug\NewProject.frmRegister.resources
+E:\Work\qlcongviec\bin\Debug\WorkManagement.exe
+E:\Work\qlcongviec\bin\Debug\WorkManagement.pdb
+E:\Work\qlcongviec\obj\Debug\WorkManagement.exe.licenses
+E:\Work\qlcongviec\obj\Debug\WorkManagement.exe
+E:\Work\qlcongviec\obj\Debug\WorkManagement.pdb
