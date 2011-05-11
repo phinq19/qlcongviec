@@ -89,7 +89,7 @@ namespace NewProject
                         break;
                     // Start WatiN
                     Open();
-
+                    
                     // Start Forum
                     error = MyWatiN.Goto(forum.Url, ie);
                     if (!string.IsNullOrEmpty(error))
@@ -100,7 +100,7 @@ namespace NewProject
                     }
 
                     // === Step 1 === //
-                    NextStep();
+                    //NextStep();
 
                     // Control User name
                     error = "";
@@ -132,6 +132,7 @@ namespace NewProject
                     error = MyWatiN.Goto(forum.Url, ie);
                     if (!string.IsNullOrEmpty(error))
                     {
+                        
                         AddStatus(forum.Url, RunStatus.ErrTimeOut, error);
                         Close();
                         continue;
@@ -140,7 +141,7 @@ namespace NewProject
                     //Wait(10000);
 
                     // === Step 2 === //
-                    NextStep();
+                    //NextStep();
 
                     // Filter topic
                     bool isTopic = false;
@@ -171,7 +172,7 @@ namespace NewProject
                         }
                     }
                     // === Step 3 === //
-                    NextStep();
+                    //NextStep();
                     if (!isNewTopic)
                     {
                         AddStatus(forum.Url, RunStatus.ErrNewThread, error);
@@ -220,7 +221,7 @@ namespace NewProject
                         continue;
                     }
                     // === Step 4 === //
-                    NextStep();
+                   //NextStep();
                     // Control Tag
                     RunControl(multiforum.Tags, entry.Tags);
 
@@ -236,7 +237,7 @@ namespace NewProject
                         continue;
                     }
 
-                    NextStep();
+                   // NextStep();
 
                     // End WatiN
                     Close();
@@ -278,6 +279,7 @@ namespace NewProject
                 }
             }
             return status;
+            
         }
 
         string RunControl(List<HControl> controls, string data)
@@ -296,9 +298,14 @@ namespace NewProject
 
         void Open()
         {
-            ie = new IE(true);
-            ie.ClearCache();
-            ie.ClearCookies();
+            try
+            {
+                ie = new IE(false);
+           
+                ie.ClearCache();
+                ie.ClearCookies();
+            }
+            catch { }
             //ie.ShowWindow(NativeMethods.WindowShowStyle.Hide);
         }
 

@@ -16,11 +16,11 @@ namespace NewProject
             try
             {
                 bool existed = true;
-                Regex regex = new Regex(FilterPattern.GetToPattern(control.Value));
+                //Regex regex = new Regex(FilterPattern.GetToPattern(control.Value));
                 switch (control.Control.ToLower())
                 {
                     case ControlType.AHref:
-                        existed = ie.Link(Find.ByText(regex)).Exists;
+                        existed = ie.Link(Find.ByText(control.Value)).Exists;
                         break;
                     case ControlType.AHrefNoText:
                         try
@@ -55,7 +55,8 @@ namespace NewProject
 
         public static AttributeConstraint GetControl(IE ie, HControl control)
         {
-            Regex regex = new Regex(FilterPattern.GetToPattern(control.Value));
+            //Regex regex = new Regex(FilterPattern.GetToPattern(control.Value));
+            String regex = control.Value;
             switch (control.Attribute.ToLower())
             {
                 case AttributeType.Id:

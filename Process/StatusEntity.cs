@@ -16,7 +16,7 @@ namespace NewProject
         {
             Forum = _forum;
             Status = _status;
-            Message = "";
+            Message = getStatus();
         }
 
         public StatusEntity(string _forum, RunStatus _status, string _message)
