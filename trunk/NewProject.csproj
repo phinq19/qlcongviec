@@ -79,15 +79,22 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WatiN.Core, Version=2.0.2.790, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\WatiN.Core.dll</HintPath>
+    </Reference>
     <Reference Include="WinHTMLEditorControl, Version=4.0.6.39, Culture=neutral, PublicKeyToken=e444157244638e02, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Common.cs" />
+    <Compile Include="Class\Entry.cs" />
+    <Compile Include="Class\WebLink.cs" />
     <Compile Include="Class\MailConfig.cs" />
     <Compile Include="Class\Customers.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Class\CustomersType.cs" />
+    <Compile Include="Class\FieldSetting.cs" />
     <Compile Include="ctrSend.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +162,14 @@
     <Compile Include="frmRibbonForm.Designer.cs">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Process\Enums.cs" />
+    <Compile Include="Process\Filter.cs" />
+    <Compile Include="Process\FilterPattern.cs" />
+    <Compile Include="Process\HControl.cs" />
+    <Compile Include="Process\MultiForum.cs" />
+    <Compile Include="Process\MultiThreadForum.cs" />
+    <Compile Include="Process\MyWatiN.cs" />
+    <Compile Include="Process\StatusEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ctrSend.resx">

@@ -17,3 +17,6 @@ E:\Work\qlcongviec\bin\Debug\WorkManagement.pdb
 E:\Work\qlcongviec\obj\Debug\WorkManagement.exe.licenses
 E:\Work\qlcongviec\obj\Debug\WorkManagement.exe
 E:\Work\qlcongviec\obj\Debug\WorkManagement.pdb
+E:\Work\qlcongviec\bin\Debug\WatiN.Core.dll
+E:\Work\qlcongviec\bin\Debug\Interop.SHDocVw.dll
+E:\Work\qlcongviec\bin\Debug\nunit.framework.dll
