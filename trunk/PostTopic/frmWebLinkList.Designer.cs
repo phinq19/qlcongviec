@@ -38,6 +38,7 @@
             this.colGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ItemLookUp_Nhom = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ItemLookUp_DVT = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -54,7 +55,6 @@
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colNote = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_KhachHang)).BeginInit();
@@ -128,7 +128,7 @@
             // 
             this.colUrl.AppearanceHeader.Options.UseTextOptions = true;
             this.colUrl.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colUrl.Caption = "Web";
+            this.colUrl.Caption = "Website";
             this.colUrl.FieldName = "Url";
             this.colUrl.Name = "colUrl";
             this.colUrl.OptionsColumn.AllowFocus = false;
@@ -193,6 +193,18 @@
             this.colID.FieldName = "ID";
             this.colID.Name = "colID";
             this.colID.Width = 23;
+            // 
+            // colNote
+            // 
+            this.colNote.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNote.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNote.Caption = "Note";
+            this.colNote.FieldName = "Note";
+            this.colNote.Name = "colNote";
+            this.colNote.OptionsColumn.AllowFocus = false;
+            this.colNote.Visible = true;
+            this.colNote.VisibleIndex = 4;
+            this.colNote.Width = 204;
             // 
             // repositoryItemComboBox1
             // 
@@ -339,18 +351,6 @@
             this.labelControl1.Size = new System.Drawing.Size(76, 13);
             this.labelControl1.TabIndex = 7;
             this.labelControl1.Text = "Tên khách hàng";
-            // 
-            // colNote
-            // 
-            this.colNote.AppearanceHeader.Options.UseTextOptions = true;
-            this.colNote.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colNote.Caption = "Note";
-            this.colNote.FieldName = "Note";
-            this.colNote.Name = "colNote";
-            this.colNote.OptionsColumn.AllowFocus = false;
-            this.colNote.Visible = true;
-            this.colNote.VisibleIndex = 4;
-            this.colNote.Width = 204;
             // 
             // frmWebLinkList
             // 
