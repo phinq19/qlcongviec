@@ -96,6 +96,12 @@
     </Compile>
     <Compile Include="Class\CustomersType.cs" />
     <Compile Include="Class\FieldSetting.cs" />
+    <Compile Include="PostTopic\ctrPost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostTopic\ctrPost.Designer.cs">
+      <DependentUpon>ctrPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="PostTopic\frmWebLink.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,10 @@
     <Compile Include="ProcessClass\StatusEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PostTopic\ctrPost.resx">
+      <DependentUpon>ctrPost.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="PostTopic\frmWebLink.resx">
       <DependentUpon>frmWebLink.cs</DependentUpon>
       <SubType>Designer</SubType>
