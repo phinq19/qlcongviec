@@ -47,3 +47,4 @@ E:\Work\qlcongviec\obj\Debug\NewProject.frmFieldSetting.resources
 E:\Work\qlcongviec\obj\Debug\NewProject.frmTypeSetup.resources
 E:\Work\qlcongviec\obj\Debug\NewProject.frmWebLink.resources
 E:\Work\qlcongviec\obj\Debug\NewProject.frmWebLinkList.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrPost.resources
