@@ -302,8 +302,8 @@ namespace NewProject
         {
             try
             {
-                ie = new IE(webBrowser);
-           
+                ie = new IE(false);
+                ie.ShowWindow(NativeMethods.WindowShowStyle.Hide);
                 ie.ClearCache();
                 ie.ClearCookies();
             }
