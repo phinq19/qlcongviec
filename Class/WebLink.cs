@@ -40,7 +40,7 @@ namespace NewProject
            ,[UrlPost]
            ,[UserName]
            ,[Password]
-            ,[Note]
+           ,[Note]
            ,[Group]
            ,[Type])
          VALUES
@@ -89,6 +89,21 @@ namespace NewProject
         {
             
             string sql = @"select * from WebLink where Type='" + Type+"'";
+            DataTable dtTable = Provider.ExecuteToDataTable(sql);
+            return dtTable;
+
+        }
+        public static DataTable GetNotIn(string str)
+        {
+            string sql = "";
+            if (str == "")
+            {
+                sql = @"select * from WebLink order by Url";
+            }
+            else
+            {
+                sql = @"select * from WebLink where ID not in " + str + " order by Url";
+            }
             DataTable dtTable = Provider.ExecuteToDataTable(sql);
             return dtTable;
 

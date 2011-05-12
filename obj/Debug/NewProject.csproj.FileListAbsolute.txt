@@ -48,3 +48,9 @@ E:\Work\qlcongviec\obj\Debug\NewProject.frmTypeSetup.resources
 E:\Work\qlcongviec\obj\Debug\NewProject.frmWebLink.resources
 E:\Work\qlcongviec\obj\Debug\NewProject.frmWebLinkList.resources
 E:\Work\qlcongviec\obj\Debug\NewProject.ctrPost.resources
+D:\Work\qlcongviec\obj\Debug\NewProject.frmWebLink.resources
+D:\Work\qlcongviec\obj\Debug\NewProject.frmWebLinkList.resources
+D:\Work\qlcongviec\obj\Debug\NewProject.frmTypeSetup.resources
+D:\Work\qlcongviec\obj\Debug\NewProject.ctrContentTopic.resources
+D:\Work\qlcongviec\obj\Debug\NewProject.frmFieldSetting.resources
+D:\Work\qlcongviec\obj\Debug\NewProject.ctrSelectLink.resources

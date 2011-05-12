@@ -5,6 +5,7 @@ using System.Text;
 
 using System.Threading;
 using WatiN.Core;
+using System.Windows.Forms;
 
 namespace NewProject
 {
@@ -54,6 +55,7 @@ namespace NewProject
 
         }
 
+        public WebBrowser webBrowser;
         public void Running()
         {
             //bRun = true;
@@ -300,7 +302,7 @@ namespace NewProject
         {
             try
             {
-                ie = new IE(false);
+                ie = new IE(webBrowser);
            
                 ie.ClearCache();
                 ie.ClearCookies();
