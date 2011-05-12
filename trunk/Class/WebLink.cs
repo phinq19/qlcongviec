@@ -7,17 +7,20 @@ namespace NewProject
 {
     public class WebLink
     {
-        public int ID;
+        public long ID;
         public string Url;
+        public string UrlPost;
         public string UserName;
         public string Password;
+        public string Note;
+        public int Group;
         public string Type;
 
         public WebLink()
         {
            
         }
-        public static bool Delete(int ID)
+        public static bool Delete(long ID)
         {
             try
             {
@@ -29,29 +32,38 @@ namespace NewProject
 
 
         }
-        public static int Insert(WebLink cus)
+        public static long Insert(WebLink cus)
         {
 
             string sql = @"INSERT INTO WebLink
            ([Url]
+           ,[UrlPost]
            ,[UserName]
            ,[Password]
+            ,[Note]
+           ,[Group]
            ,[Type])
          VALUES
            ('" + cus.Url + @"'
+            ,'" + cus.UrlPost + @"'
            ,'" + cus.UserName + @"'
            ,'" + cus.Password + @"'
+            ,'" + cus.Note + @"'
+             ," + cus.Group + @"
             ,'" + cus.Type + @"')";
             Provider.ExecuteNonQuery(sql);
-            return int.Parse(Provider.ExecuteScalar("Select @@IDENTITY").ToString());
+            return long.Parse(Provider.ExecuteScalar("Select @@IDENTITY").ToString());
 
         }
         public static void Update(WebLink cus)
         {
             string sql = @"UPDATE [WebLink]
                SET [Url] = '" + cus.Url + @"'
+                    ,[UrlPost] = '" + cus.UrlPost + @"'
                   ,[UserName] = '" + cus.UserName + @"'
                   ,[Password] = '" + cus.Password + @"'
+                    ,[Note] = '" + cus.Note + @"'
+                  ,[Group] = " + cus.Group + @"
                   ,[Type] = '" + cus.Type + @"' 
              WHERE ID=" + cus.ID;
             Provider.ExecuteNonQuery(sql);

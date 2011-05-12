@@ -42,3 +42,8 @@ D:\Work\qlcongviec\obj\Debug\NewProject.frmRibbonForm.resources
 D:\Work\qlcongviec\obj\Debug\NewProject.Properties.Resources.resources
 D:\Work\qlcongviec\obj\Debug\NewProject.csproj.GenerateResource.Cache
 D:\Work\qlcongviec\obj\Debug\WorkManagement.exe.licenses
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrContentTopic.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.frmFieldSetting.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.frmTypeSetup.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.frmWebLink.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.frmWebLinkList.resources
