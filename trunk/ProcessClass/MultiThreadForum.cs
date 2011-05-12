@@ -54,8 +54,6 @@ namespace NewProject
             entry = _entry;
 
         }
-
-        public WebBrowser webBrowser;
         public void Running()
         {
             //bRun = true;
@@ -302,7 +300,8 @@ namespace NewProject
         {
             try
             {
-                ie = new IE(false);
+                ie = new IE();
+                
                 ie.ShowWindow(NativeMethods.WindowShowStyle.Hide);
                 ie.ClearCache();
                 ie.ClearCookies();
