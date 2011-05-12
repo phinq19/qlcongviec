@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Common.cs" />
+    <Compile Include="Class\CodeType.cs" />
     <Compile Include="Class\Entry.cs" />
     <Compile Include="Class\WebLink.cs" />
     <Compile Include="Class\MailConfig.cs" />
@@ -95,6 +96,24 @@
     </Compile>
     <Compile Include="Class\CustomersType.cs" />
     <Compile Include="Class\FieldSetting.cs" />
+    <Compile Include="PostTopic\frmWebLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostTopic\frmWebLink.Designer.cs">
+      <DependentUpon>frmWebLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\frmWebLinkList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostTopic\frmWebLinkList.Designer.cs">
+      <DependentUpon>frmWebLinkList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTypeSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTypeSetup.designer.cs">
+      <DependentUpon>frmTypeSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrSend.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,16 +181,40 @@
     <Compile Include="frmRibbonForm.Designer.cs">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Process\Enums.cs" />
-    <Compile Include="Process\Filter.cs" />
-    <Compile Include="Process\FilterPattern.cs" />
-    <Compile Include="Process\HControl.cs" />
-    <Compile Include="Process\MultiForum.cs" />
-    <Compile Include="Process\MultiThreadForum.cs" />
-    <Compile Include="Process\MyWatiN.cs" />
-    <Compile Include="Process\StatusEntity.cs" />
+    <Compile Include="PostTopic\ctrContentTopic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostTopic\ctrContentTopic.Designer.cs">
+      <DependentUpon>ctrContentTopic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\frmFieldSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostTopic\frmFieldSetting.designer.cs">
+      <DependentUpon>frmFieldSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessClass\Enums.cs" />
+    <Compile Include="ProcessClass\Filter.cs" />
+    <Compile Include="ProcessClass\FilterPattern.cs" />
+    <Compile Include="ProcessClass\HControl.cs" />
+    <Compile Include="ProcessClass\MultiForum.cs" />
+    <Compile Include="ProcessClass\MultiThreadForum.cs" />
+    <Compile Include="ProcessClass\MyWatiN.cs" />
+    <Compile Include="ProcessClass\StatusEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PostTopic\frmWebLink.resx">
+      <DependentUpon>frmWebLink.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\frmWebLinkList.resx">
+      <DependentUpon>frmWebLinkList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTypeSetup.resx">
+      <DependentUpon>frmTypeSetup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrSend.resx">
       <DependentUpon>ctrSend.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -213,6 +256,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRibbonForm.resx">
       <DependentUpon>frmRibbonForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\ctrContentTopic.resx">
+      <DependentUpon>ctrContentTopic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\frmFieldSetting.resx">
+      <DependentUpon>frmFieldSetting.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />

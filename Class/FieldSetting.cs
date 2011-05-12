@@ -72,6 +72,31 @@ namespace NewProject
             return null;
 
         }
+        public static DataTable GetFieldForum()
+        {
+            try
+            {
+                string strSQL = "Select * From FieldForum";
+                return Provider.ExecuteToDataTable(strSQL);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public static DataTable GetByFieldDataTable(string Field)
+        {
+            try
+            {
+                string sql = @"select * from FieldSetting where Field='" + Field + "'";
+                return Provider.ExecuteToDataTable(sql);
+                
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public static List<HControl> GetByField(string Field)
         {
             try
