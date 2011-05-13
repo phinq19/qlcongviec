@@ -30,11 +30,7 @@ namespace NewProject
         {
             int i = gridView1.TopRowIndex;
             int k = gridView1.FocusedRowHandle;
-
-
-            grid_KhachHang.DataSource = WebLink.GetByType("POS");
-
-
+            grid_KhachHang.DataSource = WebLink.GetByType(_Type);
             gridView1.FocusedRowHandle = k;
             gridView1.TopRowIndex = i;
             
@@ -140,6 +136,10 @@ namespace NewProject
         private void frmWebLinkList_Load(object sender, EventArgs e)
         {
             _InitData();
+            if(_Type=="POST")
+            {
+                colTopic.Visible = false;
+            }
         }
        
 
