@@ -20,7 +20,7 @@ namespace NewProject
         }
         private DataTable DTbCTPN;
         private DataTable DTbCustomer;
-        private void _InitData()
+        public void _InitData()
         {
 
             DTbCTPN = new DataTable();
@@ -34,11 +34,11 @@ namespace NewProject
             gridControl1.DataSource = DTbCTPN;
             _LoadNhomWebLink();
             _LoadDSWebLink();
+           
         }
         private void ctrRecipients_Load(object sender, EventArgs e)
         {
-           
-
+            
         }
         private void _LoadDSWebLink()
         {
@@ -94,6 +94,7 @@ namespace NewProject
                     dtRow["UrlPost"] = gridView2.GetRowCellValue(rowHandle, colUrlPost);
                     dtRow["UserName"] = gridView2.GetRowCellValue(rowHandle, colUsername);
                     dtRow["Note"] = gridView2.GetRowCellValue(rowHandle, colNote);
+                    dtRow["Group"] = gridView2.GetRowCellValue(rowHandle, colNhom);
                     DTbCTPN.Rows.Add(dtRow);
                 }
             }
@@ -108,10 +109,12 @@ namespace NewProject
                     if (r.Length == 0)
                     {
                         DataRow dtRow = DTbCTPN.NewRow();
-                        dtRow["Url"] = gridView2.GetRowCellValue(rowHandle, colUrl);
-                        dtRow["UrlPost"] = gridView2.GetRowCellValue(rowHandle, colUrlPost);
-                        dtRow["UserName"] = gridView2.GetRowCellValue(rowHandle, colUsername);
-                        dtRow["Note"] = gridView2.GetRowCellValue(rowHandle, colNote);
+                        dtRow["ID"] = id;
+                        dtRow["Url"] = dtR["Url"];
+                        dtRow["UrlPost"] = dtR["UrlPost"];
+                        dtRow["UserName"] = dtR["UserName"];
+                        dtRow["Note"] = dtR["Note"];
+                        dtRow["Group"] = dtR["Group"];
                         DTbCTPN.Rows.Add(dtRow);
                     }
                 }

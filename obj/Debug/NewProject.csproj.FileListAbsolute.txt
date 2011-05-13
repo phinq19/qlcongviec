@@ -54,3 +54,5 @@ D:\Work\qlcongviec\obj\Debug\NewProject.frmTypeSetup.resources
 D:\Work\qlcongviec\obj\Debug\NewProject.ctrContentTopic.resources
 D:\Work\qlcongviec\obj\Debug\NewProject.frmFieldSetting.resources
 D:\Work\qlcongviec\obj\Debug\NewProject.ctrSelectLink.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrSelectLink.resources
+E:\Work\qlcongviec\obj\Debug\NewProject.ctrPostTopic.resources

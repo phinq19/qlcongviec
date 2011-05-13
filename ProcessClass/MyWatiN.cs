@@ -162,8 +162,8 @@ namespace NewProject
 
         public static void Init()
         {
-            IE.Settings.WaitForCompleteTimeOut = 60000;
-            IE.Settings.AttachToIETimeOut = 60000;
+           
+            
         }
 
         public static int Loop
