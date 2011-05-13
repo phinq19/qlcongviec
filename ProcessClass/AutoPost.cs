@@ -22,12 +22,15 @@ namespace NewProject
         IE ie;
         #endregion
 
-        public AutoPost(WebLink weblink, String Subject, String Content, String Tag)
+        private WebBrowser webBrowse;
+        public AutoPost(WebBrowser webBrowse1, WebLink weblink, String Subject, String Content, String Tag)
         {
             //IE.Settings.AttachToIETimeOut = 100000;
-            IE.Settings.BrowserType = BrowserType.FireFox;
+            //IE.Settings.BrowserType = BrowserType.FireFox;
             IE.Settings.WaitForCompleteTimeOut = 60000;
             IE.Settings.AttachToIETimeOut = 60000;
+           IE.Settings.AutoStartDialogWatcher = false; 
+            webBrowse = webBrowse1;
             forum = weblink;
             _Subject = Subject;
             _Content = Content;
@@ -113,7 +116,7 @@ namespace NewProject
                     Close();
                     return "Không tìm thấy textbox subject";
                 }
-
+                
                 // Control Mode
                 bool b = false;
                 for (int i = 0; i < multiforum.Mode.Count; i++)
@@ -199,8 +202,9 @@ namespace NewProject
             {
                 
 
-                ie = new IE(false);
-                //ie.ShowWindow(NativeMethods.WindowShowStyle.Hide);
+                //ie = new IE(webBrowse.ActiveXInstance);
+                ie = new IE(true);
+                ie.ShowWindow(NativeMethods.WindowShowStyle.Hide);
             }
             catch { return false; }
             try

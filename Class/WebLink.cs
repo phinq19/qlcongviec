@@ -12,6 +12,7 @@ namespace NewProject
         public string UrlPost;
         public string UserName;
         public string Password;
+        public string Topic;
         public string Note;
         public int Group;
         public string Type;
@@ -40,6 +41,7 @@ namespace NewProject
            ,[UrlPost]
            ,[UserName]
            ,[Password]
+           ,[Topic]
            ,[Note]
            ,[Group]
            ,[Type])
@@ -49,6 +51,7 @@ namespace NewProject
            ,'" + cus.UserName + @"'
            ,'" + cus.Password + @"'
             ,'" + cus.Note + @"'
+ ,'" + cus.Topic+ @"'
              ," + cus.Group + @"
             ,'" + cus.Type + @"')";
             Provider.ExecuteNonQuery(sql);
@@ -63,6 +66,7 @@ namespace NewProject
                   ,[UserName] = '" + cus.UserName + @"'
                   ,[Password] = '" + cus.Password + @"'
                     ,[Note] = '" + cus.Note + @"'
+                     ,[Topic] = '" + cus.Topic + @"'
                   ,[Group] = " + cus.Group + @"
                   ,[Type] = '" + cus.Type + @"' 
              WHERE ID=" + cus.ID;

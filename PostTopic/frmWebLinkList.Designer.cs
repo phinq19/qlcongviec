@@ -55,6 +55,7 @@
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.colTopic = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_KhachHang)).BeginInit();
@@ -111,7 +112,8 @@
             this.colPassword,
             this.colGroup,
             this.colID,
-            this.colNote});
+            this.colNote,
+            this.colTopic});
             this.gridView1.GridControl = this.grid_KhachHang;
             this.gridView1.GroupCount = 1;
             this.gridView1.GroupPanelText = "<Kéo cột để nhóm đối tác>";
@@ -134,7 +136,7 @@
             this.colUrl.OptionsColumn.AllowFocus = false;
             this.colUrl.Visible = true;
             this.colUrl.VisibleIndex = 0;
-            this.colUrl.Width = 193;
+            this.colUrl.Width = 179;
             // 
             // colUrlPost
             // 
@@ -146,7 +148,7 @@
             this.colUrlPost.OptionsColumn.AllowFocus = false;
             this.colUrlPost.Visible = true;
             this.colUrlPost.VisibleIndex = 1;
-            this.colUrlPost.Width = 320;
+            this.colUrlPost.Width = 216;
             // 
             // colUsername
             // 
@@ -157,8 +159,8 @@
             this.colUsername.Name = "colUsername";
             this.colUsername.OptionsColumn.AllowFocus = false;
             this.colUsername.Visible = true;
-            this.colUsername.VisibleIndex = 2;
-            this.colUsername.Width = 124;
+            this.colUsername.VisibleIndex = 3;
+            this.colUsername.Width = 105;
             // 
             // colPassword
             // 
@@ -169,8 +171,8 @@
             this.colPassword.Name = "colPassword";
             this.colPassword.OptionsColumn.AllowFocus = false;
             this.colPassword.Visible = true;
-            this.colPassword.VisibleIndex = 3;
-            this.colPassword.Width = 125;
+            this.colPassword.VisibleIndex = 4;
+            this.colPassword.Width = 106;
             // 
             // colGroup
             // 
@@ -203,8 +205,8 @@
             this.colNote.Name = "colNote";
             this.colNote.OptionsColumn.AllowFocus = false;
             this.colNote.Visible = true;
-            this.colNote.VisibleIndex = 4;
-            this.colNote.Width = 204;
+            this.colNote.VisibleIndex = 5;
+            this.colNote.Width = 148;
             // 
             // repositoryItemComboBox1
             // 
@@ -352,6 +354,18 @@
             this.labelControl1.TabIndex = 7;
             this.labelControl1.Text = "Tên khách hàng";
             // 
+            // colTopic
+            // 
+            this.colTopic.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTopic.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTopic.Caption = "Topic";
+            this.colTopic.FieldName = "Topic";
+            this.colTopic.Name = "colTopic";
+            this.colTopic.OptionsColumn.AllowFocus = false;
+            this.colTopic.Visible = true;
+            this.colTopic.VisibleIndex = 2;
+            this.colTopic.Width = 212;
+            // 
             // frmWebLinkList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,5 +431,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.Columns.GridColumn colNote;
+        private DevExpress.XtraGrid.Columns.GridColumn colTopic;
     }
 }
