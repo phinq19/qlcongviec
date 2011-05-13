@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{82A075C5-F612-47C1-A092-EA4068173685}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -96,11 +96,23 @@
     </Compile>
     <Compile Include="Class\CustomersType.cs" />
     <Compile Include="Class\FieldSetting.cs" />
+    <Compile Include="PostTopic\ctrPost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostTopic\ctrPost.Designer.cs">
+      <DependentUpon>ctrPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="PostTopic\ctrSelectLink.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="PostTopic\ctrSelectLink.Designer.cs">
       <DependentUpon>ctrSelectLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\ctrPostTopic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostTopic\ctrPostTopic.Designer.cs">
+      <DependentUpon>ctrPostTopic.cs</DependentUpon>
     </Compile>
     <Compile Include="PostTopic\frmWebLink.cs">
       <SubType>Form</SubType>
@@ -156,7 +168,8 @@
     <Compile Include="ctrSendmail.Designer.cs">
       <DependentUpon>ctrSendmail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Encryption.cs" />
+    <Compile Include="ProcessClass\AutoPost.cs" />
+    <Compile Include="ProcessClass\Encryption.cs" />
     <Compile Include="frmCustomerType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,8 +222,15 @@
     <Compile Include="ProcessClass\StatusEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PostTopic\ctrPost.resx">
+      <DependentUpon>ctrPost.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PostTopic\ctrSelectLink.resx">
       <DependentUpon>ctrSelectLink.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\ctrPostTopic.resx">
+      <DependentUpon>ctrPostTopic.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PostTopic\frmWebLink.resx">
@@ -295,8 +315,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Provider.cs" />
-    <Compile Include="SendMail.cs" />
+    <Compile Include="ProcessClass\Provider.cs" />
+    <Compile Include="ProcessClass\SendMail.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

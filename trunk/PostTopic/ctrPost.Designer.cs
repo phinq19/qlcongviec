@@ -155,17 +155,17 @@ namespace NewProject
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(164, 23);
             this.btnSend.TabIndex = 0;
-            this.btnSend.Text = "Send";
+            this.btnSend.Text = "Post";
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // ctrSend
+            // ctrPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ctrSend";
+            this.Name = "ctrPost";
             this.Size = new System.Drawing.Size(810, 317);
             this.Load += new System.EventHandler(this.ctrSend_Load);
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();

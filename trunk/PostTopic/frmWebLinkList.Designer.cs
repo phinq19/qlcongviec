@@ -141,7 +141,7 @@
             this.colUrlPost.AppearanceHeader.Options.UseTextOptions = true;
             this.colUrlPost.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colUrlPost.Caption = "Link Topic";
-            this.colUrlPost.FieldName = "Link Topic";
+            this.colUrlPost.FieldName = "UrlPost";
             this.colUrlPost.Name = "colUrlPost";
             this.colUrlPost.OptionsColumn.AllowFocus = false;
             this.colUrlPost.Visible = true;

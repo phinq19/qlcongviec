@@ -5,10 +5,11 @@ using System.Text;
 
 namespace NewProject
 {
+    
     public class MultiForum
     {
         #region "Properties"
-
+       
         public List<HControl> UserName;
         public List<HControl> PassWord;
         public List<HControl> Login;
