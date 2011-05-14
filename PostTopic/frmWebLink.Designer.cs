@@ -49,6 +49,8 @@
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.chkCloseAlterSave = new DevExpress.XtraEditors.CheckEdit();
+            this.txtTopic = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
@@ -59,11 +61,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Nhom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCloseAlterSave.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThemMoi
             // 
-            this.btnThemMoi.Location = new System.Drawing.Point(196, 237);
+            this.btnThemMoi.Location = new System.Drawing.Point(196, 264);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(75, 23);
             this.btnThemMoi.TabIndex = 2;
@@ -72,7 +75,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(354, 237);
+            this.btnXoa.Location = new System.Drawing.Point(354, 264);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 3;
@@ -81,6 +84,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.txtTopic);
+            this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.txtNote);
             this.groupControl1.Controls.Add(this.txtUrlPost);
@@ -98,13 +103,13 @@
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(498, 216);
+            this.groupControl1.Size = new System.Drawing.Size(498, 243);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "WebLink Info";
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(36, 162);
+            this.labelControl6.Location = new System.Drawing.Point(36, 197);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(23, 13);
             this.labelControl6.TabIndex = 25;
@@ -112,26 +117,26 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(68, 159);
+            this.txtNote.Location = new System.Drawing.Point(68, 185);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(373, 44);
-            this.txtNote.TabIndex = 24;
+            this.txtNote.TabIndex = 7;
             // 
             // txtUrlPost
             // 
             this.txtUrlPost.EnterMoveNextControl = true;
-            this.txtUrlPost.Location = new System.Drawing.Point(68, 107);
+            this.txtUrlPost.Location = new System.Drawing.Point(68, 133);
             this.txtUrlPost.Name = "txtUrlPost";
             this.txtUrlPost.Size = new System.Drawing.Size(373, 20);
-            this.txtUrlPost.TabIndex = 3;
+            this.txtUrlPost.TabIndex = 5;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(18, 110);
+            this.labelControl5.Location = new System.Drawing.Point(41, 136);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(42, 13);
+            this.labelControl5.Size = new System.Drawing.Size(18, 13);
             this.labelControl5.TabIndex = 23;
-            this.labelControl5.Text = "Link Post";
+            this.labelControl5.Text = "Link";
             // 
             // txtUrl
             // 
@@ -152,14 +157,14 @@
             // txtPassword
             // 
             this.txtPassword.EnterMoveNextControl = true;
-            this.txtPassword.Location = new System.Drawing.Point(277, 133);
+            this.txtPassword.Location = new System.Drawing.Point(277, 107);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(164, 20);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 4;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(225, 136);
+            this.labelControl4.Location = new System.Drawing.Point(225, 110);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(46, 13);
             this.labelControl4.TabIndex = 20;
@@ -168,10 +173,10 @@
             // txtUsername
             // 
             this.txtUsername.EnterMoveNextControl = true;
-            this.txtUsername.Location = new System.Drawing.Point(68, 133);
+            this.txtUsername.Location = new System.Drawing.Point(68, 107);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(143, 20);
-            this.txtUsername.TabIndex = 4;
+            this.txtUsername.TabIndex = 3;
             // 
             // lookUpEdit_Nhom
             // 
@@ -221,7 +226,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(8, 136);
+            this.labelControl3.Location = new System.Drawing.Point(8, 110);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(51, 13);
             this.labelControl3.TabIndex = 14;
@@ -229,7 +234,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(277, 237);
+            this.btnLuu.Location = new System.Drawing.Point(277, 264);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(71, 23);
             this.btnLuu.TabIndex = 1;
@@ -238,7 +243,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(435, 237);
+            this.btnThoat.Location = new System.Drawing.Point(435, 264);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
             this.btnThoat.TabIndex = 4;
@@ -248,17 +253,33 @@
             // chkCloseAlterSave
             // 
             this.chkCloseAlterSave.EditValue = true;
-            this.chkCloseAlterSave.Location = new System.Drawing.Point(10, 234);
+            this.chkCloseAlterSave.Location = new System.Drawing.Point(10, 261);
             this.chkCloseAlterSave.Name = "chkCloseAlterSave";
             this.chkCloseAlterSave.Properties.Caption = "Đóng sau khi lưu";
             this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 18);
             this.chkCloseAlterSave.TabIndex = 12;
             // 
+            // txtTopic
+            // 
+            this.txtTopic.EnterMoveNextControl = true;
+            this.txtTopic.Location = new System.Drawing.Point(68, 159);
+            this.txtTopic.Name = "txtTopic";
+            this.txtTopic.Size = new System.Drawing.Size(373, 20);
+            this.txtTopic.TabIndex = 6;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(35, 162);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(25, 13);
+            this.labelControl7.TabIndex = 27;
+            this.labelControl7.Text = "Topic";
+            // 
             // frmWebLink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 272);
+            this.ClientSize = new System.Drawing.Size(522, 299);
             this.Controls.Add(this.chkCloseAlterSave);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThemMoi);
@@ -281,6 +302,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Nhom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCloseAlterSave.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,5 +330,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.MemoEdit txtNote;
+        private DevExpress.XtraEditors.TextEdit txtTopic;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }

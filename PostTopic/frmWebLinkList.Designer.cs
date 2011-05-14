@@ -39,6 +39,7 @@
             this.ItemLookUp_Nhom = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTopic = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ItemLookUp_DVT = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -55,7 +56,6 @@
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colTopic = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_KhachHang)).BeginInit();
@@ -208,6 +208,18 @@
             this.colNote.VisibleIndex = 5;
             this.colNote.Width = 148;
             // 
+            // colTopic
+            // 
+            this.colTopic.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTopic.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTopic.Caption = "Topic";
+            this.colTopic.FieldName = "Topic";
+            this.colTopic.Name = "colTopic";
+            this.colTopic.OptionsColumn.AllowFocus = false;
+            this.colTopic.Visible = true;
+            this.colTopic.VisibleIndex = 2;
+            this.colTopic.Width = 212;
+            // 
             // repositoryItemComboBox1
             // 
             this.repositoryItemComboBox1.AutoHeight = false;
@@ -353,18 +365,6 @@
             this.labelControl1.Size = new System.Drawing.Size(76, 13);
             this.labelControl1.TabIndex = 7;
             this.labelControl1.Text = "Tên khách hàng";
-            // 
-            // colTopic
-            // 
-            this.colTopic.AppearanceHeader.Options.UseTextOptions = true;
-            this.colTopic.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colTopic.Caption = "Topic";
-            this.colTopic.FieldName = "Topic";
-            this.colTopic.Name = "colTopic";
-            this.colTopic.OptionsColumn.AllowFocus = false;
-            this.colTopic.Visible = true;
-            this.colTopic.VisibleIndex = 2;
-            this.colTopic.Width = 212;
             // 
             // frmWebLinkList
             // 
