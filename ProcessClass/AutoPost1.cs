@@ -36,7 +36,7 @@ namespace NewProject
             _Subject = Subject;
             _Content = Content;
             _Tag = Tag;
-            
+            multiforum = new MultiForum();
           
 
         }
@@ -45,7 +45,6 @@ namespace NewProject
 
         public StatusObj PostTopic()
         {
-            multiforum = new MultiForum("POS");
             StatusObj statusObj=new StatusObj();
 
             if (forum == null)
@@ -72,6 +71,8 @@ namespace NewProject
                     return statusObj;
                    
                 }
+                //ie.WaitForComplete();
+                // Start Forum
                 if (MyWatiN.Goto(forum.UrlPost, ie)!=String.Empty)
                 {
                     Close();
@@ -113,18 +114,32 @@ namespace NewProject
                     return statusObj;
                     
                 }
+                bool isTopic = false;
+               
+                string href = "";
+                HControl link = new HControl();
+                link.Control = ControlType.AHref;
+                link.Attribute = AttributeType.Text;
                
                 for (int j = 0; j < multiforum.NewThread.Count; j++)
                 {
-                    Link href = GetLink(ie.Links, multiforum.NewThread[j].Value);
-                    if (href==null)
+                    href = GetLink(ie.Links, multiforum.NewThread[j].Value);
+                    if (!string.IsNullOrEmpty(href))
                     {
-                        Close();
-                        statusObj.Message = "Không tìm thấy link tạo bài viết mới";
-                        statusObj.Status = "Error";
-                        return statusObj;
+                        // New Thread
+                        multiforum.NewThread[j].Value = href;
+                        MyWatiN.FillData(ie, multiforum.NewThread[j]);
+                        isTopic = true;
+                        break;
                     }
-                    href.Click();
+                }
+                if (!isTopic)
+                {
+                    Close();
+                 
+                    statusObj.Message = "Không tìm thấy link tạo bài viết mới";
+                    statusObj.Status = "Error";
+                    return statusObj;
                 }
                 if (RunControl(multiforum.Subject, _Subject) != string.Empty)
                 {
@@ -136,12 +151,24 @@ namespace NewProject
                 }
                 
                 // Control Mode
-                if (RunControl(multiforum.Mode) != string.Empty)
+                bool b = false;
+                for (int i = 0; i < multiforum.Mode.Count; i++)
                 {
-                    Close();
-                    statusObj.Message = "Không tìm thấy Div textarea message";
-                    statusObj.Status = "Error";
-                    return statusObj;
+                    if (MyWatiN.IsExist(ie, multiforum.Mode[i]))
+                    {
+                        for (int j = 0; j < multiforum.Message.Count; j++)
+                        {
+                            string style = ie.TextField(MyWatiN.GetControl(ie, multiforum.Message[j])).GetAttributeValue("style");
+                            string display = Filter.GetTextByRegex(FilterPattern.Display, style, true, 0, 1);
+                            if (!string.IsNullOrEmpty(display))
+                            {
+                                MyWatiN.FillData(ie, multiforum.Mode[i]);
+                                b = true;
+                                break;
+                            }
+                        }
+                        if (b == true) break;
+                    }
                 }
                 if (RunControl(multiforum.Message, _Content) != string.Empty)
                 {
@@ -185,7 +212,6 @@ namespace NewProject
         }
         public StatusObj UpTopic()
         {
-            multiforum = new MultiForum("UP");
             StatusObj statusObj = new StatusObj();
 
             if (forum == null)
@@ -255,13 +281,29 @@ namespace NewProject
                     return statusObj;
 
                 }
-                if (RunControl(multiforum.Mode) != string.Empty)
+                
+
+                // Control Mode
+                bool b = false;
+                for (int i = 0; i < multiforum.Mode.Count; i++)
                 {
-                    Close();
-                    statusObj.Message = "Không tìm thấy Div textarea message";
-                    statusObj.Status = "Error";
-                    return statusObj;
+                    if (MyWatiN.IsExist(ie, multiforum.Mode[i]))
+                    {
+                        for (int j = 0; j < multiforum.Message.Count; j++)
+                        {
+                            string style = ie.TextField(MyWatiN.GetControl(ie, multiforum.Message[j])).GetAttributeValue("style");
+                            string display = Filter.GetTextByRegex(FilterPattern.Display, style, true, 0, 1);
+                            if (!string.IsNullOrEmpty(display))
+                            {
+                                MyWatiN.FillData(ie, multiforum.Mode[i]);
+                                b = true;
+                                break;
+                            }
+                        }
+                        if (b == true) break;
+                    }
                 }
+                ie.WaitForComplete();
                 if (RunControl(multiforum.Message, _Content) != string.Empty)
                 {
                     Close();
@@ -270,7 +312,7 @@ namespace NewProject
                     statusObj.Status = "Error";
                     return statusObj;
                 }
-                if (RunControl(multiforum.Submit) != string.Empty)
+                if (RunControl(multiforum.SubmitUp) != string.Empty)
                 {
                     Close();
                     statusObj.Message = "Không tìm thấy nút gửi bài viết";
@@ -286,7 +328,6 @@ namespace NewProject
                 return statusObj;
 
             }
-            
             catch (Exception ex)
             {
                 if (ie != null)
@@ -307,86 +348,29 @@ namespace NewProject
 
         string RunControl(List<HControl> controls)
         {
-            return RunControl(controls, "");
+            string status = "Error";
+            foreach (HControl ctr in controls)
+            {
+                if (MyWatiN.IsExist(ie, ctr))
+                {
+                    status = MyWatiN.FillData(ie, ctr);
+                    break;
+                }
+            }
+            return status;
             
         }
 
         string RunControl(List<HControl> controls, string data)
         {
-            string status ="Error";
-            foreach (HControl control in controls)
+            string status = string.Empty;
+            foreach (HControl ctr in controls)
             {
-                switch (control.Control.ToLower())
+                if (MyWatiN.IsExist(ie, ctr))
                 {
-                    case ControlType.AHref:
-                        {
-                            WatiN.Core.Link obj = MyWatiN.GetLink(ie, control);
-                            if (obj != null)
-                            {
-                                obj.Click();
-                                ie.WaitForComplete();
-                                return String.Empty;
-                               
-                            }
-                            break;
-                        }
-                    case ControlType.AHrefNoText:
-                        {
-                            ie.GoTo(control.Value);
-                            ie.WaitForComplete();
-                            return String.Empty;
-                            break;
-                        }
-                    case ControlType.Button:
-                        {
-                            WatiN.Core.Button obj = MyWatiN.GetButton(ie, control);
-                            if (obj != null)
-                            {
-                                obj.Click();
-                                ie.WaitForComplete();
-                                return String.Empty;
-                              
-                            }
-                            break;
-                        }
-                    case ControlType.Div:
-                        {
-                            WatiN.Core.Div obj = MyWatiN.GetDiv(ie, control);
-                            if (obj != null)
-                            {
-                                obj.Click();
-                                ie.WaitForComplete();
-                                return String.Empty;
-                               
-                            }
-                            break;
-                        }
-                    case ControlType.TextArea:
-                        {
-                            WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
-                            if (obj != null)
-                            {
-                                obj.Value = data;
-                                ie.WaitForComplete();
-                                return String.Empty;
-                               
-                            }
-                            break;
-                        }
-                    case ControlType.TextBox:
-                        {
-                            WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
-                            if (obj != null)
-                            {
-                                obj.Value = data;
-                                ie.WaitForComplete();
-                                return String.Empty;
-                               
-                            }
-                            break;
-                        }
+                    status = MyWatiN.FillData(ie, ctr, data);
+                    break;
                 }
-                
             }
             return status;
         }
@@ -443,7 +427,7 @@ namespace NewProject
 
         }
 
-        Link GetLink(LinkCollection links, string link)
+        string GetLink(LinkCollection links, string link)
         {
             string href = "";
             if (link.IndexOf("./") != -1)
@@ -451,11 +435,11 @@ namespace NewProject
             for (int i = 0; i < links.Length; i++)
                 if (!string.IsNullOrEmpty(links[i].Url) && links[i].Url.Contains(link))
                 {
-                    return links[i];
-                  
+                    href = links[i].Url;
+                    break;
                 }
 
-            return null;
+            return href;
         }
 
         #endregion

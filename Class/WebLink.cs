@@ -50,8 +50,8 @@ namespace NewProject
             ,'" + cus.UrlPost + @"'
            ,'" + cus.UserName + @"'
            ,'" + cus.Password + @"'
+            ,'" + cus.Topic+ @"'
             ,'" + cus.Note + @"'
- ,'" + cus.Topic+ @"'
              ," + cus.Group + @"
             ,'" + cus.Type + @"')";
             Provider.ExecuteNonQuery(sql);
@@ -97,16 +97,16 @@ namespace NewProject
             return dtTable;
 
         }
-        public static DataTable GetNotIn(string str)
+        public static DataTable GetNotIn(string str,string type)
         {
             string sql = "";
             if (str == "")
             {
-                sql = @"select * from WebLink order by Url";
+                sql = @"select * from WebLink where Type='" + type+"' order by Url";
             }
             else
             {
-                sql = @"select * from WebLink where ID not in " + str + " order by Url";
+                sql = @"select * from WebLink where ID not in " + str + " and Type='" + type+"' order by Url";
             }
             DataTable dtTable = Provider.ExecuteToDataTable(sql);
             return dtTable;

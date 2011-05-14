@@ -38,10 +38,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,6 +45,10 @@
             this.colAttribute = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colField = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -162,38 +162,6 @@
             this.panelControl1.Size = new System.Drawing.Size(400, 320);
             this.panelControl1.TabIndex = 6;
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(15, 19);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(22, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Field";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(15, 44);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(35, 13);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Control";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(15, 71);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(26, 13);
-            this.labelControl3.TabIndex = 6;
-            this.labelControl3.Text = "Value";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(158, 44);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(43, 13);
-            this.labelControl4.TabIndex = 7;
-            this.labelControl4.Text = "Attribute";
-            // 
             // gridControl1
             // 
             this.gridControl1.EmbeddedNavigator.Name = "";
@@ -266,6 +234,38 @@
             this.colField.FieldName = "Field";
             this.colField.Name = "colField";
             this.colField.OptionsColumn.AllowFocus = false;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(158, 44);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(43, 13);
+            this.labelControl4.TabIndex = 7;
+            this.labelControl4.Text = "Attribute";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(15, 71);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(26, 13);
+            this.labelControl3.TabIndex = 6;
+            this.labelControl3.Text = "Value";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(15, 44);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(35, 13);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = "Control";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(15, 19);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(22, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Field";
             // 
             // frmFieldSetting
             // 

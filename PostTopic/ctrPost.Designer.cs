@@ -31,18 +31,20 @@ namespace NewProject
             this.components = new System.ComponentModel.Container();
             this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLogEntries = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLinkUp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnAbort = new DevExpress.XtraEditors.SimpleButton();
             this.btnSend = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -75,6 +77,15 @@ namespace NewProject
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Progress";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(10, 20);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(760, 18);
+            this.progressBar1.TabIndex = 4;
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -93,7 +104,9 @@ namespace NewProject
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDateTime,
-            this.colLogEntries});
+            this.colLogEntries,
+            this.colLinkUp,
+            this.colID});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -108,7 +121,7 @@ namespace NewProject
             this.colDateTime.OptionsColumn.AllowFocus = false;
             this.colDateTime.Visible = true;
             this.colDateTime.VisibleIndex = 0;
-            this.colDateTime.Width = 172;
+            this.colDateTime.Width = 107;
             // 
             // colLogEntries
             // 
@@ -120,7 +133,19 @@ namespace NewProject
             this.colLogEntries.OptionsColumn.AllowFocus = false;
             this.colLogEntries.Visible = true;
             this.colLogEntries.VisibleIndex = 1;
-            this.colLogEntries.Width = 567;
+            this.colLogEntries.Width = 294;
+            // 
+            // colLinkUp
+            // 
+            this.colLinkUp.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLinkUp.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLinkUp.Caption = "Link Up";
+            this.colLinkUp.FieldName = "LinkUp";
+            this.colLinkUp.Name = "colLinkUp";
+            this.colLinkUp.OptionsColumn.AllowFocus = false;
+            this.colLinkUp.Visible = true;
+            this.colLinkUp.VisibleIndex = 2;
+            this.colLinkUp.Width = 338;
             // 
             // groupBox2
             // 
@@ -179,19 +204,16 @@ namespace NewProject
             this.panelControl1.TabIndex = 8;
             this.panelControl1.Visible = false;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(10, 20);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(760, 18);
-            this.progressBar1.TabIndex = 4;
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // colID
+            // 
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
             // 
             // ctrPost
             // 
@@ -231,6 +253,8 @@ namespace NewProject
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraGrid.Columns.GridColumn colLinkUp;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
 
     }
 }

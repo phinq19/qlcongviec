@@ -22,39 +22,18 @@ namespace NewProject
 
         #endregion
 
-        public MultiForum()
+        public MultiForum(string Type)
         {
-            //UserName = new List<HControl>();
-            //PassWord = new List<HControl>();
-            //Login = new List<HControl>();
-            //NewThread = new List<HControl>();
-            //Subject = new List<HControl>();
-            //Message = new List<HControl>();
-            //Tags = new List<HControl>();
-            //Mode = new List<HControl>();
-            //Submit = new List<HControl>();
-            UserName = FieldSetting.GetByField(FieldEnums.UserName);
-            PassWord = FieldSetting.GetByField(FieldEnums.Password);
-            Login = FieldSetting.GetByField(FieldEnums.Login);
-            NewThread = FieldSetting.GetByField(FieldEnums.NewThread);
-            Subject = FieldSetting.GetByField(FieldEnums.Subject);
-            Message = FieldSetting.GetByField(FieldEnums.Message);
-            Tags = FieldSetting.GetByField(FieldEnums.Tags);
-            Mode = FieldSetting.GetByField(FieldEnums.Mode);
-            Submit = FieldSetting.GetByField(FieldEnums.Submit);
+            UserName = FieldSetting.GetByField(FieldEnums.UserName, Type);
+            PassWord = FieldSetting.GetByField(FieldEnums.Password, Type);
+            Login = FieldSetting.GetByField(FieldEnums.Login, Type);
+            NewThread = FieldSetting.GetByField(FieldEnums.NewThread, Type);
+            Subject = FieldSetting.GetByField(FieldEnums.Subject, Type);
+            Message = FieldSetting.GetByField(FieldEnums.Message, Type);
+            Tags = FieldSetting.GetByField(FieldEnums.Tags, Type);
+            Mode = FieldSetting.GetByField(FieldEnums.Mode, Type);
+            Submit = FieldSetting.GetByField(FieldEnums.Submit, Type);
         }
 
-        //public void Init()
-        //{
-        //    UserName = FieldSetting.GetByField(FieldEnums.UserName);
-        //    PassWord = FieldSetting.GetByField(FieldEnums.Password);
-        //    Login = FieldSetting.GetByField(FieldEnums.Login);
-        //    NewThread = FieldSetting.GetByField(FieldEnums.NewThread);
-        //    Subject = FieldSetting.GetByField(FieldEnums.Subject);
-        //    Message = FieldSetting.GetByField(FieldEnums.Message);
-        //    Tags = FieldSetting.GetByField(FieldEnums.Tags);
-        //    Mode = FieldSetting.GetByField(FieldEnums.Mode);
-        //    Submit = FieldSetting.GetByField(FieldEnums.Submit);
-        //}
     }
 }

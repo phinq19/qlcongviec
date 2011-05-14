@@ -62,6 +62,24 @@ namespace NewProject
             root.Nodes.Add(button);
             button.Expand();
             root.Expand();
+            TreeNode div = new TreeNode("Div");
+            foreach (WatiN.Core.Div obj in ie.Divs)
+            {
+                if (obj.Id != null && obj.Id.ToString() != "")
+                {
+                    TreeNode nodeD = new TreeNode(obj.Id);
+                    nodeD.Nodes.Add("Id = " + obj.Id);
+                    nodeD.Nodes.Add("Name = " + obj.Name);
+                    nodeD.Nodes.Add("ClassName = " + obj.ClassName);
+                    //nodeD.Nodes.Add("Text = " + obj.Text);
+
+                    //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
+                    div.Nodes.Add(nodeD);
+                }
+            }
+            root.Nodes.Add(div);
+            div.Expand();
+            root.Expand();
             //TreeNode link = new TreeNode("Link");
             //foreach (WatiN.Core.Button obj in ie.d)
             //{

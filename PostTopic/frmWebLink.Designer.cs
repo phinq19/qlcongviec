@@ -31,6 +31,8 @@
             this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtTopic = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtNote = new DevExpress.XtraEditors.MemoEdit();
             this.txtUrlPost = new DevExpress.XtraEditors.TextEdit();
@@ -49,10 +51,9 @@
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.chkCloseAlterSave = new DevExpress.XtraEditors.CheckEdit();
-            this.txtTopic = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrlPost.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrl.Properties)).BeginInit();
@@ -61,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Nhom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCloseAlterSave.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThemMoi
@@ -106,6 +106,22 @@
             this.groupControl1.Size = new System.Drawing.Size(498, 243);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "WebLink Info";
+            // 
+            // txtTopic
+            // 
+            this.txtTopic.EnterMoveNextControl = true;
+            this.txtTopic.Location = new System.Drawing.Point(68, 159);
+            this.txtTopic.Name = "txtTopic";
+            this.txtTopic.Size = new System.Drawing.Size(373, 20);
+            this.txtTopic.TabIndex = 6;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(35, 162);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(25, 13);
+            this.labelControl7.TabIndex = 27;
+            this.labelControl7.Text = "Topic";
             // 
             // labelControl6
             // 
@@ -259,22 +275,6 @@
             this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 18);
             this.chkCloseAlterSave.TabIndex = 12;
             // 
-            // txtTopic
-            // 
-            this.txtTopic.EnterMoveNextControl = true;
-            this.txtTopic.Location = new System.Drawing.Point(68, 159);
-            this.txtTopic.Name = "txtTopic";
-            this.txtTopic.Size = new System.Drawing.Size(373, 20);
-            this.txtTopic.TabIndex = 6;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(35, 162);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(25, 13);
-            this.labelControl7.TabIndex = 27;
-            this.labelControl7.Text = "Topic";
-            // 
             // frmWebLink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,6 +294,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrlPost.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrl.Properties)).EndInit();
@@ -302,7 +303,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Nhom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCloseAlterSave.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
