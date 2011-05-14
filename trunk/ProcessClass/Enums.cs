@@ -4,10 +4,17 @@ using System.Text;
 
 namespace NewProject
 {
+    public class StatusObj
+    {
+        public string Status;
+        public string Value;
+        public string Message;
+        
+    }
     public class NumCode
     {
         public const string WEB = "WEB";
-        
+
     }
     public class ControlType
     {
@@ -47,6 +54,7 @@ namespace NewProject
         public const string Mode = "Mode";
         public const string Tags = "Tags";
         public const string Submit = "Submit";
+        public const string SubmitUp = "SubmitUp";
     }
 
     public enum RunStatus

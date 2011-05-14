@@ -13,10 +13,11 @@ namespace NewProject
     {
         Status status;
         FieldSetting obj;
-
-        public frmFieldSetting()
+        private String Type;
+        public frmFieldSetting(string type)
         {
             InitializeComponent();
+            Type = type;
         }
 
         void LoadCombo()
@@ -30,7 +31,7 @@ namespace NewProject
         {
             if (cboField.Items.Count > 0)
             {
-                gridControl1.DataSource = FieldSetting.GetByFieldDataTable(cboField.Text);
+                gridControl1.DataSource = FieldSetting.GetByFieldDataTable(cboField.Text,Type);
             }
         }
 
@@ -87,7 +88,7 @@ namespace NewProject
                         obj.Control = cboControl.Text.Trim();
                         obj.Attribute = cboAttribute.Text.Trim();
                         obj.Value = txtValue.Text.Trim();
-
+                        obj.Type = Type;
                         FieldSetting.Insert(obj);
 
                         LoadData();
@@ -96,7 +97,7 @@ namespace NewProject
                         obj.Control = cboControl.Text.Trim();
                         obj.Attribute = cboAttribute.Text.Trim();
                         obj.Value = txtValue.Text.Trim();
-
+                        obj.Type = Type;
                         FieldSetting.Update(obj);
                         LoadData();
 

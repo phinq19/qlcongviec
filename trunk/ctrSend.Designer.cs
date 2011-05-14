@@ -28,6 +28,7 @@ namespace NewProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -39,6 +40,8 @@ namespace NewProject
             this.btnAbort = new DevExpress.XtraEditors.SimpleButton();
             this.btnSend = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -61,6 +64,7 @@ namespace NewProject
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.progressBarControl1);
             this.groupBox1.Location = new System.Drawing.Point(13, 6);
             this.groupBox1.Name = "groupBox1";
@@ -164,6 +168,20 @@ namespace NewProject
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(10, 20);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(760, 18);
+            this.progressBar1.TabIndex = 8;
+            // 
             // ctrSend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +215,8 @@ namespace NewProject
         private DevExpress.XtraEditors.SimpleButton btnAbort;
         private DevExpress.XtraEditors.SimpleButton btnSend;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ProgressBar progressBar1;
 
     }
 }

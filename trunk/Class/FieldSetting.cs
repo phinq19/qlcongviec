@@ -12,6 +12,7 @@ namespace NewProject
         public string Attribute;
         public string Value;
         public string Field;
+        public string Type;
         public FieldSetting()
 		{
 
@@ -35,12 +36,13 @@ namespace NewProject
            ([Control]
            ,[Attribute]
            ,[Value]
-           ,[Field])
+           ,[Field],[Type])
          VALUES
            ('" + cus.Control + @"'
            ,'" + cus.Attribute + @"'
            ,'" + cus.Value + @"'
-            ,'" + cus.Field + @"')";
+            ,'" + cus.Field + @"'
+            ,'" + cus.Type + @"')";
             Provider.ExecuteNonQuery(sql);
             return int.Parse(Provider.ExecuteScalar("Select @@IDENTITY").ToString());
 
@@ -52,6 +54,7 @@ namespace NewProject
                   ,[Attribute] = '" + cus.Attribute + @"'
                   ,[Value] = '" + cus.Value + @"'
                   ,[Field] = '" + cus.Field + @"' 
+                ,[Type] = '" + cus.Type + @"' 
              WHERE ID=" + cus.ID;
             Provider.ExecuteNonQuery(sql);
 
@@ -84,11 +87,11 @@ namespace NewProject
                 return null;
             }
         }
-        public static DataTable GetByFieldDataTable(string Field)
+        public static DataTable GetByFieldDataTable(string Field, string Type)
         {
             try
             {
-                string sql = @"select * from FieldSetting where Field='" + Field + "'";
+                string sql = @"select * from FieldSetting where Field='" + Field + "' and Type='" + Type + "'";
                 return Provider.ExecuteToDataTable(sql);
                 
             }
@@ -97,12 +100,12 @@ namespace NewProject
                 return null;
             }
         }
-        public static List<HControl> GetByField(string Field)
+        public static List<HControl> GetByField(string Field,string Type)
         {
             try
             {
                 List<HControl> fields = new List<HControl>();
-                string sql = @"select * from FieldSetting where Field='" + Field+"'";
+                string sql = @"select * from FieldSetting where Field='" + Field+"' and Type='"+Type+"'";
                 DataTable table = Provider.ExecuteToDataTable(sql);
                 if (table != null && table.Rows.Count > 0)
                 {

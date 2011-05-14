@@ -174,5 +174,227 @@ namespace NewProject
                 return 5;
             }
         }
+        public static WatiN.Core.Button GetButton(IE ie, HControl control)
+        {
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        foreach (WatiN.Core.Button bt in ie.Buttons)
+                        {
+                            if(bt.Id==control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        foreach (WatiN.Core.Button bt in ie.Buttons)
+                        {
+                            if (bt.Name == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Class:
+                     {
+                        foreach (WatiN.Core.Button bt in ie.Buttons)
+                        {
+                            if (bt.ClassName == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Text:
+                     {
+                         foreach (WatiN.Core.Button bt in ie.Buttons)
+                         {
+                             string s = bt.Text.ToLowerInvariant();
+                             s = s.Replace("ð", "đ");
+                             if (s == control.Value.ToLower())
+                                 return bt;
+                         }
+                         return null;
+                     }
+                case AttributeType.Value:
+                     {
+                         foreach (WatiN.Core.Button bt in ie.Buttons)
+                         {
+                             string s = bt.Value.ToLowerInvariant();
+                             s = s.Replace("ð", "đ");
+                             if(s==control.Value.ToLower())
+                                 return bt;
+                         }
+                         return null;
+                     }
+                default:
+                     {
+                         foreach (WatiN.Core.Button bt in ie.Buttons)
+                         {
+                             if (bt.Name == control.Value)
+                                 return bt;
+                         }
+                         return null;
+                     }
+            }
+        }
+        public static WatiN.Core.TextField GetTextField(IE ie, HControl control)
+        {
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        foreach (WatiN.Core.TextField bt in ie.TextFields)
+                        {
+                            if (bt.Id == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        foreach (WatiN.Core.TextField bt in ie.TextFields)
+                        {
+                            if (bt.Name == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Class:
+                    {
+                        foreach (WatiN.Core.TextField bt in ie.TextFields)
+                        {
+                            if (bt.ClassName == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Text:
+                    {
+                        foreach (WatiN.Core.TextField bt in ie.TextFields)
+                        {
+                            if (bt.Text == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Value:
+                    {
+                        foreach (WatiN.Core.TextField bt in ie.TextFields)
+                        {
+                            if (bt.Value == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                default:
+                    {
+                        foreach (WatiN.Core.TextField bt in ie.TextFields)
+                        {
+                            if (bt.Name == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+            }
+        }
+        public static WatiN.Core.Div GetDiv(IE ie, HControl control)
+        {
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        Div div= ie.Div(Find.ById(control.Value));
+                        if (div.Exists)
+                            return div;
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        Div div = ie.Div(Find.ByName(control.Value));
+                        if (div.Exists)
+                            return div;
+                        return null;
+                    }
+                case AttributeType.Class:
+                    {
+                        Div div = ie.Div(Find.ByClass(control.Value));
+                        if (div.Exists)
+                            return div;
+                        return null;
+                    }
+                case AttributeType.Text:
+                    {
+                        foreach (WatiN.Core.Div bt in ie.Divs)
+                        {
+                            if (bt.Text == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                
+                default:
+                    {
+                        foreach (WatiN.Core.Div bt in ie.Divs)
+                        {
+                            if (bt.Name == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+            }
+        }
+        public static WatiN.Core.Link GetLink(IE ie, HControl control)
+        {
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        foreach (WatiN.Core.Link bt in ie.Links)
+                        {
+                            if (bt.Id == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        foreach (WatiN.Core.Link bt in ie.Links)
+                        {
+                            if (bt.Name == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Class:
+                    {
+                        foreach (WatiN.Core.Link bt in ie.Links)
+                        {
+                            if (bt.ClassName == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Text:
+                    {
+                        foreach (WatiN.Core.Link bt in ie.Links)
+                        {
+                            if (bt.Text == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+                
+                default:
+                    {
+                        foreach (WatiN.Core.Link bt in ie.Links)
+                        {
+                            if (bt.Name == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+            }
+        }
     }
 }

@@ -10,42 +10,30 @@ using System.Collections;
 
 namespace NewProject
 {
-    public partial class ctrSelectLink : DevExpress.XtraEditors.XtraUserControl
+    public partial class ctrSelectLinkUp : DevExpress.XtraEditors.XtraUserControl
     {
-        public ctrSelectLink()
+        public ctrSelectLinkUp()
         {
             InitializeComponent();
-            
+            _InitData();
             
         }
         private DataTable DTbCTPN;
-        private DataTable dtWebLink;
-        private string _Type;
-        public void _InitData(string type)
+        private DataTable DTbCustomer;
+        public void _InitData()
         {
-            _Type = type;
+
             DTbCTPN = new DataTable();
             DTbCTPN.Columns.Add("ID", typeof(long));
             DTbCTPN.Columns.Add("Url", typeof(string));
             DTbCTPN.Columns.Add("UrlPost", typeof(string));
             DTbCTPN.Columns.Add("UserName", typeof(string));
             DTbCTPN.Columns.Add("Passwold", typeof(string));
-            DTbCTPN.Columns.Add("Topic", typeof(string));
             DTbCTPN.Columns.Add("Note", typeof(string));
             DTbCTPN.Columns.Add("Group", typeof(long));
             gridControl1.DataSource = DTbCTPN;
             _LoadNhomWebLink();
             _LoadDSWebLink();
-            if(_Type=="POS")
-            {
-                colTopic.Visible = false;
-                colTopic1.Visible = false;
-            }
-            else
-            {
-                colUrlPost.Visible = false;
-                colUrlPost1.Visible = false;
-            }
            
         }
         private void ctrRecipients_Load(object sender, EventArgs e)
@@ -68,8 +56,8 @@ namespace NewProject
             {
                 str = "(" + str.Trim(',') + ")";
             }
-            dtWebLink = WebLink.GetNotIn(str, _Type);
-            gridControl2.DataSource = dtWebLink;
+            DTbCustomer = WebLink.GetNotIn(str,"POS");
+            gridControl2.DataSource = DTbCustomer;
 
 
             gridView2.FocusedRowHandle = k;
@@ -107,14 +95,13 @@ namespace NewProject
                     dtRow["UserName"] = gridView2.GetRowCellValue(rowHandle, colUsername);
                     dtRow["Note"] = gridView2.GetRowCellValue(rowHandle, colNote);
                     dtRow["Group"] = gridView2.GetRowCellValue(rowHandle, colNhom);
-                    dtRow["Topic"] = gridView2.GetRowCellValue(rowHandle, colTopic);
                     DTbCTPN.Rows.Add(dtRow);
                 }
             }
             else
             {
                 long type = long.Parse(gridView2.GetGroupRowValue(rowHandle).ToString());
-                DataRow[] rows = dtWebLink.Select("Group=" + type.ToString());
+                DataRow[] rows = DTbCustomer.Select("Group=" + type.ToString());
                 foreach (DataRow dtR in rows)
                 {
                     long id = long.Parse(dtR["ID"].ToString());
@@ -126,7 +113,6 @@ namespace NewProject
                         dtRow["Url"] = dtR["Url"];
                         dtRow["UrlPost"] = dtR["UrlPost"];
                         dtRow["UserName"] = dtR["UserName"];
-                        dtRow["Topic"] = dtR["Topic"];
                         dtRow["Note"] = dtR["Note"];
                         dtRow["Group"] = dtR["Group"];
                         DTbCTPN.Rows.Add(dtRow);
@@ -163,7 +149,7 @@ namespace NewProject
                     AddRowGridView(i);
                 }
             }
-            //dtWebLink.Rows.Clear();
+            //DTbCustomer.Rows.Clear();
             _LoadDSWebLink();
         }
 
@@ -176,11 +162,24 @@ namespace NewProject
         private void btnClearAll_Click(object sender, EventArgs e)
         {
             DTbCTPN.Rows.Clear();
+            //gridControl1.DataSource = DTbCTPN;
             _LoadDSWebLink();
         }
         public DataTable  GetWebLink()
         {
             return DTbCTPN;
+            //ArrayList arr = new ArrayList();
+            //foreach (DataRow dtRow in DTbCTPN.Rows)
+            //{
+            //    Customers cus = new Customers();
+            //    cus.ID = long.Parse(dtRow["ID"].ToString());
+            //    cus.Email = dtRow["Email"].ToString();
+            //    cus.LastName = dtRow["LastName"].ToString();
+            //    cus.FirstName = dtRow["FirstName"].ToString();
+            //    cus.CallName = dtRow["CallName"].ToString();
+            //    arr.Add(cus);
+            //}
+            //return arr;
         }
         
     }

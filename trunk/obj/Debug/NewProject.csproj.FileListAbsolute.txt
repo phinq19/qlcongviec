@@ -4,7 +4,6 @@ D:\Work\qlcongviec\bin\Debug\WorkManagement.exe
 D:\Work\qlcongviec\bin\Debug\WorkManagement.pdb
 D:\Work\qlcongviec\bin\Debug\WatiN.Core.dll
 D:\Work\qlcongviec\bin\Debug\Interop.SHDocVw.dll
-D:\Work\qlcongviec\bin\Debug\nunit.framework.dll
 D:\Work\qlcongviec\obj\Debug\ResolveAssemblyReference.cache
 D:\Work\qlcongviec\obj\Debug\NewProject.ctrSend.resources
 D:\Work\qlcongviec\obj\Debug\NewProject.ctrPreview.resources
@@ -59,3 +58,4 @@ E:\Work\qlcongviec\obj\Debug\WorkManagement.exe.licenses
 E:\Work\qlcongviec\obj\Debug\WorkManagement.exe
 E:\Work\qlcongviec\obj\Debug\WorkManagement.pdb
 E:\Work\qlcongviec\bin\Debug\Interop.SHDocVw.dll
+D:\Work\qlcongviec\obj\Debug\NewProject.ctrUpTopic.resources

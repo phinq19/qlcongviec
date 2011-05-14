@@ -9,19 +9,20 @@ using DevExpress.XtraEditors;
 
 namespace NewProject
 {
-    public partial class ctrPostTopic : DevExpress.XtraEditors.XtraUserControl
+    public partial class ctrUpTopic : DevExpress.XtraEditors.XtraUserControl
     {
-        public ctrPostTopic()
+        public ctrUpTopic()
         {
             InitializeComponent();
         }
         private void ctrSendmail_Load(object sender, EventArgs e)
         {
             ctrSelectLink1.Visible = true;
-            ctrSelectLink1._InitData("POS");
+            ctrSelectLink1._InitData("UP");
             ctrPost1.Visible = false;
-            ctrPost1._InitData("POS");
+            ctrPost1._InitData("UP");
             ctrContentTopic1.Visible = false;
+
         }
         private void btnContent_Click(object sender, EventArgs e)
         {
