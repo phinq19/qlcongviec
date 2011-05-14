@@ -39,13 +39,14 @@ namespace NewProject
             this.btnAbort = new DevExpress.XtraEditors.SimpleButton();
             this.btnSend = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // progressBarControl1
@@ -165,23 +166,20 @@ namespace NewProject
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // webBrowser1
+            // panelControl1
             // 
-            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser1.Location = new System.Drawing.Point(13, 184);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(782, 70);
-            this.webBrowser1.TabIndex = 8;
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelControl1.Location = new System.Drawing.Point(13, 262);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(403, 51);
+            this.panelControl1.TabIndex = 8;
+            this.panelControl1.Visible = false;
             // 
             // ctrPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -194,6 +192,7 @@ namespace NewProject
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,7 +210,7 @@ namespace NewProject
         private DevExpress.XtraEditors.SimpleButton btnAbort;
         private DevExpress.XtraEditors.SimpleButton btnSend;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
 
     }
 }

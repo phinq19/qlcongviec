@@ -123,7 +123,7 @@ namespace NewProject
             this.htmlEditor1.Toolbar1.Location = new System.Drawing.Point(0, 0);
             this.htmlEditor1.Toolbar1.Name = "HtmlEditorToolbar1";
             this.htmlEditor1.Toolbar1.Size = new System.Drawing.Size(739, 27);
-            this.htmlEditor1.Toolbar1.TabIndex = 0;
+            this.htmlEditor1.Toolbar1.TabIndex = 2;
             this.htmlEditor1.Toolbar1.Text = "toolStrip1";
             // 
             // htmlEditor1.HtmlEditorToolbar2
@@ -131,7 +131,7 @@ namespace NewProject
             this.htmlEditor1.Toolbar2.Location = new System.Drawing.Point(0, 27);
             this.htmlEditor1.Toolbar2.Name = "HtmlEditorToolbar2";
             this.htmlEditor1.Toolbar2.Size = new System.Drawing.Size(739, 29);
-            this.htmlEditor1.Toolbar2.TabIndex = 1;
+            this.htmlEditor1.Toolbar2.TabIndex = 3;
             this.htmlEditor1.Toolbar2.Text = "toolStrip2";
             this.htmlEditor1.ToolbarContextMenuStrip = null;
             this.htmlEditor1.ToolbarCursor = System.Windows.Forms.Cursors.Default;
@@ -151,7 +151,7 @@ namespace NewProject
             this.txtSubject.Location = new System.Drawing.Point(54, 8);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(739, 20);
-            this.txtSubject.TabIndex = 2;
+            this.txtSubject.TabIndex = 1;
             // 
             // txtTag
             // 

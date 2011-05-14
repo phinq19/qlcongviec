@@ -6,6 +6,7 @@ using WatiN.Core;
 using System.Text.RegularExpressions;
 using System.Configuration;
 using System.Threading;
+using WatiN.Core.Constraints;
 
 namespace NewProject
 {
@@ -157,7 +158,7 @@ namespace NewProject
 
         public static void Visible(bool visible)
         {
-            IE.Settings.MakeNewIeInstanceVisible = visible;
+            Settings.MakeNewIeInstanceVisible = visible;
         }
 
         public static void Init()

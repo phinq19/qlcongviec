@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using WatiN.Core;
 using System.Windows.Forms;
+using WatiN.Core.Native.Windows;
 
 namespace NewProject
 {
@@ -41,7 +42,8 @@ namespace NewProject
 
         public MultiThreadForum()
         {
-            IE.Settings.AttachToIETimeOut = 100000;
+            //IE.AttachTo(
+            Settings.AttachToBrowserTimeOut = 100000;
         }
 
         #region "Main Function"

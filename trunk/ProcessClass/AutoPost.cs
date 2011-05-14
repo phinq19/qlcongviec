@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using WatiN.Core;
 using System.Windows.Forms;
+using WatiN.Core.Native.Windows;
 
 namespace NewProject
 {
@@ -27,9 +28,9 @@ namespace NewProject
         {
             //IE.Settings.AttachToIETimeOut = 100000;
             //IE.Settings.BrowserType = BrowserType.FireFox;
-            IE.Settings.WaitForCompleteTimeOut = 60000;
-            IE.Settings.AttachToIETimeOut = 60000;
-           IE.Settings.AutoStartDialogWatcher = false; 
+            Settings.WaitForCompleteTimeOut = 60000;
+            Settings.AttachToBrowserTimeOut = 60000;
+           
             webBrowse = webBrowse1;
             forum = weblink;
             _Subject = Subject;
@@ -200,11 +201,11 @@ namespace NewProject
         {
             try
             {
-                
 
-                //ie = new IE(webBrowse.ActiveXInstance);
-                ie = new IE(true);
-                ie.ShowWindow(NativeMethods.WindowShowStyle.Hide);
+                WatiN.Core.Settings.AutoStartDialogWatcher = false;
+                ie = new IE(webBrowse.ActiveXInstance);
+                //ie = new IE(true);
+                //ie.ShowWindow(NativeMethods.WindowShowStyle.Hide);
             }
             catch { return false; }
             try

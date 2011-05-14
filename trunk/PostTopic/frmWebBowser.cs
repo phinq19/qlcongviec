@@ -20,10 +20,12 @@ namespace NewProject
         }
 
         private IE ie;
+        private FireFox fire;
         private void frmWebBowser_Load(object sender, EventArgs e)
         {
             webBrowser1.ScriptErrorsSuppressed = true;
-            IE.Settings.AutoStartDialogWatcher = false;
+            //IE.Settings.AutoStartDialogWatcher = false;
+            WatiN.Core.Settings.AutoStartDialogWatcher = false;
             ie = new IE(webBrowser1.ActiveXInstance);
         }
 

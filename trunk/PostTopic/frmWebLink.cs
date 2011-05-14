@@ -70,6 +70,7 @@ namespace NewProject
             txtUsername.Text = _cus.UserName;
             txtPassword.Text = _cus.Password;
             txtUrl.Text = _cus.Url;
+            txtTopic.Text = _cus.Topic;
             txtUrlPost.Text = _cus.UrlPost;
             txtNote.Text = _cus.Note;
             lookUpEdit_Nhom.EditValue =int.Parse( _cus.Group.ToString());
@@ -85,6 +86,7 @@ namespace NewProject
             txtUrlPost.Text = "";
             txtPassword.Text = "";
             txtNote.Text = "";
+            txtTopic.Text = "";
             _cus = null;
 
             txtUsername.Focus();
@@ -173,6 +175,7 @@ namespace NewProject
                                     temp.UserName = txtUsername.Text;
                                     temp.Password = txtPassword.Text;
                                     temp.Note = txtNote.Text;
+                                    temp.Topic = txtTopic.Text;
                                 }
                                 else
                                 {
