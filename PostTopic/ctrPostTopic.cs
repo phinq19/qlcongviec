@@ -18,10 +18,11 @@ namespace NewProject
         private void ctrSendmail_Load(object sender, EventArgs e)
         {
             ctrSelectLink1.Visible = true;
-            ctrSelectLink1._InitData("POS");
+            ctrSelectLink1._InitData(NumCode.POS);
             ctrPost1.Visible = false;
-            ctrPost1._InitData("POS");
+            ctrPost1._InitData(NumCode.POS);
             ctrContentTopic1.Visible = false;
+            ctrContentTopic1._InitData(NumCode.POS);
         }
         private void btnContent_Click(object sender, EventArgs e)
         {

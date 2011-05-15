@@ -14,6 +14,8 @@ namespace NewProject
     public class NumCode
     {
         public const string WEB = "WEB";
+        public const string POS = "POS";
+        public const string UP = "UP";
 
     }
     public class ControlType

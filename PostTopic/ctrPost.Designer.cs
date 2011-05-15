@@ -37,21 +37,22 @@ namespace NewProject
             this.colDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLogEntries = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLinkUp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnAbort = new DevExpress.XtraEditors.SimpleButton();
             this.btnSend = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnGetLinkUp = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // progressBarControl1
@@ -147,11 +148,18 @@ namespace NewProject
             this.colLinkUp.VisibleIndex = 2;
             this.colLinkUp.Width = 338;
             // 
+            // colID
+            // 
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.panelControl1);
             this.groupBox2.Controls.Add(this.gridControl1);
             this.groupBox2.Location = new System.Drawing.Point(13, 62);
             this.groupBox2.Name = "groupBox2";
@@ -159,6 +167,15 @@ namespace NewProject
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Log Entries";
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelControl1.Location = new System.Drawing.Point(187, 105);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(403, 51);
+            this.panelControl1.TabIndex = 8;
+            this.panelControl1.Visible = false;
             // 
             // groupBox3
             // 
@@ -195,31 +212,27 @@ namespace NewProject
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelControl1.Location = new System.Drawing.Point(13, 262);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(403, 51);
-            this.panelControl1.TabIndex = 8;
-            this.panelControl1.Visible = false;
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // colID
+            // btnGetLinkUp
             // 
-            this.colID.Caption = "ID";
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
+            this.btnGetLinkUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGetLinkUp.Enabled = false;
+            this.btnGetLinkUp.Location = new System.Drawing.Point(23, 280);
+            this.btnGetLinkUp.Name = "btnGetLinkUp";
+            this.btnGetLinkUp.Size = new System.Drawing.Size(164, 23);
+            this.btnGetLinkUp.TabIndex = 2;
+            this.btnGetLinkUp.Text = "Get Link Up";
+            this.btnGetLinkUp.Click += new System.EventHandler(this.btnGetLinkUp_Click);
             // 
             // ctrPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.btnGetLinkUp);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -231,8 +244,8 @@ namespace NewProject
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -255,6 +268,7 @@ namespace NewProject
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraGrid.Columns.GridColumn colLinkUp;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraEditors.SimpleButton btnGetLinkUp;
 
     }
 }

@@ -36,10 +36,10 @@ namespace NewProject
             this.btnPreview = new DevExpress.XtraEditors.SimpleButton();
             this.btnRecipients = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.ctrSelectLink1 = new NewProject.ctrSelectLink();
             this.ctrPost1 = new NewProject.ctrPost();
             this.ctrContentTopic1 = new NewProject.ctrContentTopic();
-            this.ctrSelectLink1 = new NewProject.ctrSelectLink();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -52,11 +52,13 @@ namespace NewProject
             // 
             this.btnContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnContent.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnContent.Appearance.Options.UseFont = true;
             this.btnContent.Location = new System.Drawing.Point(3, 54);
             this.btnContent.Name = "btnContent";
             this.btnContent.Size = new System.Drawing.Size(147, 32);
             this.btnContent.TabIndex = 1;
-            this.btnContent.Text = "Content Topic";
+            this.btnContent.Text = "Content";
             this.btnContent.Click += new System.EventHandler(this.btnContent_Click);
             // 
             // groupControl1
@@ -101,11 +103,13 @@ namespace NewProject
             // 
             this.btnSendmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSendmail.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSendmail.Appearance.Options.UseFont = true;
             this.btnSendmail.Location = new System.Drawing.Point(3, 86);
             this.btnSendmail.Name = "btnSendmail";
             this.btnSendmail.Size = new System.Drawing.Size(147, 32);
             this.btnSendmail.TabIndex = 4;
-            this.btnSendmail.Text = "Post Topic";
+            this.btnSendmail.Text = "Up";
             this.btnSendmail.Click += new System.EventHandler(this.btnSendmail_Click);
             // 
             // btnPreview
@@ -124,6 +128,8 @@ namespace NewProject
             // 
             this.btnRecipients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecipients.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnRecipients.Appearance.Options.UseFont = true;
             this.btnRecipients.Location = new System.Drawing.Point(3, 23);
             this.btnRecipients.Name = "btnRecipients";
             this.btnRecipients.Size = new System.Drawing.Size(147, 32);
@@ -142,16 +148,13 @@ namespace NewProject
             this.panelControl1.Size = new System.Drawing.Size(740, 387);
             this.panelControl1.TabIndex = 4;
             // 
-            // groupControl2
+            // ctrSelectLink1
             // 
-            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl2.Controls.Add(this.panelControl1);
-            this.groupControl2.Location = new System.Drawing.Point(158, 2);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(744, 409);
-            this.groupControl2.TabIndex = 5;
+            this.ctrSelectLink1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrSelectLink1.Location = new System.Drawing.Point(2, 2);
+            this.ctrSelectLink1.Name = "ctrSelectLink1";
+            this.ctrSelectLink1.Size = new System.Drawing.Size(736, 383);
+            this.ctrSelectLink1.TabIndex = 3;
             // 
             // ctrPost1
             // 
@@ -169,21 +172,24 @@ namespace NewProject
             this.ctrContentTopic1.Size = new System.Drawing.Size(736, 383);
             this.ctrContentTopic1.TabIndex = 1;
             // 
-            // ctrSelectLink1
+            // groupControl2
             // 
-            this.ctrSelectLink1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctrSelectLink1.Location = new System.Drawing.Point(2, 2);
-            this.ctrSelectLink1.Name = "ctrSelectLink1";
-            this.ctrSelectLink1.Size = new System.Drawing.Size(736, 383);
-            this.ctrSelectLink1.TabIndex = 3;
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl2.Controls.Add(this.panelControl1);
+            this.groupControl2.Location = new System.Drawing.Point(158, 2);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(744, 409);
+            this.groupControl2.TabIndex = 5;
             // 
-            // ctrPostTopic
+            // ctrUpTopic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
-            this.Name = "ctrPostTopic";
+            this.Name = "ctrUpTopic";
             this.Size = new System.Drawing.Size(905, 415);
             this.Load += new System.EventHandler(this.ctrSendmail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
