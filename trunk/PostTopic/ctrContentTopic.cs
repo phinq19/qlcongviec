@@ -11,6 +11,7 @@ namespace NewProject
 {
     public partial class ctrContentTopic : DevExpress.XtraEditors.XtraUserControl
     {
+        private string _Type=NumCode.POS;
         public ctrContentTopic()
         {
             InitializeComponent();
@@ -21,6 +22,17 @@ namespace NewProject
                     ctr.Visible = false;
                     break;
                 }
+            }
+        }
+        public void _InitData(string _type)
+        {
+            _Type = _type;
+            if(_Type==NumCode.UP)
+            {
+                txtSubject.Visible = false;
+                txtTag.Visible = false;
+                labelControl1.Visible = false;
+                labelControl2.Visible = false;
             }
         }
         public string GetSubject()

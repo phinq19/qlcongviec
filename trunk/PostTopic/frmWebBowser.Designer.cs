@@ -125,7 +125,7 @@
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(79, 23);
             this.simpleButton2.TabIndex = 7;
-            this.simpleButton2.Text = "Go";
+            this.simpleButton2.Text = "Close";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // frmWebBowser

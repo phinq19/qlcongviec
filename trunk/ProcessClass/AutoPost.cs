@@ -45,7 +45,7 @@ namespace NewProject
 
         public StatusObj PostTopic()
         {
-            multiforum = new MultiForum("POS");
+            multiforum = new MultiForum(NumCode.POS);
             StatusObj statusObj=new StatusObj();
 
             if (forum == null)
@@ -185,7 +185,7 @@ namespace NewProject
         }
         public StatusObj UpTopic()
         {
-            multiforum = new MultiForum("UP");
+            multiforum = new MultiForum(NumCode.UP);
             StatusObj statusObj = new StatusObj();
 
             if (forum == null)

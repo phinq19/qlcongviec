@@ -59,3 +59,4 @@ E:\Work\qlcongviec\obj\Debug\WorkManagement.exe
 E:\Work\qlcongviec\obj\Debug\WorkManagement.pdb
 E:\Work\qlcongviec\bin\Debug\Interop.SHDocVw.dll
 D:\Work\qlcongviec\obj\Debug\NewProject.ctrUpTopic.resources
+D:\Work\qlcongviec\obj\Debug\NewProject.frmGetLinkUp.resources

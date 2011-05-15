@@ -36,7 +36,7 @@ namespace NewProject
             gridControl1.DataSource = DTbCTPN;
             _LoadNhomWebLink();
             _LoadDSWebLink();
-            if(_Type=="POS")
+            if(_Type==NumCode.POS)
             {
                 colTopic.Visible = false;
                 colTopic1.Visible = false;
