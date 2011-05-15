@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGetLinkUp));
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btnSetAll = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTopic = new DevExpress.XtraEditors.TextEdit();
+            this.txtNote = new DevExpress.XtraEditors.TextEdit();
             this.grid_KhachHang = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colUrl = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,11 +59,10 @@
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNote = new DevExpress.XtraEditors.TextEdit();
-            this.txtTopic = new DevExpress.XtraEditors.TextEdit();
-            this.btnSetAll = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_KhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemLookUp_Nhom)).BeginInit();
@@ -72,8 +75,6 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenKH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl2
@@ -90,6 +91,29 @@
             this.groupControl2.Size = new System.Drawing.Size(860, 385);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Danh sách link";
+            // 
+            // btnSetAll
+            // 
+            this.btnSetAll.Location = new System.Drawing.Point(360, 32);
+            this.btnSetAll.Name = "btnSetAll";
+            this.btnSetAll.Size = new System.Drawing.Size(75, 23);
+            this.btnSetAll.TabIndex = 3;
+            this.btnSetAll.Text = "Set All";
+            this.btnSetAll.Click += new System.EventHandler(this.btnSetAll_Click);
+            // 
+            // txtTopic
+            // 
+            this.txtTopic.Location = new System.Drawing.Point(443, 32);
+            this.txtTopic.Name = "txtTopic";
+            this.txtTopic.Size = new System.Drawing.Size(237, 20);
+            this.txtTopic.TabIndex = 2;
+            // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(681, 32);
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(171, 20);
+            this.txtNote.TabIndex = 1;
             // 
             // grid_KhachHang
             // 
@@ -357,29 +381,6 @@
             this.labelControl1.TabIndex = 7;
             this.labelControl1.Text = "Tên khách hàng";
             // 
-            // txtNote
-            // 
-            this.txtNote.Location = new System.Drawing.Point(681, 32);
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(171, 20);
-            this.txtNote.TabIndex = 1;
-            // 
-            // txtTopic
-            // 
-            this.txtTopic.Location = new System.Drawing.Point(443, 32);
-            this.txtTopic.Name = "txtTopic";
-            this.txtTopic.Size = new System.Drawing.Size(237, 20);
-            this.txtTopic.TabIndex = 2;
-            // 
-            // btnSetAll
-            // 
-            this.btnSetAll.Location = new System.Drawing.Point(360, 32);
-            this.btnSetAll.Name = "btnSetAll";
-            this.btnSetAll.Size = new System.Drawing.Size(75, 23);
-            this.btnSetAll.TabIndex = 3;
-            this.btnSetAll.Text = "Set All";
-            this.btnSetAll.Click += new System.EventHandler(this.btnSetAll_Click);
-            // 
             // frmGetLinkUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +391,7 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGetLinkUp";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -397,6 +399,8 @@
             this.Load += new System.EventHandler(this.frmWebLinkList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_KhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemLookUp_Nhom)).EndInit();
@@ -410,8 +414,6 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenKH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

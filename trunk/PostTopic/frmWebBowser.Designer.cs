@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWebBowser));
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtLink = new DevExpress.XtraEditors.TextEdit();
@@ -139,6 +140,7 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtLink);
             this.Controls.Add(this.labelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmWebBowser";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
