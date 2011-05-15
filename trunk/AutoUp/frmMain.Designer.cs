@@ -28,6 +28,7 @@ namespace AutoUp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnStart = new DevExpress.XtraEditors.SimpleButton();
@@ -37,6 +38,7 @@ namespace AutoUp
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLog = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -131,6 +133,10 @@ namespace AutoUp
             this.colLog.VisibleIndex = 1;
             this.colLog.Width = 523;
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Blue";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,5 +167,6 @@ namespace AutoUp
         private DevExpress.XtraGrid.Columns.GridColumn colDateTime;
         private DevExpress.XtraGrid.Columns.GridColumn colLog;
         private DevExpress.XtraEditors.SimpleButton btnStart;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }
