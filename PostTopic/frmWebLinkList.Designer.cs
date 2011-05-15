@@ -171,8 +171,6 @@
             this.colPassword.FieldName = "Password";
             this.colPassword.Name = "colPassword";
             this.colPassword.OptionsColumn.AllowFocus = false;
-            this.colPassword.Visible = true;
-            this.colPassword.VisibleIndex = 4;
             this.colPassword.Width = 106;
             // 
             // colGroup
@@ -206,7 +204,7 @@
             this.colNote.Name = "colNote";
             this.colNote.OptionsColumn.AllowFocus = false;
             this.colNote.Visible = true;
-            this.colNote.VisibleIndex = 5;
+            this.colNote.VisibleIndex = 4;
             this.colNote.Width = 148;
             // 
             // colTopic
