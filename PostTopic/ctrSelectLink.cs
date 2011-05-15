@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Collections;
+using WorkLibrary;
 
 namespace NewProject
 {

@@ -85,24 +85,13 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WatiN.Core, Version=2.0.2.790, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="WatiN.Core, Version=2.1.0.1196, Culture=neutral, PublicKeyToken=db7cfd3acb5ad44e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\WatiN.Core.dll</HintPath>
     </Reference>
     <Reference Include="WinHTMLEditorControl, Version=4.0.6.39, Culture=neutral, PublicKeyToken=e444157244638e02, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\Common.cs" />
-    <Compile Include="Class\CodeType.cs" />
-    <Compile Include="Class\Const.cs" />
-    <Compile Include="Class\Entry.cs" />
-    <Compile Include="Class\WebLink.cs" />
-    <Compile Include="Class\MailConfig.cs" />
-    <Compile Include="Class\Customers.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Class\CustomersType.cs" />
-    <Compile Include="Class\FieldSetting.cs" />
     <Compile Include="PostTopic\frmGetLinkUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,9 +182,6 @@
     <Compile Include="SendMail\ctrSendmail.Designer.cs">
       <DependentUpon>ctrSendmail.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcessClass\AutoPost.cs" />
-    <Compile Include="ProcessClass\MyWatiN.cs" />
-    <Compile Include="ProcessClass\Encryption.cs" />
     <Compile Include="frmCustomerType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,13 +224,6 @@
     <Compile Include="PostTopic\frmFieldSetting.designer.cs">
       <DependentUpon>frmFieldSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcessClass\Enums.cs" />
-    <Compile Include="ProcessClass\Filter.cs" />
-    <Compile Include="ProcessClass\FilterPattern.cs" />
-    <Compile Include="ProcessClass\HControl.cs" />
-    <Compile Include="ProcessClass\MultiForum.cs" />
-    <Compile Include="ProcessClass\MultiThreadForum.cs" />
-    <Compile Include="ProcessClass\StatusEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PostTopic\frmGetLinkUp.resx">
@@ -355,8 +334,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ProcessClass\Provider.cs" />
-    <Compile Include="ProcessClass\SendMail.cs" />
     <Compile Include="ucAbout.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -388,6 +365,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="WorkLibrary\WorkLibrary.csproj">
+      <Project>{1F4BF0E8-2335-4DEA-B2C9-0E77C99861E7}</Project>
+      <Name>WorkLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

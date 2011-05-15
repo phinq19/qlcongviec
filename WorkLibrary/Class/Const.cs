@@ -7,7 +7,7 @@ using System.Management;
 using System.IO;
 using System.Xml;
 
-namespace NewProject
+namespace WorkLibrary
 {
     public class Const
     {
