@@ -124,7 +124,12 @@ namespace NewProject
                         statusObj.Status = "Error";
                         return statusObj;
                     }
-                    href.Click();
+                    else
+                    {
+                        href.Click();
+                        break;
+                    }
+                    
                 }
                 if (RunControl(multiforum.Subject, _Subject) != string.Empty)
                 {
@@ -397,8 +402,9 @@ namespace NewProject
             {
 
                 WatiN.Core.Settings.AutoStartDialogWatcher = false;
-                //ie = new IE(webBrowse.ActiveXInstance);
-                ie = new IE(true);
+                ie = new IE(webBrowse.ActiveXInstance);
+                
+                //ie = new IE(true);
                 //ie.ShowWindow(NativeMethods.WindowShowStyle.Hide);
             }
             catch { return false; }

@@ -339,6 +339,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucAbout.resx">
+      <DependentUpon>ucAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -354,6 +357,12 @@
     </Compile>
     <Compile Include="ProcessClass\Provider.cs" />
     <Compile Include="ProcessClass\SendMail.cs" />
+    <Compile Include="ucAbout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAbout.Designer.cs">
+      <DependentUpon>ucAbout.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

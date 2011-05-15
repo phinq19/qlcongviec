@@ -176,6 +176,7 @@
             this.txtPassword.EnterMoveNextControl = true;
             this.txtPassword.Location = new System.Drawing.Point(277, 107);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(164, 20);
             this.txtPassword.TabIndex = 4;
             // 
@@ -273,7 +274,7 @@
             this.chkCloseAlterSave.Location = new System.Drawing.Point(10, 261);
             this.chkCloseAlterSave.Name = "chkCloseAlterSave";
             this.chkCloseAlterSave.Properties.Caption = "Đóng sau khi lưu";
-            this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 19);
+            this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 18);
             this.chkCloseAlterSave.TabIndex = 12;
             // 
             // frmWebLink
