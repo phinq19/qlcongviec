@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NewProject
+namespace WorkLibrary
 {
     public class Entry
     {
