@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWebLink));
             this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -272,7 +273,7 @@
             this.chkCloseAlterSave.Location = new System.Drawing.Point(10, 261);
             this.chkCloseAlterSave.Name = "chkCloseAlterSave";
             this.chkCloseAlterSave.Properties.Caption = "Đóng sau khi lưu";
-            this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 18);
+            this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 19);
             this.chkCloseAlterSave.TabIndex = 12;
             // 
             // frmWebLink
@@ -286,6 +287,7 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.btnThoat);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmWebLink";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

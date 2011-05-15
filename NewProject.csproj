@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -156,40 +157,40 @@
     <Compile Include="frmTypeSetup.designer.cs">
       <DependentUpon>frmTypeSetup.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrSend.cs">
+    <Compile Include="SendMail\ctrSend.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrSend.Designer.cs">
+    <Compile Include="SendMail\ctrSend.Designer.cs">
       <DependentUpon>ctrSend.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrPreview.cs">
+    <Compile Include="SendMail\ctrPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrPreview.Designer.cs">
+    <Compile Include="SendMail\ctrPreview.Designer.cs">
       <DependentUpon>ctrPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrRecipients.cs">
+    <Compile Include="SendMail\ctrRecipients.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrRecipients.Designer.cs">
+    <Compile Include="SendMail\ctrRecipients.Designer.cs">
       <DependentUpon>ctrRecipients.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrSender.cs">
+    <Compile Include="SendMail\ctrSender.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrSender.Designer.cs">
+    <Compile Include="SendMail\ctrSender.Designer.cs">
       <DependentUpon>ctrSender.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrContent.cs">
+    <Compile Include="SendMail\ctrContent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrContent.Designer.cs">
+    <Compile Include="SendMail\ctrContent.Designer.cs">
       <DependentUpon>ctrContent.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrSendmail.cs">
+    <Compile Include="SendMail\ctrSendmail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrSendmail.Designer.cs">
+    <Compile Include="SendMail\ctrSendmail.Designer.cs">
       <DependentUpon>ctrSendmail.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessClass\AutoPost.cs" />
@@ -281,27 +282,27 @@
       <DependentUpon>frmTypeSetup.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrSend.resx">
+    <EmbeddedResource Include="SendMail\ctrSend.resx">
       <DependentUpon>ctrSend.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrPreview.resx">
+    <EmbeddedResource Include="SendMail\ctrPreview.resx">
       <DependentUpon>ctrPreview.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrRecipients.resx">
+    <EmbeddedResource Include="SendMail\ctrRecipients.resx">
       <DependentUpon>ctrRecipients.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrSender.resx">
+    <EmbeddedResource Include="SendMail\ctrSender.resx">
       <DependentUpon>ctrSender.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrContent.resx">
+    <EmbeddedResource Include="SendMail\ctrContent.resx">
       <DependentUpon>ctrContent.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrSendmail.resx">
+    <EmbeddedResource Include="SendMail\ctrSendmail.resx">
       <DependentUpon>ctrSendmail.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -375,6 +376,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

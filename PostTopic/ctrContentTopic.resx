@@ -120,8 +120,8 @@
   <data name="htmlEditor1.DocumentHtml" xml:space="preserve">
     <value>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
 &lt;HTML&gt;&lt;HEAD&gt;
-&lt;META content="text/html; charset=unicode" http-equiv=Content-Type&gt;
-&lt;META name=GENERATOR content="MSHTML 8.00.6001.18854"&gt;&lt;/HEAD&gt;
+&lt;META http-equiv=Content-Type content="text/html; charset=unicode"&gt;
+&lt;META content="MSHTML 6.00.5730.13" name=GENERATOR&gt;&lt;/HEAD&gt;
 &lt;BODY&gt;&lt;/BODY&gt;&lt;/HTML&gt;
 </value>
   </data>
@@ -306,18 +306,18 @@
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="htmlEditor1.FactoryToolbarItems15" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -495,7 +495,7 @@
 </value>
   </data>
   <metadata name="htmlEditor1.HtmlEditorToolbar1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>165, 17</value>
+    <value>176, 17</value>
   </metadata>
   <metadata name="htmlEditor1.HtmlEditorToolbar2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

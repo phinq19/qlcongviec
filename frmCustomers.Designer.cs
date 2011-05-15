@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomers));
             this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -43,6 +44,10 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTenGoi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTen = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtHo = new DevExpress.XtraEditors.TextEdit();
             this.lookUpEdit_Nhom = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -53,10 +58,6 @@
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.chkCloseAlterSave = new DevExpress.XtraEditors.CheckEdit();
-            this.txtTen = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTenGoi = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -66,12 +67,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDienThoai.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenGoi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Nhom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCloseAlterSave.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenGoi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThemMoi
@@ -221,6 +222,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Khách hàng";
             // 
+            // txtTenGoi
+            // 
+            this.txtTenGoi.EnterMoveNextControl = true;
+            this.txtTenGoi.Location = new System.Drawing.Point(89, 92);
+            this.txtTenGoi.Name = "txtTenGoi";
+            this.txtTenGoi.Size = new System.Drawing.Size(342, 20);
+            this.txtTenGoi.TabIndex = 6;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(48, 95);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(35, 13);
+            this.labelControl8.TabIndex = 8;
+            this.labelControl8.Text = "Tên gọi";
+            // 
+            // txtTen
+            // 
+            this.txtTen.EnterMoveNextControl = true;
+            this.txtTen.Location = new System.Drawing.Point(298, 66);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(133, 20);
+            this.txtTen.TabIndex = 5;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(274, 69);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(18, 13);
+            this.labelControl4.TabIndex = 6;
+            this.labelControl4.Text = "Tên";
+            // 
             // txtHo
             // 
             this.txtHo.EnterMoveNextControl = true;
@@ -310,38 +343,6 @@
             this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 18);
             this.chkCloseAlterSave.TabIndex = 12;
             // 
-            // txtTen
-            // 
-            this.txtTen.EnterMoveNextControl = true;
-            this.txtTen.Location = new System.Drawing.Point(298, 66);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(133, 20);
-            this.txtTen.TabIndex = 5;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(274, 69);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(18, 13);
-            this.labelControl4.TabIndex = 6;
-            this.labelControl4.Text = "Tên";
-            // 
-            // txtTenGoi
-            // 
-            this.txtTenGoi.EnterMoveNextControl = true;
-            this.txtTenGoi.Location = new System.Drawing.Point(89, 92);
-            this.txtTenGoi.Name = "txtTenGoi";
-            this.txtTenGoi.Size = new System.Drawing.Size(342, 20);
-            this.txtTenGoi.TabIndex = 6;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(48, 95);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(35, 13);
-            this.labelControl8.TabIndex = 8;
-            this.labelControl8.Text = "Tên gọi";
-            // 
             // frmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,6 +354,7 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.btnThoat);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCustomers";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -369,12 +371,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDienThoai.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenGoi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Nhom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCloseAlterSave.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenGoi.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

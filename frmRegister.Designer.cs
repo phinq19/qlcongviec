@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegister));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.txtKey = new DevExpress.XtraEditors.MemoEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtKeyRegister = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtKeyRegister = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtKey = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKeyRegister.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -55,36 +56,14 @@
             this.panelControl1.Size = new System.Drawing.Size(412, 228);
             this.panelControl1.TabIndex = 0;
             // 
-            // txtKey
+            // simpleButton2
             // 
-            this.txtKey.Location = new System.Drawing.Point(12, 33);
-            this.txtKey.Name = "txtKey";
-            this.txtKey.Properties.ReadOnly = true;
-            this.txtKey.Size = new System.Drawing.Size(388, 107);
-            this.txtKey.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(15, 12);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(58, 13);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Key General";
-            // 
-            // txtKeyRegister
-            // 
-            this.txtKeyRegister.Location = new System.Drawing.Point(12, 168);
-            this.txtKeyRegister.Name = "txtKeyRegister";
-            this.txtKeyRegister.Size = new System.Drawing.Size(388, 20);
-            this.txtKeyRegister.TabIndex = 2;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(13, 148);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(61, 13);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Key Register";
+            this.simpleButton2.Location = new System.Drawing.Point(183, 194);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(123, 23);
+            this.simpleButton2.TabIndex = 5;
+            this.simpleButton2.Text = "Register";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 
@@ -95,14 +74,36 @@
             this.simpleButton1.Text = "Close";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // simpleButton2
+            // labelControl2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(183, 194);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(123, 23);
-            this.simpleButton2.TabIndex = 5;
-            this.simpleButton2.Text = "Register";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.labelControl2.Location = new System.Drawing.Point(13, 148);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(61, 13);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Key Register";
+            // 
+            // txtKeyRegister
+            // 
+            this.txtKeyRegister.Location = new System.Drawing.Point(12, 168);
+            this.txtKeyRegister.Name = "txtKeyRegister";
+            this.txtKeyRegister.Size = new System.Drawing.Size(388, 20);
+            this.txtKeyRegister.TabIndex = 2;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(15, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(58, 13);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "Key General";
+            // 
+            // txtKey
+            // 
+            this.txtKey.Location = new System.Drawing.Point(12, 33);
+            this.txtKey.Name = "txtKey";
+            this.txtKey.Properties.ReadOnly = true;
+            this.txtKey.Size = new System.Drawing.Size(388, 107);
+            this.txtKey.TabIndex = 0;
             // 
             // frmRegister
             // 
@@ -110,14 +111,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 228);
             this.Controls.Add(this.panelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRegister";
             this.Text = "Register";
             this.Load += new System.EventHandler(this.frmRegister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKeyRegister.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
