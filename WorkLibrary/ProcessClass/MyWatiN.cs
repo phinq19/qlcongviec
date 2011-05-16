@@ -304,10 +304,16 @@ namespace WorkLibrary
             {
                 case AttributeType.Id:
                     {
-                        Div div= ie.Div(Find.ById(control.Value));
-                        if (div.Exists)
-                            return div;
+                        foreach (WatiN.Core.Div bt in ie.Divs)
+                        {
+                            if (bt.Id == control.Value)
+                                return bt;
+                        }
                         return null;
+                        //Div div= ie.Div(Find.ById(control.Value));
+                        //if (div.Exists)
+                        //    return div;
+                        //return null;
                     }
                 case AttributeType.Name:
                     {

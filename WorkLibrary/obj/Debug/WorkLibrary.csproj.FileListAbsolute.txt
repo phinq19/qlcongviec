@@ -4,3 +4,9 @@ E:\Work\qlcongviec\WorkLibrary\bin\Debug\WorkLibrary.pdb
 E:\Work\qlcongviec\WorkLibrary\bin\Debug\WatiN.Core.dll
 E:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.dll
 E:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.pdb
+D:\Work\qlcongviec\WorkLibrary\bin\Debug\WorkLibrary.dll
+D:\Work\qlcongviec\WorkLibrary\bin\Debug\WorkLibrary.pdb
+D:\Work\qlcongviec\WorkLibrary\bin\Debug\WatiN.Core.dll
+D:\Work\qlcongviec\WorkLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.dll
+D:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.pdb

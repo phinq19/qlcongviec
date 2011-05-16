@@ -237,6 +237,7 @@ namespace WorkLibrary
                 }
                 if (RunControl(multiforum.PassWord, forum.Password) != string.Empty)
                 {
+                    
                     Close();
                     statusObj.Message = "Không tìm thấy textbox passworld";
                     statusObj.Status = "Error";
