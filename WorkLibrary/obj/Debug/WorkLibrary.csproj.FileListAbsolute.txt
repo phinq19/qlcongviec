@@ -1,0 +1,6 @@
+E:\Work\qlcongviec\WorkLibrary\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\qlcongviec\WorkLibrary\bin\Debug\WorkLibrary.dll
+E:\Work\qlcongviec\WorkLibrary\bin\Debug\WorkLibrary.pdb
+E:\Work\qlcongviec\WorkLibrary\bin\Debug\WatiN.Core.dll
+E:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.dll
+E:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.pdb
