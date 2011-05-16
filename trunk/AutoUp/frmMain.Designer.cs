@@ -63,7 +63,7 @@ namespace AutoUp
             this.groupBox2.Controls.Add(this.btnClose);
             this.groupBox2.Location = new System.Drawing.Point(711, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(156, 298);
+            this.groupBox2.Size = new System.Drawing.Size(156, 345);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control";
@@ -76,7 +76,7 @@ namespace AutoUp
             this.btnOption.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnOption.Appearance.Options.UseFont = true;
             this.btnOption.Appearance.Options.UseForeColor = true;
-            this.btnOption.Location = new System.Drawing.Point(6, 234);
+            this.btnOption.Location = new System.Drawing.Point(6, 281);
             this.btnOption.Name = "btnOption";
             this.btnOption.Size = new System.Drawing.Size(144, 31);
             this.btnOption.TabIndex = 4;
@@ -91,7 +91,7 @@ namespace AutoUp
             this.btnHide.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnHide.Appearance.Options.UseFont = true;
             this.btnHide.Appearance.Options.UseForeColor = true;
-            this.btnHide.Location = new System.Drawing.Point(6, 267);
+            this.btnHide.Location = new System.Drawing.Point(6, 314);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(144, 31);
             this.btnHide.TabIndex = 2;
@@ -134,7 +134,7 @@ namespace AutoUp
             this.btnClose.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.Appearance.Options.UseForeColor = true;
-            this.btnClose.Location = new System.Drawing.Point(6, 267);
+            this.btnClose.Location = new System.Drawing.Point(6, 244);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(144, 31);
             this.btnClose.TabIndex = 3;
@@ -151,7 +151,7 @@ namespace AutoUp
             this.groupBox1.Controls.Add(this.gridControl1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(693, 298);
+            this.groupBox1.Size = new System.Drawing.Size(693, 345);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Log";
@@ -171,7 +171,7 @@ namespace AutoUp
             this.gridControl1.Location = new System.Drawing.Point(3, 17);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(687, 278);
+            this.gridControl1.Size = new System.Drawing.Size(687, 325);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -222,13 +222,12 @@ namespace AutoUp
             // timer1
             // 
             this.timer1.Interval = 60000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 322);
+            this.ClientSize = new System.Drawing.Size(875, 369);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
