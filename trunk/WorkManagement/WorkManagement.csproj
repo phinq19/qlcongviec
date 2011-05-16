@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82A075C5-F612-47C1-A092-EA4068173685}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NewProject</RootNamespace>
+    <AssemblyName>WorkManagement</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.Utils.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraBars.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraCharts.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraEditors.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraGrid.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraLayout.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraNavBar.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraPrinting.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraReports.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraRichTextEdit.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraTreeList.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v7.3, Version=7.3.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="Interop.SHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=db7cfd3acb5ad44e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Interop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WatiN.Core, Version=2.1.0.1196, Culture=neutral, PublicKeyToken=db7cfd3acb5ad44e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\WatiN.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WinHTMLEditorControl, Version=4.0.6.39, Culture=neutral, PublicKeyToken=e444157244638e02, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PostTopic\frmGetLinkUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostTopic\frmGetLinkUp.Designer.cs">
+      <DependentUpon>frmGetLinkUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\ctrUpTopic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostTopic\ctrUpTopic.Designer.cs">
+      <DependentUpon>ctrUpTopic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\ctrSelectLink.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostTopic\ctrSelectLink.Designer.cs">
+      <DependentUpon>ctrSelectLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\frmWebBowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostTopic\frmWebBowser.Designer.cs">
+      <DependentUpon>frmWebBowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\ctrPost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostTopic\ctrPost.Designer.cs">
+      <DependentUpon>ctrPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\ctrPostTopic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostTopic\ctrPostTopic.Designer.cs">
+      <DependentUpon>ctrPostTopic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\frmWebLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostTopic\frmWebLink.Designer.cs">
+      <DependentUpon>frmWebLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\frmWebLinkList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostTopic\frmWebLinkList.Designer.cs">
+      <DependentUpon>frmWebLinkList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTypeSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTypeSetup.designer.cs">
+      <DependentUpon>frmTypeSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendMail\ctrSend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SendMail\ctrSend.Designer.cs">
+      <DependentUpon>ctrSend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendMail\ctrPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SendMail\ctrPreview.Designer.cs">
+      <DependentUpon>ctrPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendMail\ctrRecipients.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SendMail\ctrRecipients.Designer.cs">
+      <DependentUpon>ctrRecipients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendMail\ctrSender.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SendMail\ctrSender.Designer.cs">
+      <DependentUpon>ctrSender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendMail\ctrContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SendMail\ctrContent.Designer.cs">
+      <DependentUpon>ctrContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendMail\ctrSendmail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SendMail\ctrSendmail.Designer.cs">
+      <DependentUpon>ctrSendmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerType.designer.cs">
+      <DependentUpon>frmCustomerType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomers.Designer.cs">
+      <DependentUpon>frmCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomersList.Designer.cs">
+      <DependentUpon>frmCustomersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegister.Designer.cs">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRibbonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRibbonForm.Designer.cs">
+      <DependentUpon>frmRibbonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\ctrContentTopic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PostTopic\ctrContentTopic.Designer.cs">
+      <DependentUpon>ctrContentTopic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTopic\frmFieldSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostTopic\frmFieldSetting.designer.cs">
+      <DependentUpon>frmFieldSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PostTopic\frmGetLinkUp.resx">
+      <DependentUpon>frmGetLinkUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\ctrUpTopic.resx">
+      <DependentUpon>ctrUpTopic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\ctrSelectLink.resx">
+      <DependentUpon>ctrSelectLink.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\frmWebBowser.resx">
+      <DependentUpon>frmWebBowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\ctrPost.resx">
+      <DependentUpon>ctrPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\ctrPostTopic.resx">
+      <DependentUpon>ctrPostTopic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\frmWebLink.resx">
+      <DependentUpon>frmWebLink.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\frmWebLinkList.resx">
+      <DependentUpon>frmWebLinkList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTypeSetup.resx">
+      <DependentUpon>frmTypeSetup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendMail\ctrSend.resx">
+      <DependentUpon>ctrSend.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendMail\ctrPreview.resx">
+      <DependentUpon>ctrPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendMail\ctrRecipients.resx">
+      <DependentUpon>ctrRecipients.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendMail\ctrSender.resx">
+      <DependentUpon>ctrSender.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendMail\ctrContent.resx">
+      <DependentUpon>ctrContent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendMail\ctrSendmail.resx">
+      <DependentUpon>ctrSendmail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerType.resx">
+      <DependentUpon>frmCustomerType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomers.resx">
+      <DependentUpon>frmCustomers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomersList.resx">
+      <DependentUpon>frmCustomersList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRibbonForm.resx">
+      <DependentUpon>frmRibbonForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\ctrContentTopic.resx">
+      <DependentUpon>ctrContentTopic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostTopic\frmFieldSetting.resx">
+      <DependentUpon>frmFieldSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAbout.resx">
+      <DependentUpon>ucAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ucAbout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAbout.Designer.cs">
+      <DependentUpon>ucAbout.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WorkLibrary\WorkLibrary.csproj">
+      <Project>{1A3A699D-D600-46D5-B8D5-C88896D02118}</Project>
+      <Name>WorkLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
