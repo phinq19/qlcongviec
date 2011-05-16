@@ -112,5 +112,12 @@ namespace WorkLibrary
             return dtTable;
 
         }
+        public static DataTable GetIn(string str, string type)
+        {
+            string sql = @"select * from WebLink where ID in " + str + " and Type='" + type + "' order by Url";
+            DataTable dtTable = Provider.ExecuteToDataTable(sql);
+            return dtTable;
+
+        }
     }
 }
