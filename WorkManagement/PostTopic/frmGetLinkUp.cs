@@ -38,19 +38,23 @@ namespace NewProject
             _dtTable.Columns.Add("Type", typeof(string));
             foreach (DataRow dtRow in _dtLogEntry.Rows)
             {
-                WebLink webLink = WebLink.Get(long.Parse(dtRow["ID"].ToString()));
-                if(webLink!=null)
+                if (dtRow["Status"] == "Successful")
                 {
-                    DataRow dataRow = _dtTable.NewRow();
-                    dataRow["ID"] = webLink.ID;
-                    dataRow["Url"] = webLink.Url;
-                    dataRow["UrlPost"] = dtRow["LinkUp"];
-                    dataRow["Topic"] = _Subject;
-                    dataRow["UserName"] = webLink.UserName;
-                    dataRow["Password"] = webLink.Password;
-                    dataRow["Group"] = webLink.Group;
-                    dataRow["Tupe"] = NumCode.UP;
-                    _dtTable.Rows.Add(dataRow);
+                    WebLink webLink = WebLink.Get(long.Parse(dtRow["ID"].ToString()));
+                    if (webLink != null)
+                    {
+
+                        DataRow dataRow = _dtTable.NewRow();
+                        dataRow["ID"] = webLink.ID;
+                        dataRow["Url"] = webLink.Url;
+                        dataRow["UrlPost"] = dtRow["LinkUp"];
+                        dataRow["Topic"] = _Subject;
+                        dataRow["UserName"] = webLink.UserName;
+                        dataRow["Password"] = webLink.Password;
+                        dataRow["Group"] = webLink.Group;
+                        dataRow["Type"] = NumCode.UP;
+                        _dtTable.Rows.Add(dataRow);
+                    }
                 }
             }
             grid_KhachHang.DataSource = _dtTable;

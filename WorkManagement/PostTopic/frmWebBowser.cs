@@ -39,11 +39,11 @@ namespace NewProject
             foreach (WatiN.Core.TextField obj in ie.TextFields)
             {
                 TreeNode nodeA = new TreeNode(obj.Name);
-                nodeA.Nodes.Add("Id = " + obj.Id);
-                nodeA.Nodes.Add("Name = " + obj.Name);
-                nodeA.Nodes.Add("ReadOnly = " + obj.ReadOnly.ToString());
-                nodeA.Nodes.Add("Text = " + obj.Text);
-                nodeA.Nodes.Add("Value = " + obj.Value);
+                nodeA.Nodes.Add(obj.Id, "Id = " + obj.Id);
+                nodeA.Nodes.Add(obj.Name,"Name = " + obj.Name);
+                nodeA.Nodes.Add(obj.ReadOnly.ToString(), "ReadOnly = " + obj.ReadOnly.ToString());
+                nodeA.Nodes.Add(obj.Text,"Text = " + obj.Text);
+                nodeA.Nodes.Add(obj.Value,"Value = " + obj.Value);
                 textBox.Nodes.Add(nodeA);
             }
             root.Nodes.Add(textBox);
@@ -52,10 +52,10 @@ namespace NewProject
             foreach (WatiN.Core.Button obj in ie.Buttons)
             {
                 TreeNode nodeB = new TreeNode(obj.Value);
-                nodeB.Nodes.Add("Id = " + obj.Id);
-                nodeB.Nodes.Add("ClassName = " + obj.ClassName);
-                nodeB.Nodes.Add("Text = " + obj.Text);
-                nodeB.Nodes.Add("Value = " + obj.Value);
+                nodeB.Nodes.Add(obj.Id,"Id = " + obj.Id);
+                nodeB.Nodes.Add(obj.Text,"ClassName = " + obj.ClassName);
+                nodeB.Nodes.Add(obj.Text,"Text = " + obj.Text);
+                nodeB.Nodes.Add(obj.Value,"Value = " + obj.Value);
                 //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
                 button.Nodes.Add(nodeB);
             }
@@ -68,9 +68,9 @@ namespace NewProject
                 if (obj.Id != null && obj.Id.ToString() != "")
                 {
                     TreeNode nodeD = new TreeNode(obj.Id);
-                    nodeD.Nodes.Add("Id = " + obj.Id);
-                    nodeD.Nodes.Add("Name = " + obj.Name);
-                    nodeD.Nodes.Add("ClassName = " + obj.ClassName);
+                    nodeD.Nodes.Add(obj.Id,"Id = " + obj.Id);
+                    nodeD.Nodes.Add(obj.Name,"Name = " + obj.Name);
+                    nodeD.Nodes.Add(obj.ClassName,"ClassName = " + obj.ClassName);
                     //nodeD.Nodes.Add("Text = " + obj.Text);
 
                     //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
@@ -126,6 +126,41 @@ namespace NewProject
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            //foreach (WatiN.Core.TextField obj in ie.TextFields)
+            //{
+            //    obj.Highlight(false);
+            //}
+
+            //foreach (WatiN.Core.Button obj in ie.Buttons)
+            //{
+            //    obj.Highlight(false);
+            //}
+            //foreach (WatiN.Core.Div obj in ie.Divs)
+            //{
+            //    obj.Highlight(false);
+            //}
+            txtSelect.Text=e.Node.Text;
+            Div div = ie.Div(Find.ById(txtSelect.Text));
+            if (div != null && div.Exists)
+            {
+                div.Highlight(true);
+            }
+            TextField text = ie.TextField(Find.ByName(txtSelect.Text));
+            if (text != null && text.Exists)
+            {
+                text.Highlight(true);
+                text.Select();
+            }
+            WatiN.Core.Button butt = ie.Button(Find.ByValue(txtSelect.Text));
+            if (butt != null && butt.Exists)
+            {
+                butt.Highlight(true);
+            }
+            
         }
 
        
