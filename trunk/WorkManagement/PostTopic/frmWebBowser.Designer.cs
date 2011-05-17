@@ -38,9 +38,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtSelect = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLink.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSelect.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // webBrowser1
@@ -89,6 +91,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(267, 232);
             this.treeView1.TabIndex = 4;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // groupBox1
             // 
@@ -129,11 +132,20 @@
             this.simpleButton2.Text = "Close";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // txtSelect
+            // 
+            this.txtSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSelect.Location = new System.Drawing.Point(711, 9);
+            this.txtSelect.Name = "txtSelect";
+            this.txtSelect.Size = new System.Drawing.Size(182, 20);
+            this.txtSelect.TabIndex = 8;
+            // 
             // frmWebBowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 299);
+            this.Controls.Add(this.txtSelect);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -150,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLink.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtSelect.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,6 +179,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.TextEdit txtSelect;
 
     }
 }

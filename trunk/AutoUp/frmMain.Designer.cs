@@ -234,7 +234,9 @@ namespace AutoUp
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.OptionsColumn.AllowFocus = false;
-            this.colStatus.Width = 74;
+            this.colStatus.Visible = true;
+            this.colStatus.VisibleIndex = 2;
+            this.colStatus.Width = 76;
             // 
             // frmMain
             // 
