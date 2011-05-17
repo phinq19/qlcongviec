@@ -45,6 +45,7 @@ namespace AutoUp
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -147,8 +148,8 @@ namespace AutoUp
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.panelControl1);
             this.groupBox1.Controls.Add(this.gridControl1);
+            this.groupBox1.Controls.Add(this.panelControl1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(693, 345);
@@ -181,7 +182,8 @@ namespace AutoUp
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDateTime,
-            this.colLog});
+            this.colLog,
+            this.colStatus});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -195,7 +197,7 @@ namespace AutoUp
             this.colDateTime.OptionsColumn.AllowFocus = false;
             this.colDateTime.Visible = true;
             this.colDateTime.VisibleIndex = 0;
-            this.colDateTime.Width = 143;
+            this.colDateTime.Width = 124;
             // 
             // colLog
             // 
@@ -207,7 +209,7 @@ namespace AutoUp
             this.colLog.OptionsColumn.AllowFocus = false;
             this.colLog.Visible = true;
             this.colLog.VisibleIndex = 1;
-            this.colLog.Width = 523;
+            this.colLog.Width = 542;
             // 
             // defaultLookAndFeel1
             // 
@@ -223,6 +225,16 @@ namespace AutoUp
             // timer1
             // 
             this.timer1.Interval = 60000;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AppearanceHeader.Options.UseTextOptions = true;
+            this.colStatus.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colStatus.Caption = "Status";
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.OptionsColumn.AllowFocus = false;
+            this.colStatus.Width = 74;
             // 
             // frmMain
             // 
@@ -263,5 +275,6 @@ namespace AutoUp
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnOption;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
     }
 }
