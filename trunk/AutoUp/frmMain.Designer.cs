@@ -158,9 +158,10 @@ namespace AutoUp
             // 
             // panelControl1
             // 
-            this.panelControl1.Location = new System.Drawing.Point(191, 185);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(3, 17);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(261, 65);
+            this.panelControl1.Size = new System.Drawing.Size(687, 325);
             this.panelControl1.TabIndex = 1;
             this.panelControl1.Visible = false;
             // 

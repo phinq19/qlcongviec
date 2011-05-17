@@ -80,8 +80,10 @@ namespace WorkLibrary
                     return statusObj;
                     
                 }
+                Thread.Sleep(1000);
                 if (RunControl(multiforum.UserName, forum.UserName) != string.Empty)
                 {
+                    goto HadLogin;
                     Close();
                    
                     statusObj.Message = "Không tìm thấy textbox user name";
@@ -113,7 +115,8 @@ namespace WorkLibrary
                     return statusObj;
                     
                 }
-               
+                Thread.Sleep(1000);
+            HadLogin:
                 for (int j = 0; j < multiforum.NewThread.Count; j++)
                 {
                     Link href = GetLink(ie.Links, multiforum.NewThread[j].Value);
@@ -131,6 +134,7 @@ namespace WorkLibrary
                     }
                     
                 }
+                Thread.Sleep(1000);
                 if (RunControl(multiforum.Subject, _Subject) != string.Empty)
                 {
                     Close();
@@ -141,12 +145,13 @@ namespace WorkLibrary
                 }
                 
                 // Control Mode
+
                 if (RunControl(multiforum.Mode) != string.Empty)
                 {
-                    Close();
-                    statusObj.Message = "Không tìm thấy Div textarea message";
-                    statusObj.Status = "Error";
-                    return statusObj;
+                        Close();
+                        statusObj.Message = "Không tìm thấy Div textarea message";
+                        statusObj.Status = "Error";
+                        return statusObj;
                 }
                 if (RunControl(multiforum.Message, _Content) != string.Empty)
                 {
@@ -165,7 +170,7 @@ namespace WorkLibrary
                     return statusObj;
                    
                 }
-              
+                Thread.Sleep(1000);
                 statusObj.Message = "Successful";
                 statusObj.Status = "Successful";
                 statusObj.Value = ie.Url;
@@ -227,14 +232,16 @@ namespace WorkLibrary
                     return statusObj;
 
                 }
+                Thread.Sleep(1000);
                 if (RunControl(multiforum.UserName, forum.UserName) != string.Empty)
                 {
+                    goto HadLogin;
                     Close();
-
                     statusObj.Message = "Không tìm thấy textbox user name";
                     statusObj.Status = "Error";
                     return statusObj;
                 }
+             NoLogin:
                 if (RunControl(multiforum.PassWord, forum.Password) != string.Empty)
                 {
                     
@@ -261,12 +268,24 @@ namespace WorkLibrary
                     return statusObj;
 
                 }
-                if (RunControl(multiforum.Mode) != string.Empty)
+                Thread.Sleep(1000);
+            HadLogin:
+                int i = 0;
+                while (i < MyWatiN.Loop)
                 {
-                    Close();
-                    statusObj.Message = "Không tìm thấy Div textarea message";
-                    statusObj.Status = "Error";
-                    return statusObj;
+                    i++;
+                    if (RunControl(multiforum.Mode) != string.Empty)
+                    {
+                        Thread.Sleep(1000);
+                        if (i == MyWatiN.Loop)
+                        {
+                            Close();
+                            statusObj.Message = "Không tìm thấy Div textarea message";
+                            statusObj.Status = "Error";
+                            return statusObj;
+                        }
+                    }
+                    break;
                 }
                 if (RunControl(multiforum.Message, _Content) != string.Empty)
                 {
@@ -276,14 +295,14 @@ namespace WorkLibrary
                     statusObj.Status = "Error";
                     return statusObj;
                 }
-                if (RunControl(multiforum.Submit) != string.Empty)
-                {
-                    Close();
-                    statusObj.Message = "Không tìm thấy nút gửi bài viết";
-                    statusObj.Status = "Error";
-                    return statusObj;
+                //if (RunControl(multiforum.Submit) != string.Empty)
+                //{
+                //    Close();
+                //    statusObj.Message = "Không tìm thấy nút gửi bài viết";
+                //    statusObj.Status = "Error";
+                //    return statusObj;
 
-                }
+                //}
                 statusObj.Message = "Successful";
                 statusObj.Status = "Successful";
                 statusObj.Value = ie.Url;
@@ -401,7 +420,7 @@ namespace WorkLibrary
         {
             try
             {
-
+                
                 WatiN.Core.Settings.AutoStartDialogWatcher = false;
                 ie = new IE(webBrowse.ActiveXInstance);
                 
@@ -417,6 +436,7 @@ namespace WorkLibrary
             try
             {
                 ie.ClearCookies();
+                
             }
             catch { }
             return true;
@@ -428,6 +448,7 @@ namespace WorkLibrary
             try
             {
                 ie.ClearCache();
+                
             }
             catch { }
             try
@@ -445,8 +466,6 @@ namespace WorkLibrary
                 ie.Dispose();
             }
             catch { }
-            ie.Close();
-            ie.Dispose();
 
         }
 

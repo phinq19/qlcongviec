@@ -140,6 +140,7 @@ namespace WorkLibrary
                 try
                 {
                     ie.GoTo(Url);
+                    ie.WaitForComplete();
                     return string.Empty;
                 }
                 catch (Exception ex)
@@ -176,6 +177,7 @@ namespace WorkLibrary
         }
         public static WatiN.Core.Button GetButton(IE ie, HControl control)
         {
+
             switch (control.Attribute.ToLower())
             {
                 case AttributeType.Id:
@@ -304,16 +306,10 @@ namespace WorkLibrary
             {
                 case AttributeType.Id:
                     {
-                        foreach (WatiN.Core.Div bt in ie.Divs)
-                        {
-                            if (bt.Id == control.Value)
-                                return bt;
-                        }
+                        Div div = ie.Div(Find.ById(control.Value));
+                        if (div.Exists)
+                            return div;
                         return null;
-                        //Div div= ie.Div(Find.ById(control.Value));
-                        //if (div.Exists)
-                        //    return div;
-                        //return null;
                     }
                 case AttributeType.Name:
                     {
