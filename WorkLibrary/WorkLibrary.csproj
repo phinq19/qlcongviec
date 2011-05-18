@@ -55,6 +55,7 @@
     <Compile Include="Class\Common.cs" />
     <Compile Include="Class\Const.cs" />
     <Compile Include="Class\UpSetting.cs" />
+    <Compile Include="ProcessClass\MyCore.cs" />
     <Compile Include="Library\RootClass.cs" />
     <Compile Include="Class\Customers.cs" />
     <Compile Include="Class\CustomersType.cs" />

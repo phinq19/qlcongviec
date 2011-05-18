@@ -18,7 +18,8 @@ namespace NewProject
             Application.SetCompatibleTextRenderingDefault(false);
             //WebLink wl = WebLink.Get(1);
             //AutoPost au = new AutoPost(wl, "sadsa", "ádasds", "ádasds");
-            //au.PostTopic();
+            //au.PostTopic()
+            MyCore.Fill(" TextField [ ID : txtUser , Name : User ] | {UserName}");
             if (Common.CheckRegister() == false)
             {
                 MessageBox.Show("Phần mềm chưa được đăng ký sử dụng.Vui lòng đăng ký sử dụng phần mềm", "Thông báo");
