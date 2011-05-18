@@ -40,7 +40,7 @@ namespace WorkLibrary
                     break;
                 }
             }
-            return "Error"
+            return "Error";
         }
         public static string Goto(String text, IE ie)
         {
