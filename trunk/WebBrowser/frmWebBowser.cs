@@ -80,6 +80,7 @@ namespace WebBrowser
             root.Nodes.Add(div);
             div.Expand();
             root.Expand();
+            
             //TreeNode link = new TreeNode("Link");
             //foreach (WatiN.Core.Button obj in ie.d)
             //{
@@ -142,7 +143,8 @@ namespace WebBrowser
             //foreach (WatiN.Core.Div obj in ie.Divs)
             //{
             //    obj.Highlight(false);
-            //}
+            //}\
+            
             txtSelect.Text=e.Node.Text;
             Div div = ie.Div(Find.ById(txtSelect.Text));
             if (div != null && div.Exists)

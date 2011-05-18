@@ -37,7 +37,13 @@ namespace WorkLibrary
         public const string Text = "text";
         public const string Href = "href";
     }
-
+    public class ProcessType
+    {
+        public const string Goto = "goto";
+        public const string Click = "click";
+        public const string Fill = "fill";
+        public const string Wait = "wait";
+    }
     public enum Status
     {
         Add = 1,
