@@ -12,3 +12,5 @@ D:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.dll
 D:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.pdb
 E:\Work\qlcongviec\bin\WorkLibrary.dll
 E:\Work\qlcongviec\bin\WorkLibrary.pdb
+D:\Work\qlcongviec\bin\WorkLibrary.dll
+D:\Work\qlcongviec\bin\WorkLibrary.pdb

@@ -13,6 +13,7 @@ namespace WorkLibrary
         public string UserName;
         public string Password;
         public string Topic;
+        public string IDTopic;
         public string Note;
         public int Group;
         public string Type;
@@ -42,6 +43,7 @@ namespace WorkLibrary
            ,[UserName]
            ,[Password]
            ,[Topic]
+            ,[IDTopic]
            ,[Note]
            ,[Group]
            ,[Type])
@@ -51,6 +53,7 @@ namespace WorkLibrary
            ,'" + cus.UserName + @"'
            ,'" + cus.Password + @"'
             ,'" + cus.Topic+ @"'
+            ,'" + cus.IDTopic + @"'
             ,'" + cus.Note + @"'
              ," + cus.Group + @"
             ,'" + cus.Type + @"')";
@@ -67,6 +70,7 @@ namespace WorkLibrary
                   ,[Password] = '" + cus.Password + @"'
                     ,[Note] = '" + cus.Note + @"'
                      ,[Topic] = '" + cus.Topic + @"'
+                    ,[IDTopic] = '" + cus.IDTopic + @"'
                   ,[Group] = " + cus.Group + @"
                   ,[Type] = '" + cus.Type + @"' 
              WHERE ID=" + cus.ID;

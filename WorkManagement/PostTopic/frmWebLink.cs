@@ -72,6 +72,7 @@ namespace NewProject
             txtPassword.Text = _cus.Password;
             txtUrl.Text = _cus.Url;
             txtTopic.Text = _cus.Topic;
+            txtIDTopic.Text = _cus.IDTopic;
             txtUrlPost.Text = _cus.UrlPost;
             txtNote.Text = _cus.Note;
             lookUpEdit_Nhom.EditValue =int.Parse( _cus.Group.ToString());
@@ -88,6 +89,7 @@ namespace NewProject
             txtPassword.Text = "";
             txtNote.Text = "";
             txtTopic.Text = "";
+            txtIDTopic.Text = "";
             _cus = null;
 
             txtUsername.Focus();
@@ -177,6 +179,7 @@ namespace NewProject
                                     temp.Password = txtPassword.Text;
                                     temp.Note = txtNote.Text;
                                     temp.Topic = txtTopic.Text;
+                                    temp.IDTopic = txtIDTopic.Text;
                                 }
                                 else
                                 {
@@ -233,7 +236,7 @@ namespace NewProject
                 }
                 else
                 {
-                    MessageBox.Show("Không thể xoá khách hàng đang được sử dụng");
+                    MessageBox.Show("Không thể xoá weblink đang được sử dụng");
                 }
             }
         }

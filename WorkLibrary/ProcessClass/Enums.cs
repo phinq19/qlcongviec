@@ -16,6 +16,7 @@ namespace WorkLibrary
         public const string WEB = "WEB";
         public const string POS = "POS";
         public const string UP = "UP";
+        public const string UPEX = "UPEX";
 
     }
     public class ControlType
@@ -26,6 +27,7 @@ namespace WorkLibrary
         public const string AHref = "href0";
         public const string AHrefNoText = "href";
         public const string Div = "div";
+        public const string Link = "link";
     }
 
     public class AttributeType

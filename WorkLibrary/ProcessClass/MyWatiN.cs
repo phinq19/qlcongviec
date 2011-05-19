@@ -182,30 +182,24 @@ namespace WorkLibrary
             {
                 case AttributeType.Id:
                     {
-                        foreach (WatiN.Core.Button bt in ie.Buttons)
-                        {
-                            if(bt.Id==control.Value)
-                                return bt;
-                        }
+                        Button bt = ie.Button(Find.ById(control.Value));
+                        if (bt.Exists)
+                            return bt;
                         return null;
                     }
                 case AttributeType.Name:
                     {
-                        foreach (WatiN.Core.Button bt in ie.Buttons)
-                        {
-                            if (bt.Name == control.Value)
-                                return bt;
-                        }
+                        Button bt = ie.Button(Find.ByName(control.Value));
+                        if (bt.Exists)
+                            return bt;
                         return null;
                     }
                 case AttributeType.Class:
                      {
-                        foreach (WatiN.Core.Button bt in ie.Buttons)
-                        {
-                            if (bt.ClassName == control.Value)
-                                return bt;
-                        }
-                        return null;
+                         Button bt = ie.Button(Find.ByClass(control.Value));
+                         if (bt.Exists)
+                             return bt;
+                         return null;
                     }
                 case AttributeType.Text:
                      {
@@ -246,56 +240,44 @@ namespace WorkLibrary
             {
                 case AttributeType.Id:
                     {
-                        foreach (WatiN.Core.TextField bt in ie.TextFields)
-                        {
-                            if (bt.Id == control.Value)
-                                return bt;
-                        }
+                        TextField txt = ie.TextField(Find.ById(control.Value));
+                        if (txt.Exists)
+                            return txt;
                         return null;
                     }
                 case AttributeType.Name:
                     {
-                        foreach (WatiN.Core.TextField bt in ie.TextFields)
-                        {
-                            if (bt.Name == control.Value)
-                                return bt;
-                        }
+                        TextField txt = ie.TextField(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
                         return null;
                     }
                 case AttributeType.Class:
                     {
-                        foreach (WatiN.Core.TextField bt in ie.TextFields)
-                        {
-                            if (bt.ClassName == control.Value)
-                                return bt;
-                        }
+                        TextField txt = ie.TextField(Find.ByClass(control.Value));
+                        if (txt.Exists)
+                            return txt;
                         return null;
                     }
                 case AttributeType.Text:
                     {
-                        foreach (WatiN.Core.TextField bt in ie.TextFields)
-                        {
-                            if (bt.Text == control.Value)
-                                return bt;
-                        }
+                        TextField txt = ie.TextField(Find.ByText(control.Value));
+                        if (txt.Exists)
+                            return txt;
                         return null;
                     }
                 case AttributeType.Value:
                     {
-                        foreach (WatiN.Core.TextField bt in ie.TextFields)
-                        {
-                            if (bt.Value == control.Value)
-                                return bt;
-                        }
+                        TextField txt = ie.TextField(Find.ByValue(control.Value));
+                        if (txt.Exists)
+                            return txt;
                         return null;
                     }
                 default:
                     {
-                        foreach (WatiN.Core.TextField bt in ie.TextFields)
-                        {
-                            if (bt.Name == control.Value)
-                                return bt;
-                        }
+                        TextField txt = ie.TextField(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
                         return null;
                     }
             }
@@ -352,48 +334,37 @@ namespace WorkLibrary
             {
                 case AttributeType.Id:
                     {
-                        foreach (WatiN.Core.Link bt in ie.Links)
-                        {
-                            if (bt.Id == control.Value)
-                                return bt;
-                        }
+                        Link link = ie.Link(Find.ById(control.Value));
+                        if (link.Exists)
+                            return link;
                         return null;
                     }
                 case AttributeType.Name:
                     {
-                        foreach (WatiN.Core.Link bt in ie.Links)
-                        {
-                            if (bt.Name == control.Value)
-                                return bt;
-                        }
+                        Link link = ie.Link(Find.ByName(control.Value));
+                        if (link.Exists)
+                            return link;
                         return null;
                     }
                 case AttributeType.Class:
                     {
-                        foreach (WatiN.Core.Link bt in ie.Links)
-                        {
-                            if (bt.ClassName == control.Value)
-                                return bt;
-                        }
+                        Link link = ie.Link(Find.ByClass(control.Value));
+                        if (link.Exists)
+                            return link;
                         return null;
                     }
                 case AttributeType.Text:
                     {
-                        foreach (WatiN.Core.Link bt in ie.Links)
-                        {
-                            if (bt.Text == control.Value)
-                                return bt;
-                        }
+                        Link link = ie.Link(Find.ByText(control.Value));
+                        if (link.Exists)
+                            return link;
                         return null;
                     }
-                
                 default:
                     {
-                        foreach (WatiN.Core.Link bt in ie.Links)
-                        {
-                            if (bt.Name == control.Value)
-                                return bt;
-                        }
+                        Link link = ie.Link(Find.ByText(control.Value));
+                        if (link.Exists)
+                            return link;
                         return null;
                     }
             }
