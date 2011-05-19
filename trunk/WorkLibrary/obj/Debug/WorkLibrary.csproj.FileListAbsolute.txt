@@ -7,10 +7,10 @@ E:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.pdb
 D:\Work\qlcongviec\WorkLibrary\bin\Debug\WorkLibrary.dll
 D:\Work\qlcongviec\WorkLibrary\bin\Debug\WorkLibrary.pdb
 D:\Work\qlcongviec\WorkLibrary\bin\Debug\WatiN.Core.dll
-D:\Work\qlcongviec\WorkLibrary\obj\Debug\ResolveAssemblyReference.cache
-D:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.dll
-D:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.pdb
 E:\Work\qlcongviec\bin\WorkLibrary.dll
 E:\Work\qlcongviec\bin\WorkLibrary.pdb
 D:\Work\qlcongviec\bin\WorkLibrary.dll
+D:\Work\qlcongviec\WorkLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.dll
+D:\Work\qlcongviec\WorkLibrary\obj\Debug\WorkLibrary.pdb
 D:\Work\qlcongviec\bin\WorkLibrary.pdb

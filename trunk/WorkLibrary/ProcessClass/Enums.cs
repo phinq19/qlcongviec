@@ -45,6 +45,7 @@ namespace WorkLibrary
         public const string Click = "click";
         public const string Fill = "fill";
         public const string Wait = "wait";
+        public const string ClickConfirm = "clickconfirm";
     }
     public enum Status
     {
