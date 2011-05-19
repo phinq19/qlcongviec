@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBrowser", "WebBrowser\We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpEx", "AutoUpEx\AutoUpEx.csproj", "{215F0885-CCED-439D-B502-0EDD886E0CF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateWebStep", "CreateWebStep\CreateWebStep.csproj", "{9A3A8E43-C579-475F-AC20-67D282CCAF11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStepBuilder", "WebStepBuild\WebStepBuilder.csproj", "{9A3A8E43-C579-475F-AC20-67D282CCAF11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
