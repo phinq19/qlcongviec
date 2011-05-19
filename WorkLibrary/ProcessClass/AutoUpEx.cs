@@ -65,7 +65,14 @@ namespace WorkLibrary
                     return statusObj;
 
                 }
-                IDWeb = WebPage.GetByPage(forum.Url.Trim().ToLower()).ID;
+                WebPage wp = WebPage.GetByPage(forum.Url.Trim().ToLower());
+                if(wp==null)
+                {
+                    statusObj.Message = "Trang Web này chưa được đăng ký";
+                    statusObj.Status = "Error";
+                    return statusObj;
+                }
+                IDWeb = wp.ID;
                 DataTable dtTable1 = WebStep.GetByIDWeb(IDWeb);
             foreach (DataRow dtRow in dtTable1.Rows)
             {
@@ -77,6 +84,7 @@ namespace WorkLibrary
                 string s = MyCore.ProcessStep(processStep, ie);
                 if(s!=String.Empty)
                 {
+                    Close();
                     statusObj.Message = dtRow["Message"].ToString();
                     statusObj.Status = "Error";
                     return statusObj;
@@ -114,9 +122,9 @@ namespace WorkLibrary
             try
             {
                 
-                WatiN.Core.Settings.AutoStartDialogWatcher = false;
-               // ie = new IE(webBrowse.ActiveXInstance);
-                
+                WatiN.Core.Settings.AutoStartDialogWatcher = true;
+                //ie = new IE(webBrowse.ActiveXInstance);
+                //WatiN.Core.Settings.AutoCloseDialogs = true;
                 ie = new IE(true);
                 //ie.ShowWindow(NativeMethods.WindowShowStyle.Hide);
             }
