@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using WatiN.Core;
+using Image=WatiN.Core.Image;
 
 
 namespace WebBrowser
@@ -98,6 +99,24 @@ namespace WebBrowser
             }
             link.Expand();
             root.Nodes.Add(link);
+            root.Expand();
+            TreeNode image = new TreeNode("Image");
+            foreach (WatiN.Core.Image obj in ie.Images)
+            {
+                //if (obj.ClassName != null && obj.ClassName.ToString() != "")
+                {
+                    TreeNode nodeL = new TreeNode(obj.Name);
+                    nodeL.Nodes.Add("Id = " + obj.Id);
+                    nodeL.Nodes.Add("Value = " + obj.Name);
+                    nodeL.Nodes.Add("Text = " + obj.Text);
+                    nodeL.Nodes.Add("Link = " + obj.Src);
+                    nodeL.Nodes.Add("Class = " + obj.ClassName);
+                    //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
+                    image.Nodes.Add(nodeL);
+                }
+            }
+            image.Expand();
+            root.Nodes.Add(image);
             root.Expand();
             
         }
