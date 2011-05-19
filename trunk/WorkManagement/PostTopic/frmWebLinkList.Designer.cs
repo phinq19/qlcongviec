@@ -41,6 +41,7 @@
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTopic = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIDTopic = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ItemLookUp_DVT = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -114,7 +115,8 @@
             this.colGroup,
             this.colID,
             this.colNote,
-            this.colTopic});
+            this.colTopic,
+            this.colIDTopic});
             this.gridView1.GridControl = this.grid_KhachHang;
             this.gridView1.GroupCount = 1;
             this.gridView1.GroupPanelText = "<Kéo cột để nhóm đối tác>";
@@ -137,7 +139,7 @@
             this.colUrl.OptionsColumn.AllowFocus = false;
             this.colUrl.Visible = true;
             this.colUrl.VisibleIndex = 0;
-            this.colUrl.Width = 179;
+            this.colUrl.Width = 184;
             // 
             // colUrlPost
             // 
@@ -149,7 +151,7 @@
             this.colUrlPost.OptionsColumn.AllowFocus = false;
             this.colUrlPost.Visible = true;
             this.colUrlPost.VisibleIndex = 1;
-            this.colUrlPost.Width = 216;
+            this.colUrlPost.Width = 223;
             // 
             // colUsername
             // 
@@ -160,8 +162,8 @@
             this.colUsername.Name = "colUsername";
             this.colUsername.OptionsColumn.AllowFocus = false;
             this.colUsername.Visible = true;
-            this.colUsername.VisibleIndex = 3;
-            this.colUsername.Width = 105;
+            this.colUsername.VisibleIndex = 4;
+            this.colUsername.Width = 102;
             // 
             // colPassword
             // 
@@ -204,7 +206,7 @@
             this.colNote.Name = "colNote";
             this.colNote.OptionsColumn.AllowFocus = false;
             this.colNote.Visible = true;
-            this.colNote.VisibleIndex = 4;
+            this.colNote.VisibleIndex = 5;
             this.colNote.Width = 148;
             // 
             // colTopic
@@ -217,7 +219,19 @@
             this.colTopic.OptionsColumn.AllowFocus = false;
             this.colTopic.Visible = true;
             this.colTopic.VisibleIndex = 2;
-            this.colTopic.Width = 212;
+            this.colTopic.Width = 219;
+            // 
+            // colIDTopic
+            // 
+            this.colIDTopic.AppearanceHeader.Options.UseTextOptions = true;
+            this.colIDTopic.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colIDTopic.Caption = "IDTopic";
+            this.colIDTopic.FieldName = "IDTopic";
+            this.colIDTopic.Name = "colIDTopic";
+            this.colIDTopic.OptionsColumn.AllowFocus = false;
+            this.colIDTopic.Visible = true;
+            this.colIDTopic.VisibleIndex = 3;
+            this.colIDTopic.Width = 90;
             // 
             // repositoryItemComboBox1
             // 
@@ -432,5 +446,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.Columns.GridColumn colNote;
         private DevExpress.XtraGrid.Columns.GridColumn colTopic;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDTopic;
     }
 }

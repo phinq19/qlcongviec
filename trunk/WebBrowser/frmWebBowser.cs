@@ -79,20 +79,26 @@ namespace WebBrowser
             }
             root.Nodes.Add(div);
             div.Expand();
+          
+
+            TreeNode link = new TreeNode("Link");
+            foreach (WatiN.Core.Link obj in ie.Links)
+            {
+                //if (obj.ClassName != null && obj.ClassName.ToString() != "")
+                {
+                    TreeNode nodeL = new TreeNode(obj.Text);
+                    nodeL.Nodes.Add("Id = " + obj.Id);
+                    nodeL.Nodes.Add("Value = " + obj.Name);
+                    nodeL.Nodes.Add("Text = " + obj.Text);
+                    nodeL.Nodes.Add("Link = " + obj.Url);
+                    nodeL.Nodes.Add("Class = " + obj.ClassName);
+                    //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
+                    link.Nodes.Add(nodeL);
+                }
+            }
+            link.Expand();
+            root.Nodes.Add(link);
             root.Expand();
-            
-            //TreeNode link = new TreeNode("Link");
-            //foreach (WatiN.Core.Button obj in ie.d)
-            //{
-            //    TreeNode nodeB = new TreeNode(obj.Value);
-            //    nodeB.Nodes.Add("Id = " + obj.Id);
-            //    nodeB.Nodes.Add("ClassName = " + obj.ClassName);
-            //    nodeB.Nodes.Add("Text = " + obj.Text);
-            //    nodeB.Nodes.Add("Value = " + obj.Value);
-            //    //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
-            //    button.Nodes.Add(nodeB);
-            //}
-            //root.Nodes.Add(button);
             
         }
 
@@ -146,23 +152,67 @@ namespace WebBrowser
             //}\
             
             txtSelect.Text=e.Node.Text;
-            Div div = ie.Div(Find.ById(txtSelect.Text));
-            if (div != null && div.Exists)
+            string Value = e.Node.Text;
+            if(Value.IndexOf(" = ")>=0)
             {
-                div.Highlight(true);
+                Value = Value.Split('=')[1].Trim();
             }
-            TextField text = ie.TextField(Find.ByName(txtSelect.Text));
-            if (text != null && text.Exists)
+            if (e.Node.FullPath.IndexOf("Div") >= 0)
             {
-                text.Highlight(true);
-                text.Select();
+                if (txtSelect.Text.IndexOf("Name = ") >= 0)
+                {
+                    Div div = ie.Div(Find.ByName(Value));
+                    if (div != null && div.Exists)
+                    {
+                        div.Highlight(true);
+                    }
+                }
+                else
+                {
+                    Div div = ie.Div(Find.ById(Value));
+                    if (div != null && div.Exists)
+                    {
+                        div.Highlight(true);
+                    }
+                }
             }
-            WatiN.Core.Button butt = ie.Button(Find.ByValue(txtSelect.Text));
-            if (butt != null && butt.Exists)
+            else if (e.Node.FullPath.IndexOf("TextBox") >= 0)
             {
-                butt.Highlight(true);
+                TextField text = ie.TextField(Find.ByName(Value));
+                if (text != null && text.Exists)
+                {
+                    text.Highlight(true);
+                    text.Select();
+                }
             }
-            
+            else if (e.Node.FullPath.IndexOf("Button") >= 0)
+            {
+                WatiN.Core.Button butt = ie.Button(Find.ByValue(Value));
+                if (butt != null && butt.Exists)
+                {
+                    butt.Highlight(true);
+                }
+            }
+            else if (e.Node.FullPath.IndexOf("Link") >= 0)
+            {
+                if (txtSelect.Text.IndexOf("Class = ") >= 0)
+                {
+                    WatiN.Core.Link link = ie.Link(Find.ByClass(Value));
+                    if (link != null && link.Exists)
+                    {
+                        link.Highlight(true);
+                    }
+                }
+                else
+                {
+                    WatiN.Core.Link link = ie.Link(Find.ByText(Value));
+                    if (link != null && link.Exists)
+                    {
+                        link.Highlight(true);
+                    }
+                }
+            }
+
         }
 
        

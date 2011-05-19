@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using WorkLibrary;
+using NewProject;
 
-namespace NewProject
+namespace AutoUp
 {
     static class Program
     {
@@ -16,24 +17,20 @@ namespace NewProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //WebLink wl = WebLink.Get(1);
-            //AutoPost au = new AutoPost(wl, "sadsa", "ádasds", "ádasds");
-            //au.PostTopic()
-            //MyCore.Fill(" TextField [ ID : txtUser , Name : User ] | {UserName}");
+            
             if (Common.CheckRegister() == false)
             {
                 MessageBox.Show("Phần mềm chưa được đăng ký sử dụng.Vui lòng đăng ký sử dụng phần mềm", "Thông báo");
                 frmRegister frm = new frmRegister();
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    Application.Run(new frmRibbonForm());
+                    Application.Run(new frmOption());
                 }
             }
             else
             {
-                Application.Run(new frmRibbonForm());
+                Application.Run(new frmOption());
             }
-            
         }
     }
 }

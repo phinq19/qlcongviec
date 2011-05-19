@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1A3A699D-D600-46D5-B8D5-C88896D02118}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -54,7 +54,10 @@
     <Compile Include="Class\CodeType.cs" />
     <Compile Include="Class\Common.cs" />
     <Compile Include="Class\Const.cs" />
+    <Compile Include="Class\WebPage.cs" />
+    <Compile Include="Class\WebStep.cs" />
     <Compile Include="Class\UpSetting.cs" />
+    <Compile Include="ProcessClass\AutoUpEx.cs" />
     <Compile Include="ProcessClass\MyCore.cs" />
     <Compile Include="Library\RootClass.cs" />
     <Compile Include="Class\Customers.cs" />

@@ -32,6 +32,8 @@
             this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.txtIDTopic = new DevExpress.XtraEditors.TextEdit();
             this.txtTopic = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -54,6 +56,7 @@
             this.chkCloseAlterSave = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDTopic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrlPost.Properties)).BeginInit();
@@ -67,7 +70,7 @@
             // 
             // btnThemMoi
             // 
-            this.btnThemMoi.Location = new System.Drawing.Point(196, 264);
+            this.btnThemMoi.Location = new System.Drawing.Point(196, 292);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(75, 23);
             this.btnThemMoi.TabIndex = 2;
@@ -76,7 +79,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(354, 264);
+            this.btnXoa.Location = new System.Drawing.Point(354, 292);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 3;
@@ -85,6 +88,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.labelControl9);
+            this.groupControl1.Controls.Add(this.txtIDTopic);
             this.groupControl1.Controls.Add(this.txtTopic);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl6);
@@ -104,21 +109,37 @@
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(498, 243);
+            this.groupControl1.Size = new System.Drawing.Size(498, 271);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "WebLink Info";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(20, 162);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(39, 13);
+            this.labelControl9.TabIndex = 29;
+            this.labelControl9.Text = "ID Topic";
+            // 
+            // txtIDTopic
+            // 
+            this.txtIDTopic.EnterMoveNextControl = true;
+            this.txtIDTopic.Location = new System.Drawing.Point(68, 159);
+            this.txtIDTopic.Name = "txtIDTopic";
+            this.txtIDTopic.Size = new System.Drawing.Size(373, 20);
+            this.txtIDTopic.TabIndex = 28;
             // 
             // txtTopic
             // 
             this.txtTopic.EnterMoveNextControl = true;
-            this.txtTopic.Location = new System.Drawing.Point(68, 159);
+            this.txtTopic.Location = new System.Drawing.Point(68, 185);
             this.txtTopic.Name = "txtTopic";
             this.txtTopic.Size = new System.Drawing.Size(373, 20);
             this.txtTopic.TabIndex = 6;
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(35, 162);
+            this.labelControl7.Location = new System.Drawing.Point(35, 188);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(25, 13);
             this.labelControl7.TabIndex = 27;
@@ -126,7 +147,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(36, 197);
+            this.labelControl6.Location = new System.Drawing.Point(36, 223);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(23, 13);
             this.labelControl6.TabIndex = 25;
@@ -134,7 +155,7 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(68, 185);
+            this.txtNote.Location = new System.Drawing.Point(68, 211);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(373, 44);
             this.txtNote.TabIndex = 7;
@@ -149,11 +170,11 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(41, 136);
+            this.labelControl5.Location = new System.Drawing.Point(14, 136);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(18, 13);
+            this.labelControl5.Size = new System.Drawing.Size(46, 13);
             this.labelControl5.TabIndex = 23;
-            this.labelControl5.Text = "Link";
+            this.labelControl5.Text = "Link Topic";
             // 
             // txtUrl
             // 
@@ -252,7 +273,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(277, 264);
+            this.btnLuu.Location = new System.Drawing.Point(277, 292);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(71, 23);
             this.btnLuu.TabIndex = 1;
@@ -261,7 +282,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(435, 264);
+            this.btnThoat.Location = new System.Drawing.Point(435, 292);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
             this.btnThoat.TabIndex = 4;
@@ -271,7 +292,7 @@
             // chkCloseAlterSave
             // 
             this.chkCloseAlterSave.EditValue = true;
-            this.chkCloseAlterSave.Location = new System.Drawing.Point(10, 261);
+            this.chkCloseAlterSave.Location = new System.Drawing.Point(10, 289);
             this.chkCloseAlterSave.Name = "chkCloseAlterSave";
             this.chkCloseAlterSave.Properties.Caption = "Đóng sau khi lưu";
             this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 18);
@@ -281,7 +302,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 299);
+            this.ClientSize = new System.Drawing.Size(522, 327);
             this.Controls.Add(this.chkCloseAlterSave);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThemMoi);
@@ -297,6 +318,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDTopic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTopic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrlPost.Properties)).EndInit();
@@ -335,5 +357,7 @@
         private DevExpress.XtraEditors.MemoEdit txtNote;
         private DevExpress.XtraEditors.TextEdit txtTopic;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit txtIDTopic;
     }
 }

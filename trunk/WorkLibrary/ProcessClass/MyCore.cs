@@ -36,7 +36,7 @@ namespace WorkLibrary
                 }
                 case ProcessType.Wait:
                 {
-                    return Wait(processText, ie);
+                    return Wait(processText);
                     break;
                 }
             }
@@ -107,6 +107,7 @@ namespace WorkLibrary
         {
             int w = int.Parse(text)*1000;
             Thread.Sleep(w);
+            return String.Empty;
         }
 
         private static string RunControl(List<HControl> controls, IE ie)
@@ -142,6 +143,18 @@ namespace WorkLibrary
                                 ie.GoTo(control.Value);
                                 ie.WaitForComplete();
                                 return String.Empty;
+                                break;
+                            }
+                        case ControlType.Link:
+                            {
+                                WatiN.Core.Link obj = MyWatiN.GetLink(ie, control);
+                                if (obj != null)
+                                {
+                                    obj.Click();
+                                    ie.WaitForComplete();
+                                    return String.Empty;
+
+                                }
                                 break;
                             }
                         case ControlType.Button:
