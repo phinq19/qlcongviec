@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using WatiN.Core;
+using WatiN.Core.DialogHandlers;
+using WatiN.Core.Native.Windows;
 using Image=WatiN.Core.Image;
 using WorkLibrary;
 using NewProject;
@@ -33,6 +35,7 @@ namespace CreateWebStep
         WebPage webpage;
         WebPage webpageUp;
         public long pageID = -1;
+        private DialogWatcher dialogWatcher;
         private void frmWebBowser_Load(object sender, EventArgs e)
         {
             Settings.WaitForCompleteTimeOut = 120000;
@@ -40,8 +43,10 @@ namespace CreateWebStep
             webBrowser1.ScriptErrorsSuppressed = true;
             //IE.Settings.AutoStartDialogWatcher = false;
             WatiN.Core.Settings.AutoStartDialogWatcher = false;
+            WatiN.Core.Settings.AutoCloseDialogs = true;
             ie = new IE(webBrowser1.ActiveXInstance);
-            WatiN.Core.Settings.AutoStartDialogWatcher = true;
+            dialogWatcher = new DialogWatcher(new Window(this.Handle));
+            dialogWatcher.CloseUnhandledDialogs = false;
             webpage = new WebPage();
             lookUpEditPage.Properties.DataSource = webpage.GetAllToTable();
             lookUpEditPage.Properties.DisplayMember = "Page";
@@ -307,6 +312,8 @@ namespace CreateWebStep
             }
             if (gridView3.FocusedRowHandle >= 0)
             {
+                btnProcessAndNext.Enabled = false;
+                bntProcess.Enabled = false;
                 type = 1;
                 proccessStep = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, colAction1).ToString();
                 backgroundWorker2.RunWorkerAsync();
@@ -321,6 +328,7 @@ namespace CreateWebStep
                 proccessStep = proccessStep.Replace("{Password}", forum.Password);
                 proccessStep = proccessStep.Replace("{Url}", forum.UrlPost);
                 proccessStep = proccessStep.Replace("{IDTopic}", forum.IDTopic);
+                dialogWatcher.CloseUnhandledDialogs = true;
                 result = MyCore.ProcessStep(proccessStep, ie);
             }
             catch { }
@@ -329,6 +337,9 @@ namespace CreateWebStep
 
         private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            btnProcessAndNext.Enabled = true;
+            bntProcess.Enabled = true;
+            dialogWatcher.CloseUnhandledDialogs = false;
             if (result != String.Empty)
             {
                 MessageBox.Show(result, "Lỗi");

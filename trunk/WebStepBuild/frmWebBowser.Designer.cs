@@ -44,10 +44,11 @@
             this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.bntNew = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.bntNew = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
@@ -107,7 +108,6 @@
             this.colIDTopic = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnClearCache = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
             ((System.ComponentModel.ISupportInitialize)(this.txtLink.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -116,6 +116,7 @@
             this.hideContainerRight.SuspendLayout();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
+            this.hideContainerLeft.SuspendLayout();
             this.dockPanel2.SuspendLayout();
             this.dockPanel2_Container.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -141,7 +142,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryGroup)).BeginInit();
-            this.hideContainerLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -279,6 +279,14 @@
             this.dockPanel1_Container.Size = new System.Drawing.Size(306, 399);
             this.dockPanel1_Container.TabIndex = 0;
             // 
+            // hideContainerLeft
+            // 
+            this.hideContainerLeft.Controls.Add(this.dockPanel2);
+            this.hideContainerLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.hideContainerLeft.Location = new System.Drawing.Point(0, 0);
+            this.hideContainerLeft.Name = "hideContainerLeft";
+            this.hideContainerLeft.Size = new System.Drawing.Size(19, 431);
+            // 
             // dockPanel2
             // 
             this.dockPanel2.Controls.Add(this.dockPanel2_Container);
@@ -313,23 +321,25 @@
             this.dockPanel2_Container.Size = new System.Drawing.Size(526, 399);
             this.dockPanel2_Container.TabIndex = 0;
             // 
-            // bntNew
-            // 
-            this.bntNew.Location = new System.Drawing.Point(214, 367);
-            this.bntNew.Name = "bntNew";
-            this.bntNew.Size = new System.Drawing.Size(83, 26);
-            this.bntNew.TabIndex = 44;
-            this.bntNew.Text = "New";
-            this.bntNew.Click += new System.EventHandler(this.bntNew_Click);
-            // 
             // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSave.Location = new System.Drawing.Point(301, 367);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(124, 26);
             this.btnSave.TabIndex = 43;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // bntNew
+            // 
+            this.bntNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bntNew.Location = new System.Drawing.Point(214, 367);
+            this.bntNew.Name = "bntNew";
+            this.bntNew.Size = new System.Drawing.Size(83, 26);
+            this.bntNew.TabIndex = 44;
+            this.bntNew.Text = "New";
+            this.bntNew.Click += new System.EventHandler(this.bntNew_Click);
             // 
             // simpleButton7
             // 
@@ -557,10 +567,12 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox6.Controls.Add(this.gridControl2);
             this.groupBox6.Location = new System.Drawing.Point(9, 140);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(416, 221);
+            this.groupBox6.Size = new System.Drawing.Size(416, 399);
             this.groupBox6.TabIndex = 35;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Step";
@@ -581,7 +593,7 @@
             this.repositoryItemLookUpEdit2,
             this.repositoryItemCalcEdit2,
             this.repositoryItemCheckEdit2});
-            this.gridControl2.Size = new System.Drawing.Size(396, 201);
+            this.gridControl2.Size = new System.Drawing.Size(396, 379);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -941,14 +953,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Step Info";
             // 
-            // hideContainerLeft
-            // 
-            this.hideContainerLeft.Controls.Add(this.dockPanel2);
-            this.hideContainerLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.hideContainerLeft.Location = new System.Drawing.Point(0, 0);
-            this.hideContainerLeft.Name = "hideContainerLeft";
-            this.hideContainerLeft.Size = new System.Drawing.Size(19, 431);
-            // 
             // frmWebBowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -980,6 +984,7 @@
             this.hideContainerRight.ResumeLayout(false);
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
+            this.hideContainerLeft.ResumeLayout(false);
             this.dockPanel2.ResumeLayout(false);
             this.dockPanel2_Container.ResumeLayout(false);
             this.dockPanel2_Container.PerformLayout();
@@ -1007,7 +1012,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryGroup)).EndInit();
-            this.hideContainerLeft.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
