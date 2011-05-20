@@ -20,18 +20,28 @@ namespace CreateWebStep
         public frmWebBowser()
         {
             InitializeComponent();
+            dtSource = new DataTable();
+            dtSource.Columns.Add("ID", typeof(long));
+            dtSource.Columns.Add("Step", typeof(int));
+            dtSource.Columns.Add("Action", typeof(string));
+            dtSource.Columns.Add("Message", typeof(string));
+            gridControl2.DataSource = dtSource;
         }
-
+        private DataTable dtSource;
         private IE ie;
         private FireFox fire;
         WebPage webpage;
+        WebPage webpageUp;
         public long pageID = -1;
         private void frmWebBowser_Load(object sender, EventArgs e)
         {
+            Settings.WaitForCompleteTimeOut = 120000;
+            Settings.AttachToBrowserTimeOut = 120000;
             webBrowser1.ScriptErrorsSuppressed = true;
             //IE.Settings.AutoStartDialogWatcher = false;
             WatiN.Core.Settings.AutoStartDialogWatcher = false;
             ie = new IE(webBrowser1.ActiveXInstance);
+            WatiN.Core.Settings.AutoStartDialogWatcher = true;
             webpage = new WebPage();
             lookUpEditPage.Properties.DataSource = webpage.GetAllToTable();
             lookUpEditPage.Properties.DisplayMember = "Page";
@@ -163,7 +173,7 @@ namespace CreateWebStep
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -258,6 +268,16 @@ namespace CreateWebStep
                 long ID = long.Parse(lookUpEditPage.EditValue.ToString());
                 gridControl3.DataSource = WebStep.GetByIDWeb(ID);
                 _LoadDSWebLink(lookUpEditPage.Text);
+                webpageUp = new WebPage();
+                webpageUp.ID = ID;
+                webpageUp = (WebPage)webpageUp.Get();
+                if (webpageUp != null)
+                {
+                    txtUrl.Text = webpageUp.Page;
+                    txtID.Text = webpageUp.ID.ToString();
+                    dtSource = WebStep.GetByIDWeb(webpageUp.ID);
+                    gridControl2.DataSource = dtSource;
+                }
             }
         }
         int type = 0;
@@ -295,11 +315,15 @@ namespace CreateWebStep
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            proccessStep = proccessStep.Replace("{UserName}", forum.UserName);
-            proccessStep = proccessStep.Replace("{Password}", forum.Password);
-            proccessStep = proccessStep.Replace("{Url}", forum.UrlPost);
-            proccessStep = proccessStep.Replace("{IDTopic}", forum.IDTopic);
-            result = MyCore.ProcessStep(proccessStep, ie);
+            try
+            {
+                proccessStep = proccessStep.Replace("{UserName}", forum.UserName);
+                proccessStep = proccessStep.Replace("{Password}", forum.Password);
+                proccessStep = proccessStep.Replace("{Url}", forum.UrlPost);
+                proccessStep = proccessStep.Replace("{IDTopic}", forum.IDTopic);
+                result = MyCore.ProcessStep(proccessStep, ie);
+            }
+            catch { }
            
         }
 
@@ -358,6 +382,9 @@ namespace CreateWebStep
 
         private void btnClearCache_Click(object sender, EventArgs e)
         {
+            gridView3.ClearSelection();
+            gridView3.FocusedRowHandle = 0;
+            gridView3.SelectRow(0);
             try
             {
                 ie.ClearCache();
@@ -369,9 +396,224 @@ namespace CreateWebStep
                 ie.ClearCookies();
             }
             catch { }
+            try
+            {
+                //webBrowser1.Dispose();
+                //webBrowser1 = new WebBrowser();
+                //webBrowser1.Name = "webBrowser1";
+                //webBrowser1.Dock = DockStyle.Fill;
+                //webBrowser1.ScriptErrorsSuppressed = true;
+                //groupBox1.Controls.Add(webBrowser1);
+                //ie = new IE(webBrowser1.ActiveXInstance);
+            }
+            catch { }
+            try
+            {
+               
+            }
+            catch { }
         }
 
         private void hideContainerLeft_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton12_Click(object sender, EventArgs e)
+        {
+            txtAction.Text = "Goto({ Url })";
+            txtMessage.Text = "Không mở được trang web";
+        }
+
+        private void simpleButton11_Click(object sender, EventArgs e)
+        {
+            txtAction.Text = "Wait( 1 )";
+        }
+
+        private void simpleButton10_Click(object sender, EventArgs e)
+        {
+            txtAction.Text = "Fill(TextBox[ Id : ]|{ UserName })";
+            txtMessage.Text = "Không tìm thấy text box Username";
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+            txtAction.Text = "Fill(TextBox[ Id : ]|{ Password })";
+            txtMessage.Text = "Không tìm thấy text box Password";
+        }
+
+        private void simpleButton8_Click(object sender, EventArgs e)
+        {
+            txtAction.Text = "Click(Button[ Id : ])";
+            txtMessage.Text = "Không tìm thấy button";
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            txtAction.Text = "Click(Link[ Id : ])";
+            txtMessage.Text = "Không tìm thấy link";
+        }
+
+        private void simpleButton2_Click_1(object sender, EventArgs e)
+        {
+            txtAction.Text = "";
+            txtMessage.Text = "";
+        }
+
+        private void bntAdd_Click(object sender, EventArgs e)
+        {
+            DataRow dtRow = dtSource.NewRow();
+            dtRow["Action"] = txtAction.Text;
+            dtRow["Message"] = txtMessage.Text;
+            dtSource.Rows.Add(dtRow);
+            CreateStep();
+        }
+        private void CreateStep()
+        {
+            int i = 1;
+            foreach (DataRow dtRow in dtSource.Rows)
+            {
+                try
+                {
+                    dtRow["Step"] = i;
+                    i++;
+                }
+                catch (Exception)
+                {
+
+
+                }
+
+            }
+        }
+
+        private void bntInsert_Click(object sender, EventArgs e)
+        {
+            DataRow dtRow = dtSource.NewRow();
+            dtRow["Action"] = txtAction.Text;
+            dtRow["Message"] = txtMessage.Text;
+            dtSource.Rows.InsertAt(dtRow, int.Parse(calcEditStep.Value.ToString()) - 1);
+            CreateStep();
+        }
+
+        private void bntUpdate_Click(object sender, EventArgs e)
+        {
+            foreach (DataRow dtRow in dtSource.Rows)
+            {
+                try
+                {
+                    if (dtRow["Step"].ToString() == txtStep.Text)
+                    {
+                        dtRow["Action"] = txtAction.Text;
+                        dtRow["Message"] = txtMessage.Text;
+                        break;
+                    }
+                }
+                catch (Exception)
+                {
+
+
+                }
+            }
+        }
+
+        private void bntDelete_Click(object sender, EventArgs e)
+        {
+            gridView2.DeleteSelectedRows();
+            CreateStep();
+        }
+
+        private void gridView2_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (gridView2.FocusedRowHandle >= 0)
+            {
+                txtAction.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, colAction).ToString();
+                txtMessage.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, colMessage).ToString();
+                txtStep.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, colStep).ToString();
+            }
+        }
+
+        private void gridView2_Click(object sender, EventArgs e)
+        {
+            gridView2_FocusedRowChanged(null, null);
+        }
+
+        private void bntNew_Click(object sender, EventArgs e)
+        {
+            txtID.Text = "";
+            txtUrl.Text = "";
+            txtAction.Text = "";
+            txtStep.Text = "";
+            txtMessage.Text = "";
+            webpageUp = null;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtUrl.Text == "")
+            {
+                MessageBox.Show("Nhập vào tên trang Web");
+                return;
+            }
+            if (webpageUp == null)
+            {
+                webpageUp = new WebPage();
+                webpageUp.Page = txtUrl.Text;
+                long ID = webpageUp.Insert();
+                txtID.Text = ID.ToString();
+                foreach (DataRow dtRow in dtSource.Rows)
+                {
+                    try
+                    {
+                        WebStep webStep = new WebStep();
+                        webStep.IDWeb = ID;
+                        webStep.Step = long.Parse(dtRow["Step"].ToString());
+                        webStep.Action = dtRow["Action"].ToString();
+                        webStep.Message = dtRow["Message"].ToString();
+                        webStep.Insert();
+
+                    }
+                    catch (Exception)
+                    {
+
+
+                    }
+                }
+                MessageBox.Show("Đã lưu thành công");
+                lookUpEditPage_EditValueChanged(null, null);
+
+            }
+            else
+            {
+
+                webpageUp.Page = txtUrl.Text;
+                webpageUp.Update();
+                WebStep.DeleteByID(webpageUp.ID);
+                foreach (DataRow dtRow in dtSource.Rows)
+                {
+                    try
+                    {
+                        WebStep webStep = new WebStep();
+                        webStep.IDWeb = webpageUp.ID;
+                        webStep.Step = long.Parse(dtRow["Step"].ToString());
+                        webStep.Action = dtRow["Action"].ToString();
+                        webStep.Message = dtRow["Message"].ToString();
+                        webStep.Insert();
+
+                    }
+                    catch (Exception)
+                    {
+
+
+                    }
+                }
+                MessageBox.Show("Đã lưu thành công");
+                lookUpEditPage_EditValueChanged(null, null);
+               
+            }
+        }
+
+        private void gridControl2_Click(object sender, EventArgs e)
         {
 
         }

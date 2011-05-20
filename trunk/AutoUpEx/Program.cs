@@ -24,12 +24,12 @@ namespace AutoUp
                 frmRegister frm = new frmRegister();
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    Application.Run(new frmOption());
+                    Application.Run(new frmAutoUp());
                 }
             }
             else
             {
-                Application.Run(new frmOption());
+                Application.Run(new frmAutoUp());
             }
         }
     }

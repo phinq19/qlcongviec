@@ -122,10 +122,10 @@ namespace WorkLibrary
             try
             {
                 
-                WatiN.Core.Settings.AutoStartDialogWatcher = true;
-                //ie = new IE(webBrowse.ActiveXInstance);
-                //WatiN.Core.Settings.AutoCloseDialogs = true;
-                ie = new IE(true);
+                WatiN.Core.Settings.AutoStartDialogWatcher = false;
+                ie = new IE(webBrowse.ActiveXInstance);
+                WatiN.Core.Settings.AutoCloseDialogs = true;
+                //ie = new IE(true);
                 //ie.ShowWindow(NativeMethods.WindowShowStyle.Hide);
             }
             catch { return false; }
