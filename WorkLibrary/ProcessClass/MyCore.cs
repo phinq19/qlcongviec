@@ -6,13 +6,13 @@ using WatiN.Core;
 using System.Threading;
 using System.Text.RegularExpressions;
 using WatiN.Core.DialogHandlers;
+using WatiN.Core.Native.Windows;
 
 namespace WorkLibrary
 {
     public class MyCore
     {
         static int Loop = 5;
-        
         public static string ProcessStep(String strstep, IE ie)
         {
             try
@@ -258,7 +258,6 @@ namespace WorkLibrary
                                 WatiN.Core.Link obj = MyWatiN.GetLink(ie, control);
                                 if (obj != null)
                                 {
-                                   
                                     ConfirmDialogHandler approveConfirmDialog = new ConfirmDialogHandler();
                                     using (new UseDialogOnce(ie.DialogWatcher, approveConfirmDialog))
                                     {
@@ -298,18 +297,16 @@ namespace WorkLibrary
                                 WatiN.Core.Button obj = MyWatiN.GetButton(ie, control);
                                 if (obj != null)
                                 {
-                                    ConfirmDialogHandler approveConfirmDialog = new ConfirmDialogHandler();
-
-                                    using (new UseDialogOnce(ie.DialogWatcher, approveConfirmDialog))
-                                    {
-                                        obj.ClickNoWait();
-                                        approveConfirmDialog.WaitUntilExists();
-                                        approveConfirmDialog.OKButton.Click();
-                                        ie.WaitForComplete();
-                                        return String.Empty;
-                                    }
-
-
+                                    ConfirmDialogHandler myHandler = new ConfirmDialogHandler();
+                                    obj.ClickNoWait();
+                                        try
+                                        {
+                                            myHandler.WaitUntilExists(1);
+                                            myHandler.OKButton.Click();
+                                        }
+                                        catch { }
+                                    ie.WaitForComplete();
+                                    return String.Empty;
                                 }
                                 break;
                             }
