@@ -59,6 +59,12 @@ namespace CreateWebStep
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -79,13 +85,12 @@ namespace CreateWebStep
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.gridControl2);
             this.groupBox2.Location = new System.Drawing.Point(12, 149);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(707, 329);
+            this.groupBox2.Size = new System.Drawing.Size(685, 329);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Step";
@@ -106,7 +111,7 @@ namespace CreateWebStep
             this.repositoryItemLookUpEdit2,
             this.repositoryItemCalcEdit2,
             this.repositoryItemCheckEdit2});
-            this.gridControl2.Size = new System.Drawing.Size(671, 304);
+            this.gridControl2.Size = new System.Drawing.Size(649, 304);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -122,6 +127,7 @@ namespace CreateWebStep
             this.gridView2.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsSelection.MultiSelect = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView2_FocusedRowChanged);
             this.gridView2.Click += new System.EventHandler(this.gridView2_Click);
             // 
@@ -224,7 +230,7 @@ namespace CreateWebStep
             this.txtUrl.EnterMoveNextControl = true;
             this.txtUrl.Location = new System.Drawing.Point(244, 17);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(373, 20);
+            this.txtUrl.Size = new System.Drawing.Size(437, 20);
             this.txtUrl.TabIndex = 22;
             // 
             // labelControl8
@@ -245,18 +251,22 @@ namespace CreateWebStep
             // 
             // txtMessage
             // 
+            this.txtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMessage.EnterMoveNextControl = true;
             this.txtMessage.Location = new System.Drawing.Point(74, 46);
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(531, 20);
+            this.txtMessage.Size = new System.Drawing.Size(595, 20);
             this.txtMessage.TabIndex = 32;
             // 
             // txtAction
             // 
+            this.txtAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAction.EnterMoveNextControl = true;
             this.txtAction.Location = new System.Drawing.Point(74, 20);
             this.txtAction.Name = "txtAction";
-            this.txtAction.Size = new System.Drawing.Size(531, 20);
+            this.txtAction.Size = new System.Drawing.Size(595, 20);
             this.txtAction.TabIndex = 30;
             // 
             // labelControl5
@@ -283,14 +293,15 @@ namespace CreateWebStep
             this.groupBox1.Controls.Add(this.txtMessage);
             this.groupBox1.Location = new System.Drawing.Point(12, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(624, 103);
+            this.groupBox1.Size = new System.Drawing.Size(685, 103);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Step Info";
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(368, 72);
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Location = new System.Drawing.Point(432, 71);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 39;
@@ -301,7 +312,7 @@ namespace CreateWebStep
             // 
             this.txtStep.Enabled = false;
             this.txtStep.EnterMoveNextControl = true;
-            this.txtStep.Location = new System.Drawing.Point(371, 74);
+            this.txtStep.Location = new System.Drawing.Point(435, 73);
             this.txtStep.Name = "txtStep";
             this.txtStep.Size = new System.Drawing.Size(72, 20);
             this.txtStep.TabIndex = 35;
@@ -309,7 +320,8 @@ namespace CreateWebStep
             // 
             // bntUpdate
             // 
-            this.bntUpdate.Location = new System.Drawing.Point(449, 72);
+            this.bntUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntUpdate.Location = new System.Drawing.Point(513, 71);
             this.bntUpdate.Name = "bntUpdate";
             this.bntUpdate.Size = new System.Drawing.Size(75, 23);
             this.bntUpdate.TabIndex = 38;
@@ -318,7 +330,8 @@ namespace CreateWebStep
             // 
             // bntDelete
             // 
-            this.bntDelete.Location = new System.Drawing.Point(530, 72);
+            this.bntDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntDelete.Location = new System.Drawing.Point(594, 71);
             this.bntDelete.Name = "bntDelete";
             this.bntDelete.Size = new System.Drawing.Size(75, 23);
             this.bntDelete.TabIndex = 37;
@@ -362,7 +375,7 @@ namespace CreateWebStep
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(514, 484);
+            this.btnSave.Location = new System.Drawing.Point(501, 484);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(124, 23);
             this.btnSave.TabIndex = 41;
@@ -371,18 +384,90 @@ namespace CreateWebStep
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(644, 484);
+            this.btnThoat.Location = new System.Drawing.Point(631, 484);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
             this.btnThoat.TabIndex = 40;
             this.btnThoat.Text = "Close";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.simpleButton1.Location = new System.Drawing.Point(708, 14);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(114, 23);
+            this.simpleButton1.TabIndex = 42;
+            this.simpleButton1.Text = "Goto({Url})";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Options.UseTextOptions = true;
+            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.simpleButton2.Location = new System.Drawing.Point(708, 43);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(114, 23);
+            this.simpleButton2.TabIndex = 43;
+            this.simpleButton2.Text = "Wait(1)";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Options.UseTextOptions = true;
+            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.simpleButton3.Location = new System.Drawing.Point(708, 72);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(114, 23);
+            this.simpleButton3.TabIndex = 44;
+            this.simpleButton3.Text = "Fill({UserName})";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Options.UseTextOptions = true;
+            this.simpleButton4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.simpleButton4.Location = new System.Drawing.Point(708, 101);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(114, 23);
+            this.simpleButton4.TabIndex = 45;
+            this.simpleButton4.Text = "Fill({Password})";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Appearance.Options.UseTextOptions = true;
+            this.simpleButton5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.simpleButton5.Location = new System.Drawing.Point(708, 130);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(114, 23);
+            this.simpleButton5.TabIndex = 46;
+            this.simpleButton5.Text = "Click(Button)";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Appearance.Options.UseTextOptions = true;
+            this.simpleButton6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.simpleButton6.Location = new System.Drawing.Point(708, 159);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(114, 23);
+            this.simpleButton6.TabIndex = 47;
+            this.simpleButton6.Text = "Click(Link)";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            // 
             // frmCreateStep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 519);
+            this.ClientSize = new System.Drawing.Size(834, 519);
+            this.Controls.Add(this.simpleButton6);
+            this.Controls.Add(this.simpleButton5);
+            this.Controls.Add(this.simpleButton4);
+            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.groupBox1);
@@ -449,6 +534,12 @@ namespace CreateWebStep
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnThoat;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
 
     }
 }

@@ -48,7 +48,7 @@ namespace WorkLibrary
             }
             return "Error";
         }
-        public static string Goto(String text, IE ie)
+        private static string Goto(String text, IE ie)
         {
             int i = 0;
             while (i < Loop)
@@ -73,7 +73,7 @@ namespace WorkLibrary
             }
             return string.Empty;
         }
-        public static string Fill(String text,IE ie)
+        private static string Fill(String text, IE ie)
         {
             List<HControl> controls = new List<HControl>();
            
@@ -93,7 +93,7 @@ namespace WorkLibrary
             }
             return RunControl(controls,data,ie);
         }
-        public static string Click(String text,IE ie)
+        private static string Click(String text, IE ie)
         {
             List<HControl> controls = new List<HControl>();
             string[] c = text.Trim().Split('[');
@@ -109,7 +109,7 @@ namespace WorkLibrary
             }
             return RunControl(controls,ie);
         }
-        public static string ClickConfirm(String text, IE ie)
+        private static string ClickConfirm(String text, IE ie)
         {
             List<HControl> controls = new List<HControl>();
             string[] c = text.Trim().Split('[');
@@ -125,19 +125,19 @@ namespace WorkLibrary
             }
             return RunControlConfirm(controls, ie);
         }
-        public static string Wait(String text)
+        private static string Wait(String text)
         {
             int w = int.Parse(text)*1000;
             Thread.Sleep(w);
             return String.Empty;
         }
 
-        private static string RunControl(List<HControl> controls, IE ie)
+        public static string RunControl(List<HControl> controls, IE ie)
         {
             return RunControl(controls, "",ie);
 
         }
-        private static string RunControl(List<HControl> controls, string data,IE ie)
+        public static string RunControl(List<HControl> controls, string data,IE ie)
         {
             int i = 0;
             string status = "Error";

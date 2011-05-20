@@ -101,6 +101,14 @@ namespace WorkLibrary
             return dtTable;
 
         }
+        public static DataTable GetByPage(string Page)
+        {
+
+            string sql = @"select * from WebLink where Url='" + Page + "'";
+            DataTable dtTable = Provider.ExecuteToDataTable(sql);
+            return dtTable;
+
+        }
         public static DataTable GetNotIn(string str,string type)
         {
             string sql = "";
