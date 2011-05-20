@@ -58,6 +58,7 @@
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btnTest = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemLookUp_Nhom)).BeginInit();
@@ -356,11 +357,22 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Blue";
             // 
+            // btnTest
+            // 
+            this.btnTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnTest.Location = new System.Drawing.Point(305, 535);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(146, 23);
+            this.btnTest.TabIndex = 8;
+            this.btnTest.Text = "Test";
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // frmWebPageList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 569);
+            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnThoat);
@@ -425,5 +437,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraEditors.SimpleButton btnTest;
     }
 }

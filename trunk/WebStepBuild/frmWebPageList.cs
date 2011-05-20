@@ -145,6 +145,30 @@ namespace CreateWebStep
         {
             gridView1_FocusedRowChanged(null, null);
         }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridView1.FocusedRowHandle >= 0)
+                {
+                    long ID = long.Parse(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, colID).ToString());
+                    frmWebBowser frm = new frmWebBowser();
+                    frm.pageID = ID;
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    frmWebBowser frm = new frmWebBowser();
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            
+        }
        
 
 
