@@ -15,38 +15,46 @@ namespace WorkLibrary
         
         public static string ProcessStep(String strstep, IE ie)
         {
-            string[] a = strstep.Split('(');
-            string processType = a[0].Trim();
-            string processText = a[1].Trim(')');
-            switch (processType.ToLower())
+            try
             {
-                case ProcessType.Click:
+                string[] a = strstep.Split('(');
+                string processType = a[0].Trim();
+                string processText = a[1].Trim(')');
+                switch (processType.ToLower())
                 {
-                    return Click(processText, ie);
-                    break;
+                    case ProcessType.Click:
+                        {
+                            return Click(processText, ie);
+                            break;
+                        }
+                    case ProcessType.Fill:
+                        {
+                            return Fill(processText, ie);
+                            break;
+                        }
+                    case ProcessType.Goto:
+                        {
+                            return Goto(processText, ie);
+                            break;
+                        }
+                    case ProcessType.Wait:
+                        {
+                            return Wait(processText);
+                            break;
+                        }
+                    case ProcessType.ClickConfirm:
+                        {
+                            return ClickConfirm(processText, ie);
+                            break;
+                        }
                 }
-                case ProcessType.Fill:
-                {
-                    return Fill(processText, ie);
-                    break;
-                }
-                case ProcessType.Goto:
-                {
-                    return Goto(processText, ie);
-                    break;
-                }
-                case ProcessType.Wait:
-                {
-                    return Wait(processText);
-                    break;
-                }
-                case ProcessType.ClickConfirm:
-                {
-                    return ClickConfirm(processText, ie);
-                    break;
-                }
+                return "Error";
             }
-            return "Error";
+            catch
+            {
+                return "Error Exception";
+            }
+
         }
         private static string Goto(String text, IE ie)
         {
