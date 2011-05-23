@@ -58,6 +58,7 @@
     <Compile Include="Class\WebStep.cs" />
     <Compile Include="Class\UpSetting.cs" />
     <Compile Include="ProcessClass\AutoUpEx.cs" />
+    <Compile Include="ProcessClass\FormDialogWatcher.cs" />
     <Compile Include="ProcessClass\MyCore.cs" />
     <Compile Include="Library\RootClass.cs" />
     <Compile Include="Class\Customers.cs" />
