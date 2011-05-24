@@ -48,7 +48,7 @@ namespace WorkLibrary
                             break;
                         }
                 }
-                return "Error";
+                return "Error Type";
             }
             catch
             {
@@ -117,6 +117,29 @@ namespace WorkLibrary
             }
             return RunControl(controls,ie);
         }
+        public static bool Exist(String text, IE ie)
+        {
+            try
+            {
+                List<HControl> controls = new List<HControl>();
+                string[] c = text.Trim().Split('[');
+                string[] d = c[1].Trim(']').Split(',');
+                foreach (string e in d)
+                {
+                    string[] f = e.Trim().Split(':');
+                    HControl hcontrol = new HControl();
+                    hcontrol.Control = c[0].Trim();
+                    hcontrol.Attribute = f[0].Trim();
+                    hcontrol.Value = f[1].Trim();
+                    controls.Add(hcontrol);
+                }
+                return CheckExist(controls, ie);
+            }
+            catch
+            {
+                return false;
+            }
+        }
         private static string ClickConfirm(String text, IE ie)
         {
             List<HControl> controls = new List<HControl>();
@@ -144,6 +167,78 @@ namespace WorkLibrary
         {
             return RunControl(controls, "",ie);
 
+        }
+        public static bool CheckExist(List<HControl> controls, IE ie)
+        {
+            int i = 0;
+            bool status = false;
+            while (i < 2)
+            {
+                i++;
+                foreach (HControl control in controls)
+                {
+                    switch (control.Control.ToLower())
+                    {
+                        case ControlType.AHref:
+                            {
+                                WatiN.Core.Link obj = MyWatiN.GetLink(ie, control);
+                                if (obj != null)
+                                {
+                                    return true;
+                                }
+                                break;
+                            }
+                        case ControlType.Link:
+                            {
+                                WatiN.Core.Link obj = MyWatiN.GetLink(ie, control);
+                                if (obj != null)
+                                {
+                                    return true;
+                                }
+                                break;
+                            }
+                        case ControlType.Button:
+                            {
+                                WatiN.Core.Button obj = MyWatiN.GetButton(ie, control);
+                                if (obj != null)
+                                {
+                                    return true;
+                                }
+                                break;
+                            }
+                        case ControlType.Div:
+                            {
+                                WatiN.Core.Div obj = MyWatiN.GetDiv(ie, control);
+                                if (obj != null)
+                                {
+                                    return true;
+                                }
+                                break;
+                            }
+                        case ControlType.TextArea:
+                            {
+                                WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
+                                if (obj != null)
+                                {
+                                    return true;
+                                }
+                                break;
+                            }
+                        case ControlType.TextBox:
+                            {
+                                WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
+                                if (obj != null)
+                                {
+                                    return true;
+                                }
+                                break;
+                            }
+                    }
+
+                }
+                Thread.Sleep(1000);
+            }
+            return status;
         }
         public static string RunControl(List<HControl> controls, string data,IE ie)
         {
@@ -297,16 +392,15 @@ namespace WorkLibrary
                                 WatiN.Core.Button obj = MyWatiN.GetButton(ie, control);
                                 if (obj != null)
                                 {
-                                    ConfirmDialogHandler myHandler = new ConfirmDialogHandler();
-                                    obj.ClickNoWait();
-                                        try
-                                        {
-                                            myHandler.WaitUntilExists(1);
-                                            myHandler.OKButton.Click();
-                                        }
-                                        catch { }
-                                    ie.WaitForComplete();
-                                    return String.Empty;
+                                    ConfirmDialogHandler approveConfirmDialog = new ConfirmDialogHandler();
+                                    using (new UseDialogOnce(ie.DialogWatcher, approveConfirmDialog))
+                                    {
+                                        obj.ClickNoWait();
+                                        approveConfirmDialog.WaitUntilExists();
+                                        approveConfirmDialog.OKButton.Click();
+                                        ie.WaitForComplete();
+                                        return String.Empty;
+                                    }
                                 }
                                 break;
                             }
