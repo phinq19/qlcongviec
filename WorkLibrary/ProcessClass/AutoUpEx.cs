@@ -74,22 +74,57 @@ namespace WorkLibrary
                 }
                 IDWeb = wp.ID;
                 DataTable dtTable1 = WebStep.GetByIDWeb(IDWeb);
-            foreach (DataRow dtRow in dtTable1.Rows)
-            {
-                string processStep = dtRow["Action"].ToString();
-                processStep = processStep.Replace("{UserName}", forum.UserName);
-                processStep = processStep.Replace("{Password}", forum.Password);
-                processStep = processStep.Replace("{Url}", forum.UrlPost);
-                processStep = processStep.Replace("{IDTopic}", forum.IDTopic);
-                string s = MyCore.ProcessStep(processStep, ie);
-                if(s!=String.Empty)
+                int i = 0;
+                while( i < dtTable1.Rows.Count)
                 {
-                    Close();
-                    statusObj.Message = dtRow["Message"].ToString();
-                    statusObj.Status = "Error";
-                    return statusObj;
+                    DataRow dtRow = dtTable1.Rows[i];
+                    string processStep = dtRow["Action"].ToString();
+                    if (processStep.IndexOf("Exists") < 0)
+                    {
+                        processStep = processStep.Replace("{UserName}", forum.UserName);
+                        processStep = processStep.Replace("{Password}", forum.Password);
+                        processStep = processStep.Replace("{Url}", forum.UrlPost);
+                        processStep = processStep.Replace("{IDTopic}", forum.IDTopic);
+                        string s = MyCore.ProcessStep(processStep, ie);
+                        if (s != String.Empty)
+                        {
+                            if (dtRow["Message"] != null && dtRow["Message"].ToString().Trim() != "")
+                            {
+                                Close();
+                                statusObj.Message = dtRow["Message"].ToString();
+                                statusObj.Status = s;
+                                return statusObj;
+                            }
+                        }
+                        i++;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            string[] a = processStep.Split('(');
+                            string processType = a[0].Trim();
+                            string processText = a[1].Trim(')');
+                            string[] b = processText.Split('|');
+                            string text = b[0].Trim();
+                            int stepYes = int.Parse(b[1]);
+                            int stepNo = int.Parse(b[2]);
+                            if (MyCore.Exist(text, ie))
+                            {
+                                i = stepYes - 1;
+                            }
+                            else
+                            {
+                                i = stepNo - 1;
+                            }
+                        }
+                        catch
+                        {
+                            i++;
+                        }
+
+                    }
                 }
-            }
 
                 statusObj.Message = "Successful";
                 statusObj.Status = "Successful";

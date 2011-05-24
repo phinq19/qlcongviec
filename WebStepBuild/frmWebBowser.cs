@@ -319,17 +319,49 @@ namespace CreateWebStep
                 backgroundWorker2.RunWorkerAsync();
             }
         }
-
+        private int nextStep;
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
             try
             {
-                proccessStep = proccessStep.Replace("{UserName}", forum.UserName);
-                proccessStep = proccessStep.Replace("{Password}", forum.Password);
-                proccessStep = proccessStep.Replace("{Url}", forum.UrlPost);
-                proccessStep = proccessStep.Replace("{IDTopic}", forum.IDTopic);
                 dialogWatcher.CloseUnhandledDialogs = true;
-                result = MyCore.ProcessStep(proccessStep, ie);
+                if (proccessStep.IndexOf("Exists") < 0)
+                {
+                    proccessStep = proccessStep.Replace("{UserName}", forum.UserName);
+                    proccessStep = proccessStep.Replace("{Password}", forum.Password);
+                    proccessStep = proccessStep.Replace("{Url}", forum.UrlPost);
+                    proccessStep = proccessStep.Replace("{IDTopic}", forum.IDTopic);
+
+                    result = MyCore.ProcessStep(proccessStep, ie);
+                }
+                else
+                {
+                    try
+                    {
+                        type = 2;
+                        result = String.Empty;
+                        string[] a = proccessStep.Split('(');
+                        string processType = a[0].Trim();
+                        string processText = a[1].Trim(')');
+                        string[] b = processText.Split('|');
+                        string text = b[0].Trim();
+                        int stepYes = int.Parse(b[1]);
+                        int stepNo = int.Parse(b[2]);
+                        if (MyCore.Exist(text, ie))
+                        {
+                            nextStep = stepYes - 1;
+                        }
+                        else
+                        {
+                            nextStep = stepNo - 1;
+                        }
+                    }
+                    catch
+                    {
+                        type = 1;
+                    }
+
+                }
             }
             catch { }
            
@@ -350,6 +382,12 @@ namespace CreateWebStep
                 gridView3.ClearSelection();
                 gridView3.FocusedRowHandle = gridView3.FocusedRowHandle + 1;
                 gridView3.SelectRow(gridView3.FocusedRowHandle);
+            }
+            else if (type == 2)
+            {
+                gridView3.ClearSelection();
+                gridView3.FocusedRowHandle = nextStep;
+                gridView3.SelectRow(nextStep);
             }
         }
 
@@ -627,6 +665,71 @@ namespace CreateWebStep
         private void gridControl2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton2_Click_2(object sender, EventArgs e)
+        {
+            txtAction.Text = "Exists(TextBox[ Id : ]| | )";
+        }
+        private void CreateStepDefault()
+        {
+            dtSource.Rows.Clear();
+            //1
+            DataRow dtRow1 = dtSource.NewRow();
+            dtRow1["Action"] = "Goto({ Url })";
+            dtRow1["Message"] = "Không mở được trang web";
+            dtSource.Rows.Add(dtRow1);
+            //2
+            DataRow dtRow2 = dtSource.NewRow();
+            dtRow2["Action"] = "Wait( 1 )";
+            dtRow2["Message"] = "";
+            dtSource.Rows.Add(dtRow2);
+            //3
+            DataRow dtRow3 = dtSource.NewRow();
+            dtRow3["Action"] = "Exists(TextBox[ Id : ]| 8 | 4 )";
+            dtRow3["Message"] = "";
+            dtSource.Rows.Add(dtRow3);
+            //4
+            DataRow dtRow4 = dtSource.NewRow();
+            dtRow4["Action"] = "Fill(TextBox[ Id : ]|{ UserName })";
+            dtRow4["Message"] = "Không tìm thấy text box Username";
+            dtSource.Rows.Add(dtRow4);
+            //5
+            DataRow dtRow5 = dtSource.NewRow();
+            dtRow5["Action"] = "Fill(TextBox[ Id : ]|{ Password })";
+            dtRow5["Message"] = "Không tìm thấy text box Password";
+            dtSource.Rows.Add(dtRow5);
+            //6
+            DataRow dtRow6 = dtSource.NewRow();
+            dtRow6["Action"] = "Click(Button[ Id : ])";
+            dtRow6["Message"] = "Không tìm thấy button Đăng nhập";
+            dtSource.Rows.Add(dtRow6);
+            //7
+            DataRow dtRow7 = dtSource.NewRow();
+            dtRow7["Action"] = "Wait( 1 )";
+            dtRow7["Message"] = "";
+            dtSource.Rows.Add(dtRow7);
+            //8
+            DataRow dtRow8 = dtSource.NewRow();
+            dtRow8["Action"] = "Goto({ Url })";
+            dtRow8["Message"] = "Không tìm thấy link Up bài";
+            dtSource.Rows.Add(dtRow8);
+            //9
+            DataRow dtRow9 = dtSource.NewRow();
+            dtRow9["Action"] = "Wait( 1 )";
+            dtRow9["Message"] = "";
+            dtSource.Rows.Add(dtRow9);
+            //10
+            DataRow dtRow10 = dtSource.NewRow();
+            dtRow10["Action"] = "Click(Button[ Id : ])";
+            dtRow10["Message"] = "Không tìm thấy button Cập nhập";
+            dtSource.Rows.Add(dtRow10);
+            CreateStep();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            CreateStepDefault();
         }
 
 

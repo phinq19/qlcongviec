@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUp", "AutoUp\AutoUp.csproj", "{7BD80275-15EC-4303-BEBA-7C4DE8D4D8E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpForum", "AutoUp\AutoUpForum.csproj", "{7BD80275-15EC-4303-BEBA-7C4DE8D4D8E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegisterQLCV", "RegisterQLCV\RegisterQLCV\RegisterQLCV.csproj", "{E98C64C5-ACC7-481E-B0F3-1EB11A5149F2}"
 EndProject
@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkManagement", "WorkManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBrowser", "WebBrowser\WebBrowser.csproj", "{D22D5ED2-6BBA-48C1-894F-DAB5DE62AE22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpEx", "AutoUpEx\AutoUpEx.csproj", "{215F0885-CCED-439D-B502-0EDD886E0CF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpWeb", "AutoUpEx\AutoUpWeb.csproj", "{215F0885-CCED-439D-B502-0EDD886E0CF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStepBuilder", "WebStepBuild\WebStepBuilder.csproj", "{9A3A8E43-C579-475F-AC20-67D282CCAF11}"
 EndProject

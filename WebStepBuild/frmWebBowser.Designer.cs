@@ -47,6 +47,7 @@
             this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.bntNew = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
@@ -108,6 +109,7 @@
             this.colIDTopic = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnClearCache = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtLink.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -302,6 +304,8 @@
             // 
             // dockPanel2_Container
             // 
+            this.dockPanel2_Container.Controls.Add(this.simpleButton3);
+            this.dockPanel2_Container.Controls.Add(this.simpleButton2);
             this.dockPanel2_Container.Controls.Add(this.btnSave);
             this.dockPanel2_Container.Controls.Add(this.bntNew);
             this.dockPanel2_Container.Controls.Add(this.simpleButton7);
@@ -320,6 +324,17 @@
             this.dockPanel2_Container.Name = "dockPanel2_Container";
             this.dockPanel2_Container.Size = new System.Drawing.Size(526, 399);
             this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Options.UseTextOptions = true;
+            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.simpleButton2.Location = new System.Drawing.Point(431, 180);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(91, 23);
+            this.simpleButton2.TabIndex = 54;
+            this.simpleButton2.Text = "Exists(TextBox)";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_2);
             // 
             // btnSave
             // 
@@ -953,6 +968,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Step Info";
             // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Options.UseTextOptions = true;
+            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton3.Location = new System.Drawing.Point(431, 269);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(91, 29);
+            this.simpleButton3.TabIndex = 55;
+            this.simpleButton3.Text = "Create Default";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
             // frmWebBowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1098,6 +1124,8 @@
         private DevExpress.XtraEditors.SimpleButton bntNew;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerLeft;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
 
     }
 }

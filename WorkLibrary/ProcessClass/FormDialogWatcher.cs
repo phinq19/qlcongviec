@@ -69,7 +69,7 @@ namespace WorkLibrary
 			// Start the thread.
 			_watcherThread.Start();
 		}
-
+        
 		/// <summary>
 		/// Increases the reference count of this DialogWatcher instance with 1.
 		/// </summary>
@@ -344,7 +344,8 @@ namespace WorkLibrary
 			}
 			if (IsRunning)
 			{
-				_watcherThread.Join();
+                _watcherThread.Suspend();
+                _watcherThread.Abort();
 			}
 			Clear();
 		}
