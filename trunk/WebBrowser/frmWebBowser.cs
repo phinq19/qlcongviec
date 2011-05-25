@@ -253,8 +253,6 @@ namespace WebBrowser
             //}
             //root.Nodes.Add(lable);
             //lable.Expand();
-            ie.Refresh();
-
             TreeNode div = new TreeNode("Div");
             foreach (WatiN.Core.Div obj in ie.Divs)
             {

@@ -166,12 +166,12 @@ namespace WorkLibrary
             catch { return false; }
             try
             {
-                ie.ClearCache();
+                //ie.ClearCache();
             }
             catch { }
             try
             {
-                ie.ClearCookies();
+                //ie.ClearCookies();
                 
             }
             catch { }
@@ -183,13 +183,13 @@ namespace WorkLibrary
         {
             try
             {
-                ie.ClearCache();
+                //ie.ClearCache();
                 
             }
             catch { }
             try
             {
-                ie.ClearCookies();
+                //ie.ClearCookies();
             }
             catch { }
             try
