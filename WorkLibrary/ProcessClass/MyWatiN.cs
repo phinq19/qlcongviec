@@ -234,7 +234,114 @@ namespace WorkLibrary
                      }
             }
         }
+        public static WatiN.Core.Button GetButton(Div ie, HControl control)
+        {
+
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        Button bt = ie.Button(Find.ById(control.Value));
+                        if (bt.Exists)
+                            return bt;
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        Button bt = ie.Button(Find.ByName(control.Value));
+                        if (bt.Exists)
+                            return bt;
+                        return null;
+                    }
+                case AttributeType.Class:
+                    {
+                        Button bt = ie.Button(Find.ByClass(control.Value));
+                        if (bt.Exists)
+                            return bt;
+                        return null;
+                    }
+                case AttributeType.Text:
+                    {
+                        foreach (WatiN.Core.Button bt in ie.Buttons)
+                        {
+                            string s = bt.Text.ToLowerInvariant();
+                            s = s.Replace("ð", "đ");
+                            if (s == control.Value.ToLower())
+                                return bt;
+                        }
+                        return null;
+                    }
+                case AttributeType.Value:
+                    {
+                        foreach (WatiN.Core.Button bt in ie.Buttons)
+                        {
+                            string s = bt.Value.ToLowerInvariant();
+                            s = s.Replace("ð", "đ");
+                            if (s == control.Value.ToLower())
+                                return bt;
+                        }
+                        return null;
+                    }
+                default:
+                    {
+                        foreach (WatiN.Core.Button bt in ie.Buttons)
+                        {
+                            if (bt.Name == control.Value)
+                                return bt;
+                        }
+                        return null;
+                    }
+            }
+        }
         public static WatiN.Core.TextField GetTextField(IE ie, HControl control)
+        {
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        TextField txt = ie.TextField(Find.ById(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        TextField txt = ie.TextField(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Class:
+                    {
+                        TextField txt = ie.TextField(Find.ByClass(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Text:
+                    {
+                        TextField txt = ie.TextField(Find.ByText(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Value:
+                    {
+                        TextField txt = ie.TextField(Find.ByValue(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                default:
+                    {
+                        TextField txt = ie.TextField(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+            }
+        }
+        public static WatiN.Core.TextField GetTextField(Div ie, HControl control)
         {
             switch (control.Attribute.ToLower())
             {
@@ -363,6 +470,47 @@ namespace WorkLibrary
                 default:
                     {
                         Link link = ie.Link(Find.ByText(control.Value));
+                        if (link.Exists)
+                            return link;
+                        return null;
+                    }
+            }
+        }
+        public static WatiN.Core.Link GetLink(Div div, HControl control)
+        {
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        Link link = div.Link(Find.ById(control.Value));
+                        if (link.Exists)
+                            return link;
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        Link link = div.Link(Find.ByName(control.Value));
+                        if (link.Exists)
+                            return link;
+                        return null;
+                    }
+                case AttributeType.Class:
+                    {
+                        Link link = div.Link(Find.ByClass(control.Value));
+                        if (link.Exists)
+                            return link;
+                        return null;
+                    }
+                case AttributeType.Text:
+                    {
+                        Link link = div.Link(Find.ByText(control.Value));
+                        if (link.Exists)
+                            return link;
+                        return null;
+                    }
+                default:
+                    {
+                        Link link = div.Link(Find.ByText(control.Value));
                         if (link.Exists)
                             return link;
                         return null;

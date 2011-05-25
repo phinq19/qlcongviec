@@ -47,6 +47,7 @@
             this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.bntNew = new DevExpress.XtraEditors.SimpleButton();
@@ -109,7 +110,7 @@
             this.colIDTopic = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnClearCache = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtLink.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -160,14 +161,14 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLink.Location = new System.Drawing.Point(89, 9);
             this.txtLink.Name = "txtLink";
-            this.txtLink.Size = new System.Drawing.Size(501, 20);
+            this.txtLink.Size = new System.Drawing.Size(418, 20);
             this.txtLink.TabIndex = 2;
             this.txtLink.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLink_KeyDown);
             // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Location = new System.Drawing.Point(602, 8);
+            this.simpleButton1.Location = new System.Drawing.Point(513, 6);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(55, 23);
             this.simpleButton1.TabIndex = 3;
@@ -324,6 +325,17 @@
             this.dockPanel2_Container.Name = "dockPanel2_Container";
             this.dockPanel2_Container.Size = new System.Drawing.Size(526, 399);
             this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Options.UseTextOptions = true;
+            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton3.Location = new System.Drawing.Point(431, 269);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(91, 29);
+            this.simpleButton3.TabIndex = 55;
+            this.simpleButton3.Text = "Create Default";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton2
             // 
@@ -968,22 +980,22 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Step Info";
             // 
-            // simpleButton3
+            // simpleButton4
             // 
-            this.simpleButton3.Appearance.Options.UseTextOptions = true;
-            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton3.Location = new System.Drawing.Point(431, 269);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(91, 29);
-            this.simpleButton3.TabIndex = 55;
-            this.simpleButton3.Text = "Create Default";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton4.Location = new System.Drawing.Point(574, 6);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(83, 23);
+            this.simpleButton4.TabIndex = 17;
+            this.simpleButton4.Text = "Get Control";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // frmWebBowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 431);
+            this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.btnClearCache);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnProcessAndNext);
@@ -1126,6 +1138,7 @@
         private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerLeft;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
 
     }
 }
