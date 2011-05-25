@@ -470,7 +470,7 @@ namespace CreateWebStep
 
         private void simpleButton12_Click(object sender, EventArgs e)
         {
-            txtAction.Text = "Goto({ Url })";
+            txtAction.Text = "Goto( {Url} )";
             txtMessage.Text = "Không mở được trang web";
         }
 
@@ -481,13 +481,13 @@ namespace CreateWebStep
 
         private void simpleButton10_Click(object sender, EventArgs e)
         {
-            txtAction.Text = "Fill(TextBox[ Id : ]|{ UserName })";
+            txtAction.Text = "Fill(TextBox[ Id : ]|{UserName})";
             txtMessage.Text = "Không tìm thấy text box Username";
         }
 
         private void simpleButton9_Click(object sender, EventArgs e)
         {
-            txtAction.Text = "Fill(TextBox[ Id : ]|{ Password })";
+            txtAction.Text = "Fill(TextBox[ Id : ]|{Password})";
             txtMessage.Text = "Không tìm thấy text box Password";
         }
 
@@ -676,7 +676,7 @@ namespace CreateWebStep
             dtSource.Rows.Clear();
             //1
             DataRow dtRow1 = dtSource.NewRow();
-            dtRow1["Action"] = "Goto({ Url })";
+            dtRow1["Action"] = "Goto(  )";
             dtRow1["Message"] = "Không mở được trang web";
             dtSource.Rows.Add(dtRow1);
             //2
@@ -691,12 +691,12 @@ namespace CreateWebStep
             dtSource.Rows.Add(dtRow3);
             //4
             DataRow dtRow4 = dtSource.NewRow();
-            dtRow4["Action"] = "Fill(TextBox[ Id : ]|{ UserName })";
+            dtRow4["Action"] = "Fill(TextBox[ Id : ]|{UserName})";
             dtRow4["Message"] = "Không tìm thấy text box Username";
             dtSource.Rows.Add(dtRow4);
             //5
             DataRow dtRow5 = dtSource.NewRow();
-            dtRow5["Action"] = "Fill(TextBox[ Id : ]|{ Password })";
+            dtRow5["Action"] = "Fill(TextBox[ Id : ]|{Password})";
             dtRow5["Message"] = "Không tìm thấy text box Password";
             dtSource.Rows.Add(dtRow5);
             //6
@@ -711,7 +711,7 @@ namespace CreateWebStep
             dtSource.Rows.Add(dtRow7);
             //8
             DataRow dtRow8 = dtSource.NewRow();
-            dtRow8["Action"] = "Goto({ Url })";
+            dtRow8["Action"] = "Goto( {Url} )";
             dtRow8["Message"] = "Không tìm thấy link Up bài";
             dtSource.Rows.Add(dtRow8);
             //9
