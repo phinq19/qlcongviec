@@ -203,21 +203,22 @@ namespace WorkLibrary
                     }
                 case AttributeType.Text:
                      {
-                         foreach (WatiN.Core.Button bt in ie.Buttons)
-                         {
-                             string s = bt.Text.ToLowerInvariant();
-                             s = s.Replace("ð", "đ");
-                             if (s == control.Value.ToLower())
-                                 return bt;
-                         }
+                         Button bt = ie.Button(Find.ByText(control.Value));
+                         if (bt.Exists)
+                             return bt;
                          return null;
                      }
                 case AttributeType.Value:
                      {
                          foreach (WatiN.Core.Button bt in ie.Buttons)
                          {
-                             string s = bt.Value.ToLowerInvariant();
-                             s = s.Replace("ð", "đ");
+                             string s = "234234fsfasrq3453rdwedawewr4";
+                             try
+                             {
+                                 s = bt.Value.ToLowerInvariant();
+                                 s = s.Replace("ð", "đ");
+                             }
+                             catch { }
                              if(s==control.Value.ToLower())
                                  return bt;
                          }

@@ -40,10 +40,10 @@ namespace CreateWebStep
         {
             Settings.WaitForCompleteTimeOut = 120000;
             Settings.AttachToBrowserTimeOut = 120000;
+           
             webBrowser1.ScriptErrorsSuppressed = true;
-            //IE.Settings.AutoStartDialogWatcher = false;
-            WatiN.Core.Settings.AutoStartDialogWatcher = false;
-            WatiN.Core.Settings.AutoCloseDialogs = true;
+
+            Settings.AutoStartDialogWatcher = false;
             ie = new IE(webBrowser1.ActiveXInstance);
             dialogWatcher = new DialogWatcher(new Window(this.Handle));
             dialogWatcher.CloseUnhandledDialogs = false;
