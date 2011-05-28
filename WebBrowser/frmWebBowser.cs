@@ -224,19 +224,43 @@ namespace WebBrowser
             root.Nodes.Add(check);
             check.Expand();
 
-            //TreeNode textBoxBody = new TreeNode("TextBoxBody");
-            //foreach (WatiN.Core.TextField obj in ie.TextFields)
-            //{
-            //    TreeNode nodeA = new TreeNode(obj.Name);
-            //    nodeA.Nodes.Add(obj.Id, "Id = " + obj.Id);
-            //    nodeA.Nodes.Add(obj.Name, "Name = " + obj.Name);
-            //    nodeA.Nodes.Add(obj.ReadOnly.ToString(), "ReadOnly = " + obj.ReadOnly.ToString());
-            //    nodeA.Nodes.Add(obj.Text, "Text = " + obj.Text);
-            //    nodeA.Nodes.Add(obj.Value, "Value = " + obj.Value);
-            //    textBoxBody.Nodes.Add(nodeA);
-            //}
-            //root.Nodes.Add(textBoxBody);
-            //textBoxBody.Expand();
+            TreeNode textBoxBody = new TreeNode("Table");
+            foreach (WatiN.Core.TableBody obj in ie.TableBodies)
+            {
+                TreeNode nodeA = new TreeNode(obj.Id);
+                nodeA.Nodes.Add(obj.Id, "Id = " + obj.Id);
+                nodeA.Nodes.Add(obj.Name, "Name = " + obj.Name);
+                //nodeA.Nodes.Add(obj.ReadOnly.ToString(), "ReadOnly = " + obj.ReadOnly.ToString());
+                nodeA.Nodes.Add(obj.Text, "Text = " + obj.Text);
+                nodeA.Nodes.Add(obj.ClassName, "Value = " + obj.ClassName);
+                textBoxBody.Nodes.Add(nodeA);
+                TreeNode treerow = new TreeNode("Row");
+                foreach (WatiN.Core.TableRow objrow in obj.TableRows)
+                {
+                    TreeNode row = new TreeNode(objrow.Id);
+                    row.Nodes.Add(objrow.Id, "Id = " + objrow.Id);
+                    row.Nodes.Add(objrow.Name, "Name = " + objrow.Name);
+                    //nodeA.Nodes.Add(obj.ReadOnly.ToString(), "ReadOnly = " + obj.ReadOnly.ToString());
+                    row.Nodes.Add(objrow.Text, "Text = " + objrow.Text);
+                    row.Nodes.Add(objrow.ClassName, "Value = " + objrow.ClassName);
+                    treerow.Nodes.Add(row);
+                    TreeNode treecell = new TreeNode("Cell");
+                    foreach (WatiN.Core.TableCell objcell in objrow.TableCells)
+                    {
+                        TreeNode cell = new TreeNode(objcell.Id);
+                        cell.Nodes.Add(objcell.Id, "Id = " + objcell.Id);
+                        cell.Nodes.Add(objcell.Name, "Name = " + objcell.Name);
+                        //nodeA.Nodes.Add(obj.ReadOnly.ToString(), "ReadOnly = " + obj.ReadOnly.ToString());
+                        cell.Nodes.Add(objcell.Text, "Text = " + objcell.Text);
+                        cell.Nodes.Add(objcell.ClassName, "Value = " + objcell.ClassName);
+                        treecell.Nodes.Add(cell);
+                    }
+                    row.Nodes.Add(treecell);
+                }
+                nodeA.Nodes.Add(treerow);
+            }
+            root.Nodes.Add(textBoxBody);
+            textBoxBody.Expand();
             //TreeNode lable = new TreeNode("Label");
             //foreach (WatiN.Core.Label obj in ie.Labels)
             //{
@@ -307,6 +331,7 @@ namespace WebBrowser
                         }
                     }
                     nodeD.Nodes.Add(link1);
+                    //LoadDiv(obj, nodeD);
 
 
                 }
@@ -334,7 +359,69 @@ namespace WebBrowser
             //root.Nodes.Add(image);
             //root.Expand();
         }
-       
+        private void LoadDiv(Div divobj,TreeNode node)
+        {
+            TreeNode div = new TreeNode("Div");
+            foreach (WatiN.Core.Div obj in divobj.Divs)
+            {
+                if (obj.Id != null && obj.Id.ToString() != "")
+                {
+                    TreeNode nodeD = new TreeNode(obj.Id);
+                    nodeD.Nodes.Add(obj.Id, "Id = " + obj.Id);
+                    nodeD.Nodes.Add(obj.Name, "Name = " + obj.Name);
+                    nodeD.Nodes.Add(obj.ClassName, "ClassName = " + obj.ClassName);
+                    //nodeD.Nodes.Add("Text = " + obj.Text);
+
+                    //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
+                    div.Nodes.Add(nodeD);
+
+                    TreeNode textBox1 = new TreeNode("TextBox");
+                    foreach (WatiN.Core.TextField obj1 in obj.TextFields)
+                    {
+                        TreeNode nodeA1 = new TreeNode(obj1.Name);
+                        nodeA1.Nodes.Add(obj1.Id, "Id = " + obj1.Id);
+                        nodeA1.Nodes.Add(obj1.Name, "Name = " + obj1.Name);
+                        nodeA1.Nodes.Add(obj1.ReadOnly.ToString(), "ReadOnly = " + obj1.ReadOnly.ToString());
+                        nodeA1.Nodes.Add(obj1.Text, "Text = " + obj1.Text);
+                        nodeA1.Nodes.Add(obj1.Value, "Value = " + obj1.Value);
+                        textBox1.Nodes.Add(nodeA1);
+                    }
+                    nodeD.Nodes.Add(textBox1);
+                    TreeNode button1 = new TreeNode("Button");
+                    foreach (WatiN.Core.Button obj1 in obj.Buttons)
+                    {
+                        TreeNode nodeB1 = new TreeNode(obj1.Value);
+                        nodeB1.Nodes.Add(obj1.Id, "Id = " + obj1.Id);
+                        nodeB1.Nodes.Add(obj1.Text, "ClassName = " + obj1.ClassName);
+                        nodeB1.Nodes.Add(obj1.Text, "Text = " + obj1.Text);
+                        nodeB1.Nodes.Add(obj1.Value, "Value = " + obj1.Value);
+                        //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
+                        button1.Nodes.Add(nodeB1);
+                    }
+                    nodeD.Nodes.Add(button1);
+                    TreeNode link1 = new TreeNode("Link");
+                    foreach (WatiN.Core.Link obj1 in obj.Links)
+                    {
+                        //if (obj.ClassName != null && obj.ClassName.ToString() != "")
+                        {
+                            TreeNode nodeL1 = new TreeNode(obj1.Text);
+                            nodeL1.Nodes.Add("Id = " + obj1.Id);
+                            nodeL1.Nodes.Add("Value = " + obj1.Name);
+                            nodeL1.Nodes.Add("Text = " + obj1.Text);
+                            nodeL1.Nodes.Add("Link = " + obj1.Url);
+                            nodeL1.Nodes.Add("Class = " + obj1.ClassName);
+                            //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
+                            link1.Nodes.Add(nodeL1);
+                        }
+                    }
+                    nodeD.Nodes.Add(link1);
+                    LoadDiv(obj, nodeD);
+
+
+                }
+            }
+            node.Nodes.Add(div);
+        }
        
 
 
