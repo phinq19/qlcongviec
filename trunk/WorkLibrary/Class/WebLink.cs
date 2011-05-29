@@ -26,7 +26,7 @@ namespace WorkLibrary
         {
             try
             {
-                string sql = "delete from WebLink where ID=" + ID + "";
+                string sql = "delete from WebUp where ID=" + ID + "";
                 Provider.ExecuteNonQuery(sql);
                 return true;
             }
@@ -34,55 +34,10 @@ namespace WorkLibrary
 
 
         }
-        public static long Insert(WebLink cus)
-        {
-
-            string sql = @"INSERT INTO WebLink
-           ([Url]
-           ,[UrlPost]
-           ,[UserName]
-           ,[Password]
-           ,[Topic]
-            ,[IDTopic]
-           ,[Note]
-           ,[Group]
-           ,[Type])
-         VALUES
-           ('" + cus.Url + @"'
-            ,'" + cus.UrlPost + @"'
-           ,'" + cus.UserName + @"'
-           ,'" + cus.Password + @"'
-            ,'" + cus.Topic+ @"'
-            ,'" + cus.IDTopic + @"'
-            ,'" + cus.Note + @"'
-             ," + cus.Group + @"
-            ,'" + cus.Type + @"')";
-            Provider.ExecuteNonQuery(sql);
-            return long.Parse(Provider.ExecuteScalar("Select @@IDENTITY").ToString());
-
-        }
-        public static void Update(WebLink cus)
-        {
-            string sql = @"UPDATE [WebLink]
-               SET [Url] = '" + cus.Url + @"'
-                    ,[UrlPost] = '" + cus.UrlPost + @"'
-                  ,[UserName] = '" + cus.UserName + @"'
-                  ,[Password] = '" + cus.Password + @"'
-                    ,[Note] = '" + cus.Note + @"'
-                     ,[Topic] = '" + cus.Topic + @"'
-                    ,[IDTopic] = '" + cus.IDTopic + @"'
-                  ,[Group] = " + cus.Group + @"
-                  ,[Type] = '" + cus.Type + @"' 
-             WHERE ID=" + cus.ID;
-            Provider.ExecuteNonQuery(sql);
-
-
-        }
-
         public static WebLink Get(long ID)
         {
             Type type = typeof(WebLink);
-            string sql = @"select * from WebLink where ID=" + ID;
+            string sql = @"select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and u.ID=" + ID;
             DataTable dtTable = Provider.ExecuteToDataTable(sql);
             if (dtTable.Rows.Count > 0)
             {
@@ -95,16 +50,19 @@ namespace WorkLibrary
         }
         public static DataTable GetByType(string Type)
         {
-            
-            string sql = @"select * from WebLink where Type='" + Type+"'";
-            DataTable dtTable = Provider.ExecuteToDataTable(sql);
-            return dtTable;
+            try
+            {
+                string sql = @" select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and u.Type='" + Type + "'";
+                DataTable dtTable = Provider.ExecuteToDataTable(sql);
+                return dtTable;
+            }
+            catch { return null; }
 
         }
         public static DataTable GetByPage(string Page)
         {
 
-            string sql = @"select * from WebLink where Url='" + Page + "'";
+            string sql = @"select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and p.Page='" + Page + "'";
             DataTable dtTable = Provider.ExecuteToDataTable(sql);
             return dtTable;
 
@@ -114,11 +72,11 @@ namespace WorkLibrary
             string sql = "";
             if (str == "")
             {
-                sql = @"select * from WebLink where Type='" + type+"' order by Url";
+                sql = @"select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and  u.Type='" + type + "' order by p.Page";
             }
             else
             {
-                sql = @"select * from WebLink where ID not in " + str + " and Type='" + type+"' order by Url";
+                sql = @"select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and  u.ID not in " + str + " and u.Type='" + type + "' order by p.Page";
             }
             DataTable dtTable = Provider.ExecuteToDataTable(sql);
             return dtTable;
@@ -126,7 +84,7 @@ namespace WorkLibrary
         }
         public static DataTable GetIn(string str, string type)
         {
-            string sql = @"select * from WebLink where ID in " + str + " and Type='" + type + "' order by Url";
+            string sql = @" select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and u.ID in " + str + " and u.Type='" + type + "' order by p.Page";
             DataTable dtTable = Provider.ExecuteToDataTable(sql);
             return dtTable;
 

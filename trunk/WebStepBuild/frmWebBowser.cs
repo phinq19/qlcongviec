@@ -48,7 +48,7 @@ namespace CreateWebStep
             dialogWatcher = new DialogWatcher(new Window(this.Handle));
             dialogWatcher.CloseUnhandledDialogs = false;
             webpage = new WebPage();
-            lookUpEditPage.Properties.DataSource = webpage.GetAllToTable();
+            lookUpEditPage.Properties.DataSource = WebPage.GetAll();
             lookUpEditPage.Properties.DisplayMember = "Page";
             lookUpEditPage.Properties.ValueMember = "ID";
             if (pageID > 0)
@@ -188,9 +188,8 @@ namespace CreateWebStep
                 long ID = long.Parse(lookUpEditPage.EditValue.ToString());
                 gridControl3.DataSource = WebStep.GetByIDWeb(ID);
                 _LoadDSWebLink(lookUpEditPage.Text);
-                webpageUp = new WebPage();
-                webpageUp.ID = ID;
-                webpageUp = (WebPage)webpageUp.Get();
+               
+                webpageUp = WebPage.Get(ID);
                 if (webpageUp != null)
                 {
                     txtUrl.Text = webpageUp.Page;
@@ -308,7 +307,7 @@ namespace CreateWebStep
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmWebLink frm = new frmWebLink(NumCode.UPEX);
+            frmWebLink frm = new frmWebLink(NumCode.UPWEB,NumCode.WEB);
             frm.ShowDialog();
             if (lookUpEditPage.EditValue!=null)
                 _LoadDSWebLink(lookUpEditPage.Text);
@@ -523,7 +522,9 @@ namespace CreateWebStep
             {
                 webpageUp = new WebPage();
                 webpageUp.Page = txtUrl.Text;
-                long ID = webpageUp.Insert();
+                webpageUp.Type = NumCode.UPWEB;
+                webpageUp.Active = 1;
+                long ID = WebPage.Insert(webpageUp);
                 txtID.Text = ID.ToString();
                 foreach (DataRow dtRow in dtSource.Rows)
                 {
@@ -534,7 +535,7 @@ namespace CreateWebStep
                         webStep.Step = long.Parse(dtRow["Step"].ToString());
                         webStep.Action = dtRow["Action"].ToString();
                         webStep.Message = dtRow["Message"].ToString();
-                        webStep.Insert();
+                        WebStep.Insert(webStep);
 
                     }
                     catch (Exception)
@@ -551,7 +552,7 @@ namespace CreateWebStep
             {
 
                 webpageUp.Page = txtUrl.Text;
-                webpageUp.Update();
+                WebPage.Update(webpageUp);
                 WebStep.DeleteByID(webpageUp.ID);
                 foreach (DataRow dtRow in dtSource.Rows)
                 {
@@ -562,7 +563,7 @@ namespace CreateWebStep
                         webStep.Step = long.Parse(dtRow["Step"].ToString());
                         webStep.Action = dtRow["Action"].ToString();
                         webStep.Message = dtRow["Message"].ToString();
-                        webStep.Insert();
+                        WebStep.Insert(webStep);
 
                     }
                     catch (Exception)

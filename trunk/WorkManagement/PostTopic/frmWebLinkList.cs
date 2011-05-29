@@ -13,10 +13,12 @@ namespace NewProject
     public partial class frmWebLinkList : DevExpress.XtraEditors.XtraForm
     {
         private string _Type;
-        public frmWebLinkList(string type)
+        private string _TypePage;
+        public frmWebLinkList(string type,string typepage)
         {
             InitializeComponent();
             _Type = type;
+            _TypePage = typepage;
         }
        
         private void _InitData()
@@ -49,7 +51,7 @@ namespace NewProject
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
 
-            frmWebLink frm = new frmWebLink(_Type);
+            frmWebLink frm = new frmWebLink(_Type,_TypePage);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 _LoadDSWebLink();
@@ -77,10 +79,10 @@ namespace NewProject
                     if (RowHandle >= 0)
                     {
                         long iDDT = long.Parse(gridView1.GetRowCellValue(RowHandle, colID).ToString());
-                        WebLink temp = WebLink.Get(iDDT);
+                        WebUp temp = WebUp.Get(iDDT);
                         if (temp != null)
                         {
-                            frmWebLink frm = new frmWebLink(_Type);
+                            frmWebLink frm = new frmWebLink(_Type,_TypePage);
                             frm._cus = temp;
                             if (frm.ShowDialog() == DialogResult.OK)
                             {
@@ -110,10 +112,10 @@ namespace NewProject
                     for (int i = 0; i < k; i++)
                     {
                         long MaDT = long.Parse(gridView1.GetRowCellValue(arrSelect[i], colID).ToString());
-                        WebLink temp = WebLink.Get(MaDT);
+                        WebUp temp = WebUp.Get(MaDT);
                         if (temp != null)
                         {
-                            if (WebLink.Delete(temp.ID))
+                            if (WebUp.Delete(temp.ID))
                             {
                                 _LoadDSWebLink();
                             }

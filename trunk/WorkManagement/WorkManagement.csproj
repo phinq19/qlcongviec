@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{82A075C5-F612-47C1-A092-EA4068173685}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -92,6 +92,12 @@
     <Reference Include="WinHTMLEditorControl, Version=4.0.6.39, Culture=neutral, PublicKeyToken=e444157244638e02, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmWebReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWebReg.designer.cs">
+      <DependentUpon>frmWebReg.cs</DependentUpon>
+    </Compile>
     <Compile Include="PostTopic\frmGetLinkUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmWebReg.resx">
+      <DependentUpon>frmWebReg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PostTopic\frmGetLinkUp.resx">
       <DependentUpon>frmGetLinkUp.cs</DependentUpon>
       <SubType>Designer</SubType>

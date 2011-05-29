@@ -52,7 +52,7 @@ namespace NewProject
                         dataRow["UserName"] = webLink.UserName;
                         dataRow["Password"] = webLink.Password;
                         dataRow["Group"] = webLink.Group;
-                        dataRow["Type"] = NumCode.UP;
+                        dataRow["Type"] = NumCode.UPFORUM;
                         _dtTable.Rows.Add(dataRow);
                     }
                 }
@@ -85,9 +85,9 @@ namespace NewProject
                 webLink.Note = dataRow["Note"].ToString();
                 webLink.UserName = dataRow["UserName"].ToString();
                 webLink.Password = dataRow["Password"].ToString();
-                webLink.Type = NumCode.UP;
+                webLink.Type = NumCode.UPFORUM;
                 webLink.Group = int.Parse(dataRow["Group"].ToString());
-                WebLink.Insert(webLink);
+                //WebLink.Insert(webLink);
             }
             MessageBox.Show("Lưu link up thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
              this.Close();

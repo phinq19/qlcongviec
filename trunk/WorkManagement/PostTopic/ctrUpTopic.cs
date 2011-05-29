@@ -19,11 +19,11 @@ namespace NewProject
         private void ctrSendmail_Load(object sender, EventArgs e)
         {
             ctrSelectLink1.Visible = true;
-            ctrSelectLink1._InitData(NumCode.UP);
+            ctrSelectLink1._InitData(NumCode.UPFORUM);
             ctrPost1.Visible = false;
-            ctrPost1._InitData(NumCode.UP);
+            ctrPost1._InitData(NumCode.UPFORUM);
             ctrContentTopic1.Visible = false;
-            ctrContentTopic1._InitData(NumCode.UP);
+            ctrContentTopic1._InitData(NumCode.UPFORUM);
 
         }
         private void btnContent_Click(object sender, EventArgs e)

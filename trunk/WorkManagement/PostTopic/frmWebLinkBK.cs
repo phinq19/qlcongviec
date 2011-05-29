@@ -14,55 +14,28 @@ namespace NewProject
     public partial class frmWebLink : DevExpress.XtraEditors.XtraForm
     {
 
-        public WebUp _cus;
+        public WebLink _cus;
         bool Saved;
         string _Type;
-        string _TypePage;
-        public frmWebLink(string _type, string _typePage)
+        public frmWebLink(string _type)
         {
             InitializeComponent();
             Saved = true;
             _Type = _type;
-            _TypePage = _typePage;
         }
 
         private void _InitData()
         {
-            _LoadWebUpType();
-            _LoadWebPage();
+            _LoadWebLinkType();
            
         }
-        private void _LoadWebUpType()
+        private void _LoadWebLinkType()
         {
             DataTable NhomDT = CodeType.GetByGroup(NumCode.WEB);
 
             lookUpEdit_Nhom.Properties.DataSource = NhomDT;
             lookUpEdit_Nhom.Properties.DisplayMember = "Name";
             lookUpEdit_Nhom.Properties.ValueMember = "ID";
-        }
-        private void _LoadWebPage()
-        {
-            DataTable NhomDT = WebReg.GetByType(_TypePage);
-
-            lookUpEditPage.Properties.DataSource = NhomDT;
-            lookUpEditPage.Properties.DisplayMember = "Page";
-            lookUpEditPage.Properties.ValueMember = "ID";
-
-            DevExpress.XtraEditors.Controls.LookUpColumnInfo colun0 = new DevExpress.XtraEditors.Controls.LookUpColumnInfo();
-            colun0.Caption = "Page";
-            colun0.FieldName = "Page";
-            lookUpEditPage.Properties.Columns.Add(colun0);
-
-            DevExpress.XtraEditors.Controls.LookUpColumnInfo colun1 = new DevExpress.XtraEditors.Controls.LookUpColumnInfo();
-            colun1.Caption = "UserName";
-            colun1.FieldName = "UserName";
-            lookUpEditPage.Properties.Columns.Add(colun1);
-            DevExpress.XtraEditors.Controls.LookUpColumnInfo colun2 = new DevExpress.XtraEditors.Controls.LookUpColumnInfo();
-            colun2.Caption = "Password";
-            colun2.FieldName = "Password";
-            colun2.Width = 40;
-            lookUpEditPage.Properties.Columns.Add(colun2);
-
         }
         private void frmWebLink_Load(object sender, EventArgs e)
         {
@@ -95,15 +68,14 @@ namespace NewProject
         private void _SetFormInfo()
         {
             txtID.Text = _cus.ID.ToString();
-            WebReg webReg = WebReg.Get(_cus.Page);
-            txtUsername.Text = webReg.UserName;
-            txtPassword.Text = webReg.Password;
+            txtUsername.Text = _cus.UserName;
+            txtPassword.Text = _cus.Password;
+            txtUrl.Text = _cus.Url;
             txtTopic.Text = _cus.Topic;
             txtIDTopic.Text = _cus.IDTopic;
             txtUrlPost.Text = _cus.UrlPost;
             txtNote.Text = _cus.Note;
             lookUpEdit_Nhom.EditValue =int.Parse( _cus.Group.ToString());
-            lookUpEditPage.EditValue = int.Parse(_cus.Page.ToString());
 
         }
 
@@ -111,8 +83,8 @@ namespace NewProject
         {
             txtID.Text = "";
             lookUpEdit_Nhom.EditValue = null;
-            lookUpEditPage.EditValue = null;
             txtUsername.Text = "";
+            txtUrl.Text = "";
             txtUrlPost.Text = "";
             txtPassword.Text = "";
             txtNote.Text = "";
@@ -120,7 +92,7 @@ namespace NewProject
             txtIDTopic.Text = "";
             _cus = null;
 
-            lookUpEditPage.Focus();
+            txtUsername.Focus();
             
         }
 
@@ -141,13 +113,13 @@ namespace NewProject
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            WebUp temp = _getFormInfo();
+            WebLink temp = _getFormInfo();
             if (temp != null)
             {
                 if (_cus == null) //thêm mới
                 {
                         _cus = temp;
-                        txtID.Text=WebUp.Insert( _cus).ToString();
+                        txtID.Text=WebLink.Insert( _cus).ToString();
                         DialogResult = DialogResult.OK;
                         if (chkCloseAlterSave.Checked)
                         {
@@ -167,7 +139,7 @@ namespace NewProject
                    
                         temp.ID = _cus.ID;
                         _cus = temp;
-                        WebUp.Update(_cus);
+                        WebLink.Update(_cus);
                         DialogResult = DialogResult.OK;
                         if (chkCloseAlterSave.Checked)
                         {
@@ -182,51 +154,65 @@ namespace NewProject
            
         }
 
-        private WebUp _getFormInfo()
+        private WebLink _getFormInfo()
         {
-                WebUp temp = null ;
+                WebLink temp = null ;
 
-                if (lookUpEditPage.EditValue != null)
+            
+                if (lookUpEdit_Nhom.EditValue != null)
                 {
-                    if (lookUpEdit_Nhom.EditValue != null)
+                    if (txtUrl.Text != "")
                     {
-
-                        if (txtUrlPost.Text != "")
+                        if (txtUrl.Text != "")
                         {
-                            
-                                    temp = new WebUp();
+                            if (txtUsername.Text != "")
+                            {
+                                if (txtPassword.Text != "")
+                                {
+                                    temp = new WebLink();
 
-                                    temp.Group = (int) lookUpEdit_Nhom.EditValue;
-                                    temp.Page = long.Parse( lookUpEditPage.EditValue.ToString());
+                                    temp.Group = (int)lookUpEdit_Nhom.EditValue;
                                     temp.Type = _Type;
                                     temp.UrlPost = txtUrlPost.Text;
+                                    temp.Url = txtUrl.Text;
+                                    temp.UserName = txtUsername.Text;
+                                    temp.Password = txtPassword.Text;
                                     temp.Note = txtNote.Text;
                                     temp.Topic = txtTopic.Text;
                                     temp.IDTopic = txtIDTopic.Text;
-                                
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Nhập password đăng nhập", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    txtPassword.Focus();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nhập user name đăng nhập", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtUsername.Focus();
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Nhập link topic cần post tin", "Lỗi", MessageBoxButtons.OK,
-                                            MessageBoxIcon.Error);
+                            MessageBox.Show("Nhập link topic cần post tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtUrlPost.Focus();
                         }
-
 
                     }
                     else
                     {
-                        MessageBox.Show("Chọn nhóm link", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        lookUpEdit_Nhom.Focus();
+                        MessageBox.Show("Nhập Web page", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtUrl.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Chọn trang Web", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    lookUpEditPage.Focus();
+                    MessageBox.Show("Chọn nhóm link", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lookUpEdit_Nhom.Focus();
                 }
-
-
+            
+            
             return temp;
         }
 
@@ -235,7 +221,7 @@ namespace NewProject
             if (_cus != null)
             {
                 
-                if (WebUp.Delete(_cus.ID))
+                if (WebLink.Delete(_cus.ID))
                 {
                     DialogResult = DialogResult.OK;
                     if (chkCloseAlterSave.Checked)
@@ -259,7 +245,7 @@ namespace NewProject
         {
             frmTypeSetup frm = new frmTypeSetup(NumCode.WEB,"Thiết lập nhóm web");
             frm.ShowDialog();
-            _LoadWebUpType();
+            _LoadWebLinkType();
             
         }
 
@@ -274,23 +260,6 @@ namespace NewProject
             else
             {
                 btnXoa.Enabled = true;
-            }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            frmWebReg frm=new frmWebReg(_TypePage);
-            if(frm.ShowDialog()==DialogResult.OK)
-                _LoadWebPage();
-        }
-
-        private void lookUpEditPage_EditValueChanged(object sender, EventArgs e)
-        {
-            if (lookUpEditPage.EditValue != null)
-            {
-                WebReg webReg = WebReg.Get(long.Parse(lookUpEditPage.EditValue.ToString()));
-                txtUsername.Text = webReg.UserName;
-                txtPassword.Text = webReg.Password;
             }
         }
 

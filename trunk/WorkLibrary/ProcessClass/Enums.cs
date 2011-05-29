@@ -14,9 +14,11 @@ namespace WorkLibrary
     public class NumCode
     {
         public const string WEB = "WEB";
+        public const string FORUM = "FORUM";
         public const string POS = "POS";
-        public const string UP = "UP";
+        public const string UPFORUM = "UPFORUM";
         public const string UPEX = "UPEX";
+        public const string UPWEB = "UPWEB";
 
     }
     public class ControlType

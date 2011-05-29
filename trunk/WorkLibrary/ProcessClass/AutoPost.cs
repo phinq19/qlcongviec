@@ -72,7 +72,7 @@ namespace WorkLibrary
                     return statusObj;
                    
                 }
-                if (MyWatiN.Goto(forum.UrlPost, ie)!=String.Empty)
+                if (MyCore.Goto(forum.UrlPost, ie)!=String.Empty)
                 {
                     Close();
                     statusObj.Message = "Không vào được link post bài";
@@ -81,7 +81,7 @@ namespace WorkLibrary
                     
                 }
 
-                if (RunControl(multiforum.UserName, forum.UserName) != string.Empty)
+                if (MyCore.RunControl(multiforum.UserName, forum.UserName, ie) != string.Empty)
                 {
                     goto HadLogin;
                     Close();
@@ -90,14 +90,14 @@ namespace WorkLibrary
                     statusObj.Status = "Error";
                     return statusObj;
                 }
-                if (RunControl(multiforum.PassWord, forum.Password) != string.Empty)
+                if (MyCore.RunControl(multiforum.PassWord, forum.Password,ie) != string.Empty)
                 {
                     Close();
                     statusObj.Message = "Không tìm thấy textbox passworld";
                     statusObj.Status = "Error";
                     return statusObj;
                 }
-                if ( RunControl(multiforum.Login) != string.Empty)
+                if (MyCore.RunControl(multiforum.Login,ie) != string.Empty)
                 {
                     Close();
                    
@@ -107,7 +107,7 @@ namespace WorkLibrary
 
                 }
                 Thread.Sleep(3000);
-                if (MyWatiN.Goto(forum.UrlPost, ie)!=String.Empty)
+                if (MyCore.Goto(forum.UrlPost, ie)!=String.Empty)
                 {
                     Close();
                     
@@ -135,7 +135,7 @@ namespace WorkLibrary
                     }
                     
                 }
-                if (RunControl(multiforum.Subject, _Subject) != string.Empty)
+                if (MyCore.RunControl(multiforum.Subject, _Subject,ie) != string.Empty)
                 {
                     Close();
                    
@@ -143,15 +143,12 @@ namespace WorkLibrary
                     statusObj.Status = "Error";
                     return statusObj;
                 }
-                RunControl(multiforum.Mode);
-                //if (RunControl(multiforum.Mode) != string.Empty)
-                //{
-                //    Close();
-                //    statusObj.Message = "Không tìm thấy Div textarea message";
-                //    statusObj.Status = "Error";
-                //    return statusObj;
-                //}
-                if (RunControl(multiforum.Message, _Content) != string.Empty)
+               // RunControl(multiforum.Mode);
+                if (MyCore.RunControl(multiforum.Mode,ie) != string.Empty)
+                {
+                    
+                }
+                if (MyCore.RunControl(multiforum.Message, _Content,ie) != string.Empty)
                 {
                     Close();
                    
@@ -159,8 +156,8 @@ namespace WorkLibrary
                     statusObj.Status = "Error";
                     return statusObj;
                 }
-                RunControl(multiforum.Tags, _Tag);
-                //if (RunControl(multiforum.Submit) != string.Empty)
+                MyCore.RunControl(multiforum.Tags, _Tag,ie);
+                //if (MyCore.RunControl(multiforum.Submit) != string.Empty)
                 //{
                 //    Close();
                 //    statusObj.Message = "Không tìm thấy nút gửi bài viết";
@@ -193,7 +190,7 @@ namespace WorkLibrary
         }
         public StatusObj UpTopic()
         {
-            multiforum = new MultiForum(NumCode.UP);
+            multiforum = new MultiForum("UP");
             StatusObj statusObj = new StatusObj();
 
             if (forum == null)
@@ -222,7 +219,7 @@ namespace WorkLibrary
                 }
                 //ie.WaitForComplete();
                 // Start Forum
-                if (MyWatiN.Goto(forum.UrlPost, ie) != String.Empty)
+                if (MyCore.Goto(forum.UrlPost, ie) != String.Empty)
                 {
                     Close();
                     statusObj.Message = "Không vào được link up bài";
@@ -230,7 +227,20 @@ namespace WorkLibrary
                     return statusObj;
 
                 }
-                if (RunControl(multiforum.UserName, forum.UserName) != string.Empty)
+                Thread.Sleep(1000);
+                if (MyCore.CheckExist(multiforum.UserName, ie) ==false)
+                {
+                    goto HadLogin;
+                    
+                }
+                if (MyCore.RunControl(multiforum.UserName, forum.UserName,ie) != string.Empty)
+                {
+                    Close();
+                    statusObj.Message = "Không tìm thấy textbox user name";
+                    statusObj.Status = "Error";
+                    return statusObj;
+                }
+                if (MyCore.RunControl(multiforum.UserName, forum.UserName,ie) != string.Empty)
                 {
                     goto HadLogin;
                     Close();
@@ -239,7 +249,7 @@ namespace WorkLibrary
                     return statusObj;
                 }
              NoLogin:
-                if (RunControl(multiforum.PassWord, forum.Password) != string.Empty)
+                if (MyCore.RunControl(multiforum.PassWord, forum.Password,ie) != string.Empty)
                 {
                     
                     Close();
@@ -247,7 +257,7 @@ namespace WorkLibrary
                     statusObj.Status = "Error";
                     return statusObj;
                 }
-                if (RunControl(multiforum.Login) != string.Empty)
+                if (MyCore.RunControl(multiforum.Login,ie) != string.Empty)
                 {
                     Close();
                     statusObj.Message = "Không tìm thấy button Login";
@@ -256,7 +266,7 @@ namespace WorkLibrary
 
                 }
                 Thread.Sleep(3000);
-                if (MyWatiN.Goto(forum.UrlPost, ie) != String.Empty)
+                if (MyCore.Goto(forum.UrlPost, ie) != String.Empty)
                 {
                     Close();
 
@@ -266,18 +276,15 @@ namespace WorkLibrary
 
                 }
             HadLogin:
-                RunControl(multiforum.Mode) ;
-                //if (RunControl(multiforum.Mode) != string.Empty)
-                //{
-                //    Close();
-                //    statusObj.Message = "Không tìm thấy Div textarea message";
-                //    statusObj.Status = "Error";
-                //    return statusObj;
-                //}
-                if (RunControl(multiforum.Message, _Content) != string.Empty)
+                Thread.Sleep(1000);
+                //RunControl(multiforum.Mode) ;
+                if (MyCore.RunControl(multiforum.Mode,ie) != string.Empty)
+                {
+                    
+                }
+                if (MyCore.RunControl(multiforum.Message, _Content,ie) != string.Empty)
                 {
                     Close();
-
                     statusObj.Message = "Không tìm thấy textarea message";
                     statusObj.Status = "Error";
                     return statusObj;
@@ -316,99 +323,6 @@ namespace WorkLibrary
         #endregion
 
         #region "Sub Function"
-
-        string RunControl(List<HControl> controls)
-        {
-            return RunControl(controls, "");
-            
-        }
-
-        string RunControl(List<HControl> controls, string data)
-        {
-            int i = 0;
-            string status ="Error";
-            while (i < MyWatiN.Loop)
-            {
-                i++;
-                foreach (HControl control in controls)
-                {
-                    switch (control.Control.ToLower())
-                    {
-                        case ControlType.AHref:
-                            {
-                                WatiN.Core.Link obj = MyWatiN.GetLink(ie, control);
-                                if (obj != null)
-                                {
-                                    obj.Click();
-                                    ie.WaitForComplete();
-                                    return String.Empty;
-
-                                }
-                                break;
-                            }
-                        case ControlType.AHrefNoText:
-                            {
-                                ie.GoTo(control.Value);
-                                ie.WaitForComplete();
-                                return String.Empty;
-                                break;
-                            }
-                        case ControlType.Button:
-                            {
-                                WatiN.Core.Button obj = MyWatiN.GetButton(ie, control);
-                                if (obj != null)
-                                {
-                                    obj.Click();
-                                    ie.WaitForComplete();
-                                    return String.Empty;
-
-                                }
-                                break;
-                            }
-                        case ControlType.Div:
-                            {
-                                WatiN.Core.Div obj = MyWatiN.GetDiv(ie, control);
-                                if (obj != null)
-                                {
-                                    obj.Click();
-                                    ie.WaitForComplete();
-                                    return String.Empty;
-
-                                }
-                                break;
-                            }
-                        case ControlType.TextArea:
-                            {
-                                WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
-                                if (obj != null)
-                                {
-                                    obj.Value = data;
-                                    ie.WaitForComplete();
-                                    return String.Empty;
-
-                                }
-                                break;
-                            }
-                        case ControlType.TextBox:
-                            {
-                                WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
-                                if (obj != null)
-                                {
-                                    obj.Value = data;
-                                    ie.WaitForComplete();
-                                    return String.Empty;
-
-                                }
-                                break;
-                            }
-                    }
-
-                }
-                Thread.Sleep(1000);
-            }
-            return status;
-        }
-
         private bool Open()
         {
             try
@@ -423,12 +337,12 @@ namespace WorkLibrary
             catch { return false; }
             try
             {
-                ie.ClearCache();
+                //ie.ClearCache();
             }
             catch { }
             try
             {
-                ie.ClearCookies();
+                //ie.ClearCookies();
                 
             }
             catch { }
@@ -440,13 +354,13 @@ namespace WorkLibrary
         {
             try
             {
-                ie.ClearCache();
+                //ie.ClearCache();
                 
             }
             catch { }
             try
             {
-                ie.ClearCookies();
+                //ie.ClearCookies();
             }
             catch { }
             try

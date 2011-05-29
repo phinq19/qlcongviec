@@ -61,7 +61,7 @@ namespace WorkLibrary
             }
 
         }
-        private static string Goto(String text, IE ie)
+        public static string Goto(String text, IE ie)
         {
             int i = 0;
             while (i < Loop)
