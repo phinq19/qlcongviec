@@ -21,8 +21,8 @@ namespace WorkLibrary
         {
             try
             {
-                string sql = "delete from FieldSetting where ID=" + ID + "";
-                Provider.ExecuteNonQuery(sql);
+                string sql = "delete from QLCV_FieldSetting where ID=" + ID + "";
+                ServerProvider.ExecuteNonQuery(sql);
                 return true;
             }
             catch { return false; }
@@ -32,31 +32,31 @@ namespace WorkLibrary
         public static int Insert(FieldSetting cus)
         {
 
-            string sql = @"INSERT INTO FieldSetting
+            string sql = @"INSERT INTO QLCV_FieldSetting
            ([Control]
            ,[Attribute]
            ,[Value]
            ,[Field],[Type])
          VALUES
-           ('" + cus.Control + @"'
-           ,'" + cus.Attribute + @"'
-           ,'" + cus.Value + @"'
-            ,'" + cus.Field + @"'
-            ,'" + cus.Type + @"')";
-            Provider.ExecuteNonQuery(sql);
-            return int.Parse(Provider.ExecuteScalar("Select @@IDENTITY").ToString());
+           (N'" + cus.Control + @"'
+           ,N'" + cus.Attribute + @"'
+           ,N'" + cus.Value + @"'
+            ,N'" + cus.Field + @"'
+            ,N'" + cus.Type + @"')";
+            ServerProvider.ExecuteNonQuery(sql);
+            return int.Parse(ServerProvider.ExecuteScalar("Select @@IDENTITY").ToString());
 
         }
         public static void Update(FieldSetting cus)
         {
-            string sql = @"UPDATE [FieldSetting]
-               SET [Control] = '" + cus.Control + @"'
-                  ,[Attribute] = '" + cus.Attribute + @"'
-                  ,[Value] = '" + cus.Value + @"'
-                  ,[Field] = '" + cus.Field + @"' 
+            string sql = @"UPDATE [QLCV_FieldSetting]
+               SET [Control] = N'" + cus.Control + @"'
+                  ,[Attribute] = N'" + cus.Attribute + @"'
+                  ,[Value] = N'" + cus.Value + @"'
+                  ,[Field] = N'" + cus.Field + @"' 
                 ,[Type] = '" + cus.Type + @"' 
              WHERE ID=" + cus.ID;
-            Provider.ExecuteNonQuery(sql);
+            ServerProvider.ExecuteNonQuery(sql);
 
 
         }
@@ -64,8 +64,8 @@ namespace WorkLibrary
         public static FieldSetting Get(long ID)
         {
             Type type = typeof(FieldSetting);
-            string sql = @"select * from FieldSetting where ID=" + ID;
-            DataTable dtTable = Provider.ExecuteToDataTable(sql);
+            string sql = @"select * from QLCV_FieldSetting where ID=" + ID;
+            DataTable dtTable = ServerProvider.ExecuteToDataTable(sql);
             if (dtTable.Rows.Count > 0)
             {
                 FieldSetting cus = new FieldSetting();
@@ -79,8 +79,8 @@ namespace WorkLibrary
         {
             try
             {
-                string strSQL = "Select * From FieldForum";
-                return Provider.ExecuteToDataTable(strSQL);
+                string strSQL = "Select * From QLCV_FieldForum";
+                return ServerProvider.ExecuteToDataTable(strSQL);
             }
             catch (Exception ex)
             {
@@ -91,8 +91,8 @@ namespace WorkLibrary
         {
             try
             {
-                string sql = @"select * from FieldSetting where Field='" + Field + "' and Type='" + Type + "'";
-                return Provider.ExecuteToDataTable(sql);
+                string sql = @"select * from QLCV_FieldSetting where Field='" + Field + "' and Type='" + Type + "'";
+                return ServerProvider.ExecuteToDataTable(sql);
                 
             }
             catch (Exception ex)
@@ -105,8 +105,8 @@ namespace WorkLibrary
             try
             {
                 List<HControl> fields = new List<HControl>();
-                string sql = @"select * from FieldSetting where Field='" + Field+"' and Type='"+Type+"'";
-                DataTable table = Provider.ExecuteToDataTable(sql);
+                string sql = @"select * from QLCV_FieldSetting where Field='" + Field + "' and Type='" + Type + "'";
+                DataTable table = ServerProvider.ExecuteToDataTable(sql);
                 if (table != null && table.Rows.Count > 0)
                 {
                     foreach (DataRow row in table.Rows)

@@ -518,5 +518,101 @@ namespace WorkLibrary
                     }
             }
         }
+        public static WatiN.Core.CheckBox GetCheckBox(IE ie, HControl control)
+        {
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ById(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Class:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ByClass(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Text:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ByText(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Value:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ByValue(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                default:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ById(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+            }
+        }
+        public static WatiN.Core.CheckBox GetCheckBox(Div ie, HControl control)
+        {
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ById(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Class:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ByClass(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Text:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ByText(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Value:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ByValue(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                default:
+                    {
+                        CheckBox txt = ie.CheckBox(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+            }
+        }
     }
 }
