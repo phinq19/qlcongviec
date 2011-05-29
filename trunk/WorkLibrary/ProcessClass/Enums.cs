@@ -30,6 +30,7 @@ namespace WorkLibrary
         public const string AHrefNoText = "href";
         public const string Div = "div";
         public const string Link = "link";
+        public const string CheckBox = "checkbox";
     }
 
     public class AttributeType
@@ -44,6 +45,7 @@ namespace WorkLibrary
     public class ProcessType
     {
         public const string Goto = "goto";
+        public const string Check = "check";
         public const string Click = "click";
         public const string DivClick = "divclick";
         public const string Fill = "fill";

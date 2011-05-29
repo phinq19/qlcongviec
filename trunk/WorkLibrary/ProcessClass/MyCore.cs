@@ -52,6 +52,11 @@ namespace WorkLibrary
                             return ClickConfirm(processText, ie);
                             break;
                         }
+                    case ProcessType.Check:
+                        {
+                            return Check(processText, ie);
+                            break;
+                        }
                 }
                 return "Error Type";
             }
@@ -105,6 +110,26 @@ namespace WorkLibrary
                 controls.Add(hcontrol);
             }
             return RunControl(controls,data,ie);
+        }
+        private static string Check(String text, IE ie)
+        {
+            List<HControl> controls = new List<HControl>();
+
+            string[] a = text.Trim().Split('|');
+            string data = a[1].Trim();
+            string b = a[0].Trim();
+            string[] c = b.Split('[');
+            string[] d = c[1].Trim(']').Split(',');
+            foreach (string e in d)
+            {
+                string[] f = e.Trim().Split(':');
+                HControl hcontrol = new HControl();
+                hcontrol.Control = c[0].Trim();
+                hcontrol.Attribute = f[0].Trim();
+                hcontrol.Value = f[1].Trim();
+                controls.Add(hcontrol);
+            }
+            return RunControl(controls, data, ie);
         }
         private static string DivClick(String text, IE ie)
         {
@@ -274,6 +299,15 @@ namespace WorkLibrary
                                 }
                                 break;
                             }
+                        case ControlType.CheckBox:
+                            {
+                                WatiN.Core.CheckBox obj = MyWatiN.GetCheckBox(ie, control);
+                                if (obj != null)
+                                {
+                                    return true;
+                                }
+                                break;
+                            }
                     }
 
                 }
@@ -336,6 +370,18 @@ namespace WorkLibrary
                                 if (obj != null)
                                 {
                                     obj.Value = data;
+                                    ie.WaitForComplete();
+                                    return String.Empty;
+
+                                }
+                                break;
+                            }
+                        case ControlType.CheckBox:
+                            {
+                                WatiN.Core.CheckBox obj = MyWatiN.GetCheckBox(div, control);
+                                if (obj != null)
+                                {
+                                    obj.Checked = true;
                                     ie.WaitForComplete();
                                     return String.Empty;
 
@@ -433,6 +479,18 @@ namespace WorkLibrary
                                 if (obj != null)
                                 {
                                     obj.Value = data;
+                                    ie.WaitForComplete();
+                                    return String.Empty;
+
+                                }
+                                break;
+                            }
+                        case ControlType.CheckBox:
+                            {
+                                WatiN.Core.CheckBox obj = MyWatiN.GetCheckBox(ie, control);
+                                if (obj != null)
+                                {
+                                    obj.Checked = bool.Parse(data);
                                     ie.WaitForComplete();
                                     return String.Empty;
 
