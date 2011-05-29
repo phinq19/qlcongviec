@@ -32,7 +32,7 @@ namespace CreateWebStep
         {
             int i = gridView1.TopRowIndex;
             int k = gridView1.FocusedRowHandle;
-            gridControl1.DataSource = webPage.GetAllToTable();
+            gridControl1.DataSource = WebPage.GetAll();
             gridView1.FocusedRowHandle = k;
             gridView1.TopRowIndex = i;
             
@@ -70,8 +70,7 @@ namespace CreateWebStep
                     if (RowHandle >= 0)
                     {
                         long iDDT = long.Parse(gridView1.GetRowCellValue(RowHandle, colID).ToString());
-                        webPage.ID = iDDT;
-                        WebPage web = (WebPage)webPage.Get();
+                        WebPage web = WebPage.Get(iDDT);
                         frmCreateStep frm = new frmCreateStep();
                         frm.webPage = web;
                             if (frm.ShowDialog() == DialogResult.OK)
@@ -103,8 +102,7 @@ namespace CreateWebStep
                         {
 
                             long MaDT = long.Parse(gridView1.GetRowCellValue(arrSelect[i], colID).ToString());
-                            webPage.ID = MaDT;
-                            webPage.Delete();
+                            WebPage.Delete(MaDT);
                             WebStep.DeleteByID(MaDT);
                             MessageBox.Show("Đã xóa thành công");
                         }

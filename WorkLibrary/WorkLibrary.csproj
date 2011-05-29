@@ -54,9 +54,12 @@
     <Compile Include="Class\CodeType.cs" />
     <Compile Include="Class\Common.cs" />
     <Compile Include="Class\Const.cs" />
+    <Compile Include="Class\WebLink.cs" />
+    <Compile Include="Class\WebReg.cs" />
     <Compile Include="Class\WebPage.cs" />
     <Compile Include="Class\WebStep.cs" />
     <Compile Include="Class\UpSetting.cs" />
+    <Compile Include="Library\ServerProvider.cs" />
     <Compile Include="ProcessClass\AutoUpEx.cs" />
     <Compile Include="ProcessClass\FormDialogWatcher.cs" />
     <Compile Include="ProcessClass\MyCore.cs" />
@@ -66,7 +69,7 @@
     <Compile Include="Class\Entry.cs" />
     <Compile Include="Class\FieldSetting.cs" />
     <Compile Include="Class\MailConfig.cs" />
-    <Compile Include="Class\WebLink.cs" />
+    <Compile Include="Class\WebUp.cs" />
     <Compile Include="Library\CustomAttributes.cs" />
     <Compile Include="Library\RootLibrary.cs" />
     <Compile Include="ProcessClass\AutoPost.cs" />

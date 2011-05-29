@@ -28,7 +28,7 @@ namespace NewProject
         public void _InitData(string _type)
         {
             _Type = _type;
-            if(_Type==NumCode.UP)
+            if (_Type == NumCode.UPFORUM)
             {
                 txtSubject.Visible = false;
                 txtTag.Visible = false;
