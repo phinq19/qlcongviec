@@ -12,6 +12,7 @@ using WatiN.Core.Native.Windows;
 using Image=WatiN.Core.Image;
 using WorkLibrary;
 using NewProject;
+using System.Threading;
 
 
 namespace CreateWebStep
@@ -45,6 +46,14 @@ namespace CreateWebStep
 
             Settings.AutoStartDialogWatcher = false;
             ie = new IE(webBrowser1.ActiveXInstance);
+            try
+            {
+                ie.ClearCache();
+            }
+            catch
+            {
+            }
+            //ie = new IE();
             dialogWatcher = new DialogWatcher(new Window(this.Handle));
             dialogWatcher.CloseUnhandledDialogs = false;
             webpage = new WebPage();
@@ -53,7 +62,7 @@ namespace CreateWebStep
             lookUpEditPage.Properties.ValueMember = "ID";
             if (pageID > 0)
             {
-                lookUpEditPage.EditValue = int.Parse(pageID.ToString());
+                lookUpEditPage.EditValue = long.Parse(pageID.ToString());
             }
         }
 
@@ -187,8 +196,14 @@ namespace CreateWebStep
             {
                 long ID = long.Parse(lookUpEditPage.EditValue.ToString());
                 gridControl3.DataSource = WebStep.GetByIDWeb(ID);
-                _LoadDSWebLink(lookUpEditPage.Text);
-               
+                if (ID > 0)
+                {
+                    _LoadDSWebLink(lookUpEditPage.Text);
+                }
+                else
+                {
+                    _LoadDSForum();
+                }
                 webpageUp = WebPage.Get(ID);
                 if (webpageUp != null)
                 {
@@ -245,7 +260,6 @@ namespace CreateWebStep
                     proccessStep = proccessStep.Replace("{Password}", forum.Password);
                     proccessStep = proccessStep.Replace("{Url}", forum.UrlPost);
                     proccessStep = proccessStep.Replace("{IDTopic}", forum.IDTopic);
-
                     result = MyCore.ProcessStep(proccessStep, ie);
                 }
                 else
@@ -321,7 +335,15 @@ namespace CreateWebStep
             gridView1.TopRowIndex = i;
 
         }
+        private void _LoadDSForum()
+        {
+            int i = gridView1.TopRowIndex;
+            int k = gridView1.FocusedRowHandle;
+            gridControl1.DataSource = WebLink.GetByType(NumCode.UPFORUM);
+            gridView1.FocusedRowHandle = k;
+            gridView1.TopRowIndex = i;
 
+        }
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             try
@@ -552,7 +574,7 @@ namespace CreateWebStep
             {
 
                 webpageUp.Page = txtUrl.Text;
-                WebPage.Update(webpageUp);
+                //WebPage.Update(webpageUp);
                 WebStep.DeleteByID(webpageUp.ID);
                 foreach (DataRow dtRow in dtSource.Rows)
                 {
@@ -818,6 +840,81 @@ namespace CreateWebStep
             //image.Expand();
             //root.Nodes.Add(image);
             //root.Expand();
+        }
+        private void Auto()
+        {
+            DataTable dtTable1 = WebStep.GetByIDWeb(long.Parse(lookUpEditPage.EditValue.ToString()));
+            int i = 0;
+            while (i < dtTable1.Rows.Count)
+            {
+                DataRow dtRow = dtTable1.Rows[i];
+                string processStep = dtRow["Action"].ToString();
+                if (processStep.IndexOf("Exists") < 0)
+                {
+                    processStep = processStep.Replace("{UserName}", forum.UserName);
+                    processStep = processStep.Replace("{Password}", forum.Password);
+                    processStep = processStep.Replace("{Url}", forum.UrlPost);
+                    processStep = processStep.Replace("{IDTopic}", forum.IDTopic);
+                    processStep = processStep.Replace("{Content}", "Up phụ nè");
+                    string s = MyCore.ProcessStep(processStep, ie);
+                    if (s != String.Empty)
+                    {
+                        if (dtRow["Message"] != null && dtRow["Message"].ToString().Trim() != "")
+                        {
+                            MessageBox.Show(dtRow["Message"].ToString());
+                            return;
+                        }
+                    }
+                    i++;
+                }
+                else
+                {
+                    try
+                    {
+                        string[] a = processStep.Split('(');
+                        string processType = a[0].Trim();
+                        string processText = a[1].Trim(')');
+                        string[] b = processText.Split('|');
+                        string text = b[0].Trim();
+                        int stepYes = int.Parse(b[1]);
+                        int stepNo = int.Parse(b[2]);
+                        if (MyCore.Exist(text, ie))
+                        {
+                            i = stepYes - 1;
+                        }
+                        else
+                        {
+                            i = stepNo - 1;
+                        }
+                    }
+                    catch
+                    {
+                        i++;
+                    }
+
+                }
+            }
+            MessageBox.Show("Hoàn thành");
+        }
+        private void bntAuto_Click(object sender, EventArgs e)
+        {
+            if (forum == null)
+            {
+                MessageBox.Show("Chưa chọn link Topic");
+                return;
+            }
+            Thread thread = new Thread(Auto);
+            thread.IsBackground = true;
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            
+            
+
+        }
+
+        private void webBrowser1_Validated(object sender, EventArgs e)
+        {
+
         }
 
        

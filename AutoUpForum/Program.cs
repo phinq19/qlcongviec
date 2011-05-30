@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using WorkLibrary;
 using NewProject;
 
-namespace AutoUp
+namespace AutoUpForum
 {
     static class Program
     {

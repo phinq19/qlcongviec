@@ -5,12 +5,13 @@ using System.Text;
 using System.Data.OleDb;
 using System.Data;
 using System.Collections;
+using System.Data.SqlClient;
 
 namespace WorkLibrary
 {
     public class ServerProvider
     {
-        public static OleDbConnection myOleDbConnection;
+        public static SqlConnection mySqlConnection;
         //public Provider()
         //{
         //    string path = System.Windows.Forms.Application.StartupPath;
@@ -20,16 +21,19 @@ namespace WorkLibrary
         //}
         public void Close()
         {
-            myOleDbConnection.Close();
+            mySqlConnection.Close();
         }
         public static bool Connect()
         {
             try
             {
-                string path = System.Windows.Forms.Application.StartupPath;
-                string ConnectString = @"PROVIDER=Microsoft.Jet.OLEDB.4.0;Data Source=" + path + "/database.mdb";
-                myOleDbConnection = new OleDbConnection(ConnectString);
-                myOleDbConnection.Open();
+                string ConnectString=@"user id=viettin;
+                                       password=123456;server=112.213.89.70;
+                                       Trusted_Connection=no;
+                                       database=viettin_db; 
+                                       connection timeout=30";
+                mySqlConnection = new SqlConnection(ConnectString);
+                mySqlConnection.Open();
                 return true;
             }
             catch
@@ -39,47 +43,47 @@ namespace WorkLibrary
         }
         public static int ExecuteNonQuery(string sql)
         {
-            if (myOleDbConnection == null)
+            if (mySqlConnection == null)
                 Connect();
-            OleDbCommand myOleDbCommand = new OleDbCommand(sql, myOleDbConnection);
+            SqlCommand myOleDbCommand = new SqlCommand(sql, mySqlConnection);
            return myOleDbCommand.ExecuteNonQuery();
             
         }
         public static DataTable ExecuteToDataTable(string sql)
         {
-            if (myOleDbConnection == null)
+            if (mySqlConnection == null)
                 Connect();
             DataSet dtset = new DataSet();
-            OleDbDataAdapter myOleDataAdapter = new OleDbDataAdapter(sql, myOleDbConnection);
+            SqlDataAdapter myOleDataAdapter = new SqlDataAdapter(sql, mySqlConnection);
             myOleDataAdapter.Fill(dtset);
             return dtset.Tables[0];
         }
-        public static OleDbDataReader ExecuteToDataReader(string sql)
+        public static SqlDataReader ExecuteToDataReader(string sql)
         {
-            if (myOleDbConnection == null)
+            if (mySqlConnection == null)
                 Connect();
-            OleDbCommand myOleDbCommand = new OleDbCommand(sql, myOleDbConnection);
+            SqlCommand myOleDbCommand = new SqlCommand(sql, mySqlConnection);
             return myOleDbCommand.ExecuteReader();
 
         }
         public static object ExecuteScalar(string sql)
         {
-            if (myOleDbConnection == null)
+            if (mySqlConnection == null)
                 Connect();
-            OleDbCommand myOleDbCommand = new OleDbCommand(sql, myOleDbConnection);
+            SqlCommand myOleDbCommand = new SqlCommand(sql, mySqlConnection);
             return myOleDbCommand.ExecuteScalar();
         }
         public static void ExecuteStore(string sqlStore, ArrayList parameter)
         {
-            if (myOleDbConnection == null)
+            if (mySqlConnection == null)
                 Connect();
-            OleDbCommand myOleDbCommand = new OleDbCommand(sqlStore, myOleDbConnection);
+            SqlCommand myOleDbCommand = new SqlCommand(sqlStore, mySqlConnection);
 
             myOleDbCommand.CommandType = CommandType.StoredProcedure;
             int i = 0;
             foreach (object obj in parameter)
             {
-                myOleDbCommand.Parameters.Add(new OleDbParameter(i.ToString(),obj));
+                myOleDbCommand.Parameters.Add(new SqlParameter(i.ToString(),obj));
                 i++;
             }
             

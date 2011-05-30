@@ -24,7 +24,7 @@ namespace WorkLibrary
         #endregion
 
         private WebBrowser webBrowse;
-        public AutoPost(WebBrowser webBrowse1, WebLink weblink, String Subject, String Content, String Tag)
+        public AutoPost(WebBrowser webBrowse1,MultiForum multiforum, WebLink weblink, String Subject, String Content, String Tag)
         {
             //IE.Settings.AttachToIETimeOut = 100000;
             //IE.Settings.BrowserType = BrowserType.FireFox;
@@ -45,7 +45,7 @@ namespace WorkLibrary
 
         public StatusObj PostTopic()
         {
-            multiforum = new MultiForum(NumCode.POS);
+            
             StatusObj statusObj=new StatusObj();
 
             if (forum == null)
@@ -190,7 +190,7 @@ namespace WorkLibrary
         }
         public StatusObj UpTopic()
         {
-            multiforum = new MultiForum("UP");
+            
             StatusObj statusObj = new StatusObj();
 
             if (forum == null)

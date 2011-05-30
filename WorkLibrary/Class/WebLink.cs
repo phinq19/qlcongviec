@@ -8,6 +8,7 @@ namespace WorkLibrary
     public class WebLink
     {
         public long ID;
+        public long PageID;
         public string Url;
         public string UrlPost;
         public string UserName;
@@ -37,7 +38,7 @@ namespace WorkLibrary
         public static WebLink Get(long ID)
         {
             Type type = typeof(WebLink);
-            string sql = @"select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and u.ID=" + ID;
+            string sql = @"select u.ID,p.ID as PageID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and u.ID=" + ID;
             DataTable dtTable = Provider.ExecuteToDataTable(sql);
             if (dtTable.Rows.Count > 0)
             {
@@ -52,7 +53,7 @@ namespace WorkLibrary
         {
             try
             {
-                string sql = @" select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and u.Type='" + Type + "'";
+                string sql = @" select u.ID,p.ID as PageID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and u.Type='" + Type + "'";
                 DataTable dtTable = Provider.ExecuteToDataTable(sql);
                 return dtTable;
             }
@@ -62,7 +63,7 @@ namespace WorkLibrary
         public static DataTable GetByPage(string Page)
         {
 
-            string sql = @"select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and p.Page='" + Page + "'";
+            string sql = @"select u.ID,p.ID as PageID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and p.Page='" + Page + "'";
             DataTable dtTable = Provider.ExecuteToDataTable(sql);
             return dtTable;
 
@@ -72,11 +73,11 @@ namespace WorkLibrary
             string sql = "";
             if (str == "")
             {
-                sql = @"select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and  u.Type='" + type + "' order by p.Page";
+                sql = @"select u.ID,p.ID as PageID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and  u.Type='" + type + "' order by p.Page";
             }
             else
             {
-                sql = @"select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and  u.ID not in " + str + " and u.Type='" + type + "' order by p.Page";
+                sql = @"select u.ID,p.ID as PageID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and  u.ID not in " + str + " and u.Type='" + type + "' order by p.Page";
             }
             DataTable dtTable = Provider.ExecuteToDataTable(sql);
             return dtTable;
@@ -84,7 +85,7 @@ namespace WorkLibrary
         }
         public static DataTable GetIn(string str, string type)
         {
-            string sql = @" select u.ID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and u.ID in " + str + " and u.Type='" + type + "' order by p.Page";
+            string sql = @" select u.ID,p.ID as PageID,p.Page as Url,u.UrlPost,p.UserName,p.Password,u.Topic,u.IDTopic,u.Note,u.Group,u.Type from WebUp u,WebReg p where u.Page=p.ID and u.ID in " + str + " and u.Type='" + type + "' order by p.Page";
             DataTable dtTable = Provider.ExecuteToDataTable(sql);
             return dtTable;
 

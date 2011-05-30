@@ -111,6 +111,7 @@
             this.btnClearCache = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.bntAuto = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtLink.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -206,6 +207,7 @@
             this.webBrowser1.ScriptErrorsSuppressed = true;
             this.webBrowser1.Size = new System.Drawing.Size(629, 364);
             this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.Validated += new System.EventHandler(this.webBrowser1_Validated);
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // groupBox2
@@ -964,11 +966,11 @@
             // btnClearCache
             // 
             this.btnClearCache.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearCache.Location = new System.Drawing.Point(881, 396);
+            this.btnClearCache.Location = new System.Drawing.Point(908, 396);
             this.btnClearCache.Name = "btnClearCache";
-            this.btnClearCache.Size = new System.Drawing.Size(83, 23);
+            this.btnClearCache.Size = new System.Drawing.Size(56, 23);
             this.btnClearCache.TabIndex = 14;
-            this.btnClearCache.Text = "Clear Cache";
+            this.btnClearCache.Text = "Clear";
             this.btnClearCache.Click += new System.EventHandler(this.btnClearCache_Click);
             // 
             // groupBox4
@@ -990,11 +992,22 @@
             this.simpleButton4.Text = "Get Control";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
+            // bntAuto
+            // 
+            this.bntAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntAuto.Location = new System.Drawing.Point(842, 396);
+            this.bntAuto.Name = "bntAuto";
+            this.bntAuto.Size = new System.Drawing.Size(60, 23);
+            this.bntAuto.TabIndex = 20;
+            this.bntAuto.Text = "Auto Run";
+            this.bntAuto.Click += new System.EventHandler(this.bntAuto_Click);
+            // 
             // frmWebBowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 431);
+            this.Controls.Add(this.bntAuto);
             this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.btnClearCache);
             this.Controls.Add(this.groupBox3);
@@ -1139,6 +1152,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton bntAuto;
 
     }
 }
