@@ -76,6 +76,7 @@ namespace WorkLibrary
                 {
                     ie.GoTo(text);
                     ie.WaitForComplete();
+                    //ie.WaitUntilContainsText("message");
                     return string.Empty;
                 }
                 catch (Exception ex)
@@ -178,6 +179,7 @@ namespace WorkLibrary
             }
             return RunControl(controls,ie);
         }
+        
         public static bool Exist(String text, IE ie)
         {
             try
@@ -478,6 +480,7 @@ namespace WorkLibrary
                                 WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
                                 if (obj != null)
                                 {
+                                
                                     obj.Value = data;
                                     ie.WaitForComplete();
                                     return String.Empty;

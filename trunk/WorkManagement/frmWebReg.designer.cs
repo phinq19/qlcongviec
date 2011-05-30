@@ -55,6 +55,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtMa = new DevExpress.XtraEditors.TextEdit();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.lookUpEditPage = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemLookUp_DVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditTinhLaiLo)).BeginInit();
@@ -69,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPage.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ItemLookUp_DVT
@@ -256,6 +258,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.lookUpEditPage);
             this.groupControl1.Controls.Add(this.txtPassword);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.txtUsername);
@@ -321,6 +324,17 @@
             this.btnSua.Text = "Sửa (&E)";
             this.btnSua.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // lookUpEditPage
+            // 
+            this.lookUpEditPage.EnterMoveNextControl = true;
+            this.lookUpEditPage.Location = new System.Drawing.Point(70, 25);
+            this.lookUpEditPage.Name = "lookUpEditPage";
+            this.lookUpEditPage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditPage.Properties.NullText = "<Chọn trang web>";
+            this.lookUpEditPage.Size = new System.Drawing.Size(458, 20);
+            this.lookUpEditPage.TabIndex = 31;
+            // 
             // frmWebReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +369,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPage.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,6 +404,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.Columns.GridColumn colUser;
         private DevExpress.XtraGrid.Columns.GridColumn colPass;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditPage;
 
     }
 }

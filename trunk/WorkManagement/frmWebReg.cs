@@ -15,7 +15,7 @@ namespace NewProject
         bool Saved;
         WebReg _webReg;
         string status = "NORMAL";
-        private string _Type = "WEB";
+        private string _Type = NumCode.WEB;
         public frmWebReg(string _type)
         {
             InitializeComponent();
@@ -28,7 +28,11 @@ namespace NewProject
             if (_webReg != null)
             {
                 txtMa.Text = _webReg.ID.ToString();
-                txtTen.Text = _webReg.Page;
+                if (_Type == NumCode.WEB)
+                    lookUpEditPage.EditValue = _webReg.Page;
+                else
+                    txtTen.Text = _webReg.Page;
+                    
                 txtUsername.Text = _webReg.UserName;
                 txtPassword.Text = _webReg.Password;
                 txtGhiChu.Text = _webReg.Note;
@@ -44,6 +48,7 @@ namespace NewProject
             txtMa.Text = "";
             txtUsername.Text = "";
             txtPassword.Text = "";
+            lookUpEditPage.EditValue = null;
             _webReg = null;
         }
 
@@ -58,6 +63,7 @@ namespace NewProject
                 txtTen.Enabled = true;
                 txtUsername.Enabled = true;
                 txtPassword.Enabled = true;
+                lookUpEditPage.Enabled = true;
                 btnXoa.Enabled = true;
                // btnLuu.Enabled = true;
                 btnSua.Enabled = true;
@@ -73,6 +79,7 @@ namespace NewProject
                
                 txtMa.Enabled = false;
                 txtGhiChu.Enabled = true;
+                lookUpEditPage.Enabled = true;
                 txtUsername.Enabled = true;
                 txtPassword.Enabled = true;
                 txtTen.Enabled = true;
@@ -91,6 +98,7 @@ namespace NewProject
                 txtTen.Enabled = false;
                 txtUsername.Enabled = false;
                 txtPassword.Enabled = false;
+                lookUpEditPage.Enabled = false;
                // btnLuu.Enabled = false;
                 btnThemMoi.Enabled = true;
                 btnSua.Enabled = true;
@@ -109,12 +117,19 @@ namespace NewProject
         private WebReg _getFormInfo()
         {
             WebReg nhom = null;
-           
-                if (txtTen.Text != "")
+
+            if (txtTen.Text != "" && lookUpEditPage.EditValue==null)
                 {
                     nhom = new WebReg();
                     //nhom.Ma = int.Parse(txtMa.Text);
-                    nhom.Page = txtTen.Text;
+                    if (_Type == NumCode.WEB)
+                    {
+                        nhom.Page = lookUpEditPage.EditValue.ToString();
+                    }
+                    else
+                    {
+                        nhom.Page = txtTen.Text;
+                    }
                     nhom.Note = txtGhiChu.Text;
                     nhom.UserName = txtUsername.Text;
                     nhom.Password = txtPassword.Text;
@@ -129,7 +144,20 @@ namespace NewProject
             
             return nhom;
         }
+        private void _LoadWebPage()
+        {
+            DataTable NhomDT = WebPage.GetActive(_Type);
 
+            lookUpEditPage.Properties.DataSource = NhomDT;
+            lookUpEditPage.Properties.DisplayMember = "Page";
+            lookUpEditPage.Properties.ValueMember = "Page";
+
+            DevExpress.XtraEditors.Controls.LookUpColumnInfo colun0 = new DevExpress.XtraEditors.Controls.LookUpColumnInfo();
+            colun0.Caption = "Page";
+            colun0.FieldName = "Page";
+            lookUpEditPage.Properties.Columns.Add(colun0);
+
+        }
         private void _LoadDSNHom()
         {
             DataTable list = WebReg.GetByType(_Type);
@@ -147,6 +175,15 @@ namespace NewProject
         {
             GetResource();
             _LoadDSNHom();
+            if (_Type == NumCode.WEB)
+            {
+                _LoadWebPage();
+                txtTen.Visible = false;
+            }
+            else
+            {
+                lookUpEditPage.Visible = false;
+            }
             _ClearForm();
             _setFormStatus("NORMAL");
         }

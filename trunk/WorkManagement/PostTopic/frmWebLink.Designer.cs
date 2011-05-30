@@ -315,7 +315,7 @@
             this.chkCloseAlterSave.Location = new System.Drawing.Point(10, 231);
             this.chkCloseAlterSave.Name = "chkCloseAlterSave";
             this.chkCloseAlterSave.Properties.Caption = "Đóng sau khi lưu";
-            this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 19);
+            this.chkCloseAlterSave.Size = new System.Drawing.Size(108, 18);
             this.chkCloseAlterSave.TabIndex = 12;
             // 
             // frmWebLink
