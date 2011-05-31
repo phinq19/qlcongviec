@@ -72,87 +72,137 @@ namespace WebBrowser
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            //foreach (WatiN.Core.TextField obj in ie.TextFields)
-            //{
-            //    obj.Highlight(false);
-            //}
+            try
+            {
+                //foreach (WatiN.Core.TextField obj in ie.TextFields)
+                //{
+                //    obj.Highlight(false);
+                //}
 
-            //foreach (WatiN.Core.Button obj in ie.Buttons)
-            //{
-            //    obj.Highlight(false);
-            //}
-            //foreach (WatiN.Core.Div obj in ie.Divs)
-            //{
-            //    obj.Highlight(false);
-            //}\
-            
-            txtSelect.Text=e.Node.Text;
-            string Value = e.Node.Text;
-            if(Value.IndexOf(" = ")>=0)
-            {
-                Value = Value.Split('=')[1].Trim();
-            }
-            if (e.Node.FullPath.IndexOf("Div") >= 0)
-            {
-                if (txtSelect.Text.IndexOf("Name = ") >= 0)
+                //foreach (WatiN.Core.Button obj in ie.Buttons)
+                //{
+                //    obj.Highlight(false);
+                //}
+                //foreach (WatiN.Core.Div obj in ie.Divs)
+                //{
+                //    obj.Highlight(false);
+                //}\
+
+                txtSelect.Text = e.Node.Text;
+                string Value = e.Node.Text;
+                if (Value.IndexOf(" = ") >= 0)
                 {
-                    Div div = ie.Div(Find.ByName(Value));
-                    if (div != null && div.Exists)
+                    Value = Value.Split('=')[1].Trim();
+                }
+                if (e.Node.FullPath.IndexOf("Div") >= 0)
+                {
+                    if (txtSelect.Text.IndexOf("Name = ") >= 0)
                     {
-                        div.Highlight(true);
+                        Div div = ie.Div(Find.ByName(Value));
+                        if (div != null && div.Exists)
+                        {
+                            div.Highlight(true);
+                        }
+                    }
+                    else
+                    {
+                        Div div = ie.Div(Find.ById(Value));
+                        if (div != null && div.Exists)
+                        {
+                            div.Highlight(true);
+                        }
                     }
                 }
-                else
+                else if (e.Node.FullPath.IndexOf("TextBox") >= 0)
                 {
-                    Div div = ie.Div(Find.ById(Value));
-                    if (div != null && div.Exists)
+                    TextField text = ie.TextField(Find.ByName(Value));
+                    if (text != null && text.Exists)
                     {
-                        div.Highlight(true);
+                        text.Highlight(true);
+                        text.Select();
+                    }
+                }
+                else if (e.Node.FullPath.IndexOf("Button") >= 0)
+                {
+                    WatiN.Core.Button butt = ie.Button(Find.ByValue(Value));
+                    if (butt != null && butt.Exists)
+                    {
+                        butt.Highlight(true);
+                    }
+                }
+                else if (e.Node.FullPath.IndexOf("Link") >= 0)
+                {
+                    if (txtSelect.Text.IndexOf("Class = ") >= 0)
+                    {
+                        WatiN.Core.Link link = ie.Link(Find.ByClass(Value));
+                        if (link != null && link.Exists)
+                        {
+                            link.Highlight(true);
+                        }
+                    }
+                    else
+                    {
+                        WatiN.Core.Link link = ie.Link(Find.ByText(Value));
+                        if (link != null && link.Exists)
+                        {
+                            link.Highlight(true);
+                        }
+                    }
+                }
+                else if (e.Node.FullPath.IndexOf("Element") >= 0)
+                {
+                    if (txtSelect.Text.IndexOf("Id = ") >= 0)
+                    {
+                        WatiN.Core.Element link = ie.Element(Find.ById(Value));
+                        if (link != null && link.Exists)
+                        {
+                            link.Highlight(true);
+                        }
+                    }
+                    else
+                    {
+                        WatiN.Core.Element link = ie.Element(Find.ByText(Value));
+                        if (link != null && link.Exists)
+                        {
+                            link.Highlight(true);
+                        }
                     }
                 }
             }
-            else if (e.Node.FullPath.IndexOf("TextBox") >= 0)
-            {
-                TextField text = ie.TextField(Find.ByName(Value));
-                if (text != null && text.Exists)
-                {
-                    text.Highlight(true);
-                    text.Select();
-                }
-            }
-            else if (e.Node.FullPath.IndexOf("Button") >= 0)
-            {
-                WatiN.Core.Button butt = ie.Button(Find.ByValue(Value));
-                if (butt != null && butt.Exists)
-                {
-                    butt.Highlight(true);
-                }
-            }
-            else if (e.Node.FullPath.IndexOf("Link") >= 0)
-            {
-                if (txtSelect.Text.IndexOf("Class = ") >= 0)
-                {
-                    WatiN.Core.Link link = ie.Link(Find.ByClass(Value));
-                    if (link != null && link.Exists)
-                    {
-                        link.Highlight(true);
-                    }
-                }
-                else
-                {
-                    WatiN.Core.Link link = ie.Link(Find.ByText(Value));
-                    if (link != null && link.Exists)
-                    {
-                        link.Highlight(true);
-                    }
-                }
-            }
+            catch { }
 
         }
 
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
-            LoadControl();
+            try
+            {
+                //Element elemen = ie.Element(Find.ByAlt("Submit"));
+                //if (elemen.Exists)
+                //{
+                //    elemen.Click();
+                //    ie.WaitForComplete();
+                //}
+                foreach (WatiN.Core.Form frm in ie.Forms)
+                {
+                    if (frm.GetAttributeValue("Action").IndexOf("do=login") > 0)
+                    {
+                        Settings.WaitForCompleteTimeOut = 1;
+                        try
+                        {
+                            frm.Submit();
+                        }
+                        catch
+                        { }
+                        ie.WaitForComplete();
+                        Settings.WaitForCompleteTimeOut = 30000;
+                        break;
+                    }
+                }
+                
+            }
+            catch { }
+           // LoadControl();
         }
         private void LoadControl()
         {
@@ -339,25 +389,57 @@ namespace WebBrowser
             root.Nodes.Add(div);
             div.Expand();
 
+            TreeNode image = new TreeNode("Image");
+            foreach (WatiN.Core.Image obj in ie.Images)
+            {
+                if (obj.Id != null && obj.Id.ToString() != "")
+                {
+                    TreeNode nodeL = new TreeNode(obj.Id);
+                    nodeL.Nodes.Add("Id = " + obj.Id);
+                    nodeL.Nodes.Add("Name = " + obj.Name);
+                    nodeL.Nodes.Add("Text = " + obj.Text);
+                    nodeL.Nodes.Add("Src = " + obj.Src);
+                    nodeL.Nodes.Add("Class = " + obj.ClassName);
+                    //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
+                    image.Nodes.Add(nodeL);
+                }
+            }
+            image.Expand();
+            root.Nodes.Add(image);
             root.Expand();
-            //TreeNode image = new TreeNode("Image");
-            //foreach (WatiN.Core.Image obj in ie.Images)
-            //{
-            //    //if (obj.ClassName != null && obj.ClassName.ToString() != "")
-            //    {
-            //        TreeNode nodeL = new TreeNode(obj.Name);
-            //        nodeL.Nodes.Add("Id = " + obj.Id);
-            //        nodeL.Nodes.Add("Value = " + obj.Name);
-            //        nodeL.Nodes.Add("Text = " + obj.Text);
-            //        nodeL.Nodes.Add("Link = " + obj.Src);
-            //        nodeL.Nodes.Add("Class = " + obj.ClassName);
-            //        //nodeB.Nodes.Add("Tilte = " + obj.Title.ToString());
-            //        image.Nodes.Add(nodeL);
-            //    }
-            //}
-            //image.Expand();
-            //root.Nodes.Add(image);
-            //root.Expand();
+            TreeNode element = new TreeNode("Element");
+            foreach (WatiN.Core.Element<Image> obj in ie.ElementsOfType<Image>())
+            {
+                //if (obj.ClassName != null && obj.ClassName.ToString() != "")
+                {
+                    TreeNode nodeL = new TreeNode(obj.GetValue("Alt"));
+                    nodeL.Nodes.Add("Id = " + obj.Id);
+                    nodeL.Nodes.Add("TagName = " + obj.TagName);
+                    nodeL.Nodes.Add("Name = " + obj.Name);
+                    nodeL.Nodes.Add("Text = " + obj.Text);
+                    nodeL.Nodes.Add("Title = " + obj.Title);
+                    nodeL.Nodes.Add("Tilte = " + obj.GetValue("Src"));
+                    element.Nodes.Add(nodeL);
+                }
+            }
+            element.Expand();
+            root.Nodes.Add(element);
+            TreeNode Form = new TreeNode("Form");
+            foreach (WatiN.Core.Form obj in ie.Forms)
+            {
+                //if (obj.ClassName != null && obj.ClassName.ToString() != "")
+                {
+                    TreeNode nodeL = new TreeNode(obj.GetValue("Action"));
+                    nodeL.Nodes.Add("Id = " + obj.Id);
+                    nodeL.Nodes.Add("Name = " + obj.Name);
+                    nodeL.Nodes.Add("Text = " + obj.Text);
+                    nodeL.Nodes.Add("Title = " + obj.Title);
+                    Form.Nodes.Add(nodeL);
+                }
+            }
+            Form.Expand();
+            root.Nodes.Add(Form);
+            root.Expand();
         }
         private void LoadDiv(Div divobj,TreeNode node)
         {

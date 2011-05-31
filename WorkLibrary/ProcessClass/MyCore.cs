@@ -12,7 +12,7 @@ namespace WorkLibrary
 {
     public class MyCore
     {
-        static int Loop = 5;
+        static int Loop = 4;
         public static string ProcessStep(String strstep, IE ie)
         {
             try
@@ -57,6 +57,11 @@ namespace WorkLibrary
                             return Check(processText, ie);
                             break;
                         }
+                    case ProcessType.Submit:
+                        {
+                            return Submit(processText, ie);
+                            break;
+                        }
                 }
                 return "Error Type";
             }
@@ -98,16 +103,17 @@ namespace WorkLibrary
            
             string[] a = text.Trim().Split('|');
             string data = a[1].Trim();
-            string b = a[0].Trim();
-            string[] c = b.Split('[');
-            string[] d = c[1].Trim(']').Split(',');
-            foreach (string e in d)
+
+            string[] k = a[0].Split(',');
+            foreach (string l in k)
             {
-                string[] f = e.Trim().Split(':');
+                string[] m = l.Trim().Split('[');
+                string n = m[1].Trim(']');
+                string[] o = n.Split(':');
                 HControl hcontrol = new HControl();
-                hcontrol.Control = c[0].Trim();
-                hcontrol.Attribute = f[0].Trim();
-                hcontrol.Value = f[1].Trim();
+                hcontrol.Control = m[0].Trim();
+                hcontrol.Attribute = o[0].Trim();
+                hcontrol.Value = o[1].Trim();
                 controls.Add(hcontrol);
             }
             return RunControl(controls,data,ie);
@@ -118,16 +124,16 @@ namespace WorkLibrary
 
             string[] a = text.Trim().Split('|');
             string data = a[1].Trim();
-            string b = a[0].Trim();
-            string[] c = b.Split('[');
-            string[] d = c[1].Trim(']').Split(',');
-            foreach (string e in d)
+            string[] k = a[0].Split(',');
+            foreach (string l in k)
             {
-                string[] f = e.Trim().Split(':');
+                string[] m = l.Trim().Split('[');
+                string n = m[1].Trim(']');
+                string[] o = n.Split(':');
                 HControl hcontrol = new HControl();
-                hcontrol.Control = c[0].Trim();
-                hcontrol.Attribute = f[0].Trim();
-                hcontrol.Value = f[1].Trim();
+                hcontrol.Control = m[0].Trim();
+                hcontrol.Attribute = o[0].Trim();
+                hcontrol.Value = o[1].Trim();
                 controls.Add(hcontrol);
             }
             return RunControl(controls, data, ie);
@@ -139,24 +145,24 @@ namespace WorkLibrary
             string[] a = text.Trim().Split('|');
             string g = a[0].Trim();
             string[] h = g.Split('[');
-            string[] l = h[1].Trim(']').Split(':');
+            string[] j = h[1].Trim(']').Split(':');
             HControl hcontroldiv = new HControl();
             hcontroldiv.Control = h[0].Trim();
-            hcontroldiv.Attribute = l[0].Trim();
-            hcontroldiv.Value = l[1].Trim();
+            hcontroldiv.Attribute = j[0].Trim();
+            hcontroldiv.Value = j[1].Trim();
             Div div = MyWatiN.GetDiv(ie, hcontroldiv);
             if (div != null)
             {
-                string b = a[1].Trim();
-                string[] c = b.Split('[');
-                string[] d = c[1].Trim(']').Split(',');
-                foreach (string e in d)
+                string[] k = text.Split(',');
+                foreach (string l in k)
                 {
-                    string[] f = e.Trim().Split(':');
+                    string[] m = l.Trim().Split('[');
+                    string n = m[1].Trim(']');
+                    string[] o = n.Split(':');
                     HControl hcontrol = new HControl();
-                    hcontrol.Control = c[0].Trim();
-                    hcontrol.Attribute = f[0].Trim();
-                    hcontrol.Value = f[1].Trim();
+                    hcontrol.Control = m[0].Trim();
+                    hcontrol.Attribute = o[0].Trim();
+                    hcontrol.Value = o[1].Trim();
                     controls.Add(hcontrol);
                 }
                 return RunControl(controls, div,ie);
@@ -166,34 +172,74 @@ namespace WorkLibrary
         private static string Click(String text, IE ie)
         {
             List<HControl> controls = new List<HControl>();
-            string[] c = text.Trim().Split('[');
-            string[] d = c[1].Trim(']').Split(',');
-            foreach (string e in d)
+            string[] k = text.Split(',');
+            foreach (string l in k)
             {
-                string[] f = e.Trim().Split(':');
+                string[] m = l.Trim().Split('[');
+                string n = m[1].Trim(']');
+                string[] o = n.Split(':');
                 HControl hcontrol = new HControl();
-                hcontrol.Control = c[0].Trim();
-                hcontrol.Attribute = f[0].Trim();
-                hcontrol.Value = f[1].Trim();
+                hcontrol.Control = m[0].Trim();
+                hcontrol.Attribute = o[0].Trim();
+                hcontrol.Value = o[1].Trim();
                 controls.Add(hcontrol);
             }
             return RunControl(controls,ie);
         }
-        
+        private static string Submit(String text, IE ie)
+        {
+            List<HControl> controls = new List<HControl>();
+            string[] k = text.Split(',');
+            foreach (string l in k)
+            {
+                string[] m = l.Trim().Split('[');
+                string n = m[1].Trim(']');
+                string[] o = n.Split(':');
+                HControl hcontrol = new HControl();
+                hcontrol.Control = m[0].Trim();
+                hcontrol.Attribute = o[0].Trim();
+                hcontrol.Value = o[1].Trim();
+                controls.Add(hcontrol);
+            }
+            foreach (WatiN.Core.Form frm in ie.Forms)
+            {
+                foreach (HControl ctr in controls)
+                {
+                    if (frm.GetAttributeValue(ctr.Attribute).IndexOf(ctr.Value) >= 0)
+                    {
+                        int timeout = Settings.WaitForCompleteTimeOut;
+                        Settings.WaitForCompleteTimeOut = 1;
+                        try
+                        {
+                            frm.Submit();
+                        }
+                        catch
+                        {
+                        }
+                        ie.WaitForComplete();
+                        Settings.WaitForCompleteTimeOut = timeout;
+                        return String.Empty;
+                    }
+                }
+            }
+          
+            return "Error";
+        }
         public static bool Exist(String text, IE ie)
         {
             try
             {
                 List<HControl> controls = new List<HControl>();
-                string[] c = text.Trim().Split('[');
-                string[] d = c[1].Trim(']').Split(',');
-                foreach (string e in d)
+                string[] k = text.Split(',');
+                foreach (string l in k)
                 {
-                    string[] f = e.Trim().Split(':');
+                    string[] m = l.Trim().Split('[');
+                    string n = m[1].Trim(']');
+                    string[] o = n.Split(':');
                     HControl hcontrol = new HControl();
-                    hcontrol.Control = c[0].Trim();
-                    hcontrol.Attribute = f[0].Trim();
-                    hcontrol.Value = f[1].Trim();
+                    hcontrol.Control = m[0].Trim();
+                    hcontrol.Attribute = o[0].Trim();
+                    hcontrol.Value = o[1].Trim();
                     controls.Add(hcontrol);
                 }
                 return CheckExist(controls, ie);
@@ -206,15 +252,16 @@ namespace WorkLibrary
         private static string ClickConfirm(String text, IE ie)
         {
             List<HControl> controls = new List<HControl>();
-            string[] c = text.Trim().Split('[');
-            string[] d = c[1].Trim(']').Split(',');
-            foreach (string e in d)
+            string[] k = text.Split(',');
+            foreach (string l in k)
             {
-                string[] f = e.Trim().Split(':');
+                string[] m = l.Trim().Split('[');
+                string n = m[1].Trim(']');
+                string[] o = n.Split(':');
                 HControl hcontrol = new HControl();
-                hcontrol.Control = c[0].Trim();
-                hcontrol.Attribute = f[0].Trim();
-                hcontrol.Value = f[1].Trim();
+                hcontrol.Control = m[0].Trim();
+                hcontrol.Attribute = o[0].Trim();
+                hcontrol.Value = o[1].Trim();
                 controls.Add(hcontrol);
             }
             return RunControlConfirm(controls, ie);
@@ -283,6 +330,15 @@ namespace WorkLibrary
                                 }
                                 break;
                             }
+                        case ControlType.Image:
+                            {
+                                WatiN.Core.Image obj = MyWatiN.GetImage(ie, control);
+                                if (obj != null)
+                                {
+                                    return true;
+                                }
+                                break;
+                            }
                         case ControlType.TextArea:
                             {
                                 WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
@@ -313,7 +369,10 @@ namespace WorkLibrary
                     }
 
                 }
-                Thread.Sleep(1000);
+                if (i < 1)
+                {
+                    Thread.Sleep(1000);
+                }
             }
             return status;
         }
@@ -353,7 +412,18 @@ namespace WorkLibrary
                                 }
                                 break;
                             }
-                        
+                        case ControlType.Image:
+                            {
+                                WatiN.Core.Image obj = MyWatiN.GetImage(div, control);
+                                if (obj != null)
+                                {
+                                    obj.Click();
+                                    ie.WaitForComplete();
+                                    return String.Empty;
+
+                                }
+                                break;
+                            }
                         case ControlType.TextArea:
                             {
                                 WatiN.Core.TextField obj = MyWatiN.GetTextField(div, control);
@@ -393,7 +463,10 @@ namespace WorkLibrary
                     }
 
                 }
-                Thread.Sleep(1000);
+                if (i < Loop - 1)
+                {
+                    Thread.Sleep(1000);
+                }
             }
             return status;
         }
@@ -463,6 +536,18 @@ namespace WorkLibrary
                                 }
                                 break;
                             }
+                        case ControlType.Image:
+                            {
+                                WatiN.Core.Image obj = MyWatiN.GetImage(ie, control);
+                                if (obj != null)
+                                {
+                                    obj.Click();
+                                    ie.WaitForComplete();
+                                    return String.Empty;
+
+                                }
+                                break;
+                            }
                         case ControlType.TextArea:
                             {
                                 WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
@@ -480,7 +565,7 @@ namespace WorkLibrary
                                 WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
                                 if (obj != null)
                                 {
-                                
+                                   // obj.SetAttributeValue("style", String.Empty);
                                     obj.Value = data;
                                     ie.WaitForComplete();
                                     return String.Empty;
