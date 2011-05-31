@@ -49,13 +49,13 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lookUpEditPage = new DevExpress.XtraEditors.LookUpEdit();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtUsername = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtMa = new DevExpress.XtraEditors.TextEdit();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
-            this.lookUpEditPage = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemLookUp_DVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditTinhLaiLo)).BeginInit();
@@ -67,10 +67,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPage.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ItemLookUp_DVT
@@ -273,6 +273,17 @@
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Thông tin đăng ký";
             // 
+            // lookUpEditPage
+            // 
+            this.lookUpEditPage.EnterMoveNextControl = true;
+            this.lookUpEditPage.Location = new System.Drawing.Point(70, 25);
+            this.lookUpEditPage.Name = "lookUpEditPage";
+            this.lookUpEditPage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditPage.Properties.NullText = "<Chọn trang web>";
+            this.lookUpEditPage.Size = new System.Drawing.Size(458, 20);
+            this.lookUpEditPage.TabIndex = 31;
+            // 
             // txtPassword
             // 
             this.txtPassword.EnterMoveNextControl = true;
@@ -324,17 +335,6 @@
             this.btnSua.Text = "Sửa (&E)";
             this.btnSua.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // lookUpEditPage
-            // 
-            this.lookUpEditPage.EnterMoveNextControl = true;
-            this.lookUpEditPage.Location = new System.Drawing.Point(70, 25);
-            this.lookUpEditPage.Name = "lookUpEditPage";
-            this.lookUpEditPage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditPage.Properties.NullText = "<Chọn trang web>";
-            this.lookUpEditPage.Size = new System.Drawing.Size(458, 20);
-            this.lookUpEditPage.TabIndex = 31;
-            // 
             // frmWebReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,10 +366,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPage.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

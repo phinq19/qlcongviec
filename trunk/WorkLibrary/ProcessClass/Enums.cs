@@ -24,6 +24,7 @@ namespace WorkLibrary
     public class ControlType
     {
         public const string TextBox = "textbox";
+        public const string Image = "image";
         public const string TextArea = "textarea";
         public const string Button = "button";
         public const string AHref = "href0";
@@ -45,6 +46,7 @@ namespace WorkLibrary
     public class ProcessType
     {
         public const string Goto = "goto";
+        public const string Submit = "submit";
         public const string Check = "check";
         public const string Click = "click";
         public const string DivClick = "divclick";

@@ -614,5 +614,101 @@ namespace WorkLibrary
                     }
             }
         }
+        public static WatiN.Core.Image GetImage(IE ie, HControl control)
+        {
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        Image txt = ie.Image(Find.ById(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        Image txt = ie.Image(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Class:
+                    {
+                        Image txt = ie.Image(Find.ByClass(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Text:
+                    {
+                        Image txt = ie.Image(Find.ByText(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Value:
+                    {
+                        Image txt = ie.Image(Find.ByValue(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                default:
+                    {
+                        Image txt = ie.Image(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+            }
+        }
+        public static WatiN.Core.Image GetImage(Div ie, HControl control)
+        {
+            switch (control.Attribute.ToLower())
+            {
+                case AttributeType.Id:
+                    {
+                        Image txt = ie.Image(Find.ById(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Name:
+                    {
+                        Image txt = ie.Image(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Class:
+                    {
+                        Image txt = ie.Image(Find.ByClass(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Text:
+                    {
+                        Image txt = ie.Image(Find.ByText(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                case AttributeType.Value:
+                    {
+                        Image txt = ie.Image(Find.ByValue(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+                default:
+                    {
+                        Image txt = ie.Image(Find.ByName(control.Value));
+                        if (txt.Exists)
+                            return txt;
+                        return null;
+                    }
+            }
+        }
     }
 }
