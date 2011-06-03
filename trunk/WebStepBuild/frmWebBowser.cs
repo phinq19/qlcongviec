@@ -261,6 +261,7 @@ namespace CreateWebStep
                     proccessStep = proccessStep.Replace("{Url}", forum.UrlPost);
                     proccessStep = proccessStep.Replace("{IDTopic}", forum.IDTopic);
                     result = MyCore.ProcessStep(proccessStep, ie);
+                    
                 }
                 else
                 {
@@ -367,36 +368,38 @@ namespace CreateWebStep
 
         private void btnClearCache_Click(object sender, EventArgs e)
         {
-            gridView3.ClearSelection();
-            gridView3.FocusedRowHandle = 0;
-            gridView3.SelectRow(0);
-            try
-            {
-                ie.ClearCache();
+            webBrowser1.Document.All["vB_Editor_QR_textarea"].Style="WIDTH: 614px; HEIGHT: 100px; oWidth: 100%";
+            webBrowser1.Document.All["vB_Editor_QR_textarea"].InnerText = "Úp phụ nè";
+            //gridView3.ClearSelection();
+            //gridView3.FocusedRowHandle = 0;
+            //gridView3.SelectRow(0);
+            //try
+            //{
+            //    ie.ClearCache();
 
-            }
-            catch { }
-            try
-            {
-                ie.ClearCookies();
-            }
-            catch { }
-            try
-            {
-                //webBrowser1.Dispose();
-                //webBrowser1 = new WebBrowser();
-                //webBrowser1.Name = "webBrowser1";
-                //webBrowser1.Dock = DockStyle.Fill;
-                //webBrowser1.ScriptErrorsSuppressed = true;
-                //groupBox1.Controls.Add(webBrowser1);
-                //ie = new IE(webBrowser1.ActiveXInstance);
-            }
-            catch { }
-            try
-            {
+            //}
+            //catch { }
+            //try
+            //{
+            //    ie.ClearCookies();
+            //}
+            //catch { }
+            //try
+            //{
+            //    //webBrowser1.Dispose();
+            //    //webBrowser1 = new WebBrowser();
+            //    //webBrowser1.Name = "webBrowser1";
+            //    //webBrowser1.Dock = DockStyle.Fill;
+            //    //webBrowser1.ScriptErrorsSuppressed = true;
+            //    //groupBox1.Controls.Add(webBrowser1);
+            //    //ie = new IE(webBrowser1.ActiveXInstance);
+            //}
+            //catch { }
+            //try
+            //{
                
-            }
-            catch { }
+            //}
+            //catch { }
         }
 
         private void hideContainerLeft_Click(object sender, EventArgs e)

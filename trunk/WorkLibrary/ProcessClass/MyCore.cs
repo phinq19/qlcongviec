@@ -62,6 +62,11 @@ namespace WorkLibrary
                             return Submit(processText, ie);
                             break;
                         }
+                    case ProcessType.ClickMode:
+                        {
+                            return ClickMode(processText, ie);
+                            break;
+                        }
                 }
                 return "Error Type";
             }
@@ -117,6 +122,40 @@ namespace WorkLibrary
                 controls.Add(hcontrol);
             }
             return RunControl(controls,data,ie);
+        }
+        private static string ClickMode(String text, IE ie)
+        {
+            List<HControl> controls = new List<HControl>();
+
+            string[] a = text.Trim().Split('|');
+            string g = a[1].Trim();
+            string[] h = g.Split('[');
+            string[] j = h[1].Trim(']').Split(':');
+            HControl hcontroldiv = new HControl();
+            hcontroldiv.Control = h[0].Trim();
+            hcontroldiv.Attribute = j[0].Trim();
+            hcontroldiv.Value = j[1].Trim();
+            TextField div = MyWatiN.GetTextField(ie, hcontroldiv);
+            string style = div.GetAttributeValue("style");
+            string display = Filter.GetTextByRegex(FilterPattern.Display, style, true, 0, 1);
+            if (!string.IsNullOrEmpty(display))
+            {
+                string[] k = a[0].Split(',');
+                foreach (string l in k)
+                {
+                    string[] m = l.Trim().Split('[');
+                    string n = m[1].Trim(']');
+                    string[] o = n.Split(':');
+                    HControl hcontrol = new HControl();
+                    hcontrol.Control = m[0].Trim();
+                    hcontrol.Attribute = o[0].Trim();
+                    hcontrol.Value = o[1].Trim();
+                    controls.Add(hcontrol);
+                }
+                return RunControl(controls, "", ie);
+            }
+            return String.Empty;
+           
         }
         private static string Check(String text, IE ie)
         {
@@ -565,7 +604,8 @@ namespace WorkLibrary
                                 WatiN.Core.TextField obj = MyWatiN.GetTextField(ie, control);
                                 if (obj != null)
                                 {
-                                   // obj.SetAttributeValue("style", String.Empty);
+
+                                    
                                     obj.Value = data;
                                     ie.WaitForComplete();
                                     return String.Empty;

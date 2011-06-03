@@ -12,5 +12,6 @@ namespace WorkLibrary
     public class Const
     {
         public static int ThreadNumber = 5;
+        public static string RegisterKey = "";
     }
 }

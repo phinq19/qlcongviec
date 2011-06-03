@@ -64,15 +64,8 @@ namespace WorkLibrary
             {
 
                 // Start WatiN
-                if (Open() == false)
-                {
-                    statusObj.Message = "Không mở được trình duyệt";
-                    statusObj.Status = "Error";
-                    return statusObj;
-
-                }
                 WebPage wp = WebPage.GetByPage(forum.Url.Trim().ToLower());
-                if(wp==null)
+                if (wp == null)
                 {
                     statusObj.Message = "Trang Web này chưa được đăng ký";
                     statusObj.Status = "Error";
@@ -80,6 +73,20 @@ namespace WorkLibrary
                 }
                 IDWeb = wp.ID;
                 DataTable dtTable1 = WebStep.GetByIDWeb(wp.ID);
+                if (dtTable1 == null)
+                {
+                    statusObj.Message = "Chưa đăng ký sử dụng phần mềm";
+                    statusObj.Status = "Register";
+                    return statusObj;
+                }
+                if (Open() == false)
+                {
+                    statusObj.Message = "Không mở được trình duyệt";
+                    statusObj.Status = "Error";
+                    return statusObj;
+
+                }
+                
                 int i = 0;
                 while( i < dtTable1.Rows.Count)
                 {
@@ -176,6 +183,23 @@ namespace WorkLibrary
             {
 
                 // Start WatiN
+                DataTable dtTable1;
+                WebPage wp = WebPage.GetByPage(forum.Url.Trim().ToLower());
+                if (wp != null)
+                {
+                    dtTable1 = WebStep.GetByIDWeb(wp.ID);
+                }
+                else
+                {
+                    dtTable1 = WebStep.GetByIDWeb(-1);
+
+                }
+                if (dtTable1 == null)
+                {
+                    statusObj.Message = "Chưa đăng ký sử dụng phần mềm";
+                    statusObj.Status = "Register";
+                    return statusObj;
+                }
                 if (Open() == false)
                 {
                     statusObj.Message = "Không mở được trình duyệt";
@@ -183,7 +207,7 @@ namespace WorkLibrary
                     return statusObj;
 
                 }
-                DataTable dtTable1 = WebStep.GetByIDWeb(-1);
+                
                 int i = 0;
                 while (i < dtTable1.Rows.Count)
                 {

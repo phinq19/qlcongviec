@@ -156,7 +156,7 @@ namespace WorkLibrary
                     HControl link = new HControl();
                     link.Control = ControlType.AHref;
                     link.Attribute = AttributeType.Text;
-                   
+                    
                     for (int j = 0; j < multiforum.NewThread.Count; j++)
                     {
                         href = GetLink(ie.Links, multiforum.NewThread[j].Value);

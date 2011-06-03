@@ -47,6 +47,7 @@ namespace WorkLibrary
     {
         public const string Goto = "goto";
         public const string Submit = "submit";
+        public const string ClickMode = "clickmode";
         public const string Check = "check";
         public const string Click = "click";
         public const string DivClick = "divclick";

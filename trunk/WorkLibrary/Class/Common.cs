@@ -112,6 +112,7 @@ namespace WorkLibrary
                                     string strKey = strK.Substring(2, 1) + strK.Substring(6, 1) + strK.Substring(4, 1) + strK.Substring(2, 1) + strK.Substring(8, 1) + strK.Substring(6, 1) + strK.Substring(3, 1) + strK.Substring(1, 1) + strK.Substring(3, 1);
                                     if (Register == strKey)
                                     {
+                                        Const.RegisterKey = Register;
                                         return true;
                                     }
                                 }
