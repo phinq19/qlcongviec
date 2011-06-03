@@ -77,6 +77,7 @@ namespace NewProject
             if (CheckKey(txtKey.Text, txtKeyRegister.Text) == true)
             {
                 SaveRegister(txtKeyRegister.Text);
+                Const.RegisterKey = txtKeyRegister.Text;
                 MessageBox.Show("Đã đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 this.Close();
