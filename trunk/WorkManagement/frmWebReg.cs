@@ -118,7 +118,7 @@ namespace NewProject
         {
             WebReg nhom = null;
 
-            if (txtTen.Text != "" && lookUpEditPage.EditValue==null)
+            if (txtTen.Text != "" || lookUpEditPage.EditValue!=null)
                 {
                     nhom = new WebReg();
                     //nhom.Ma = int.Parse(txtMa.Text);
