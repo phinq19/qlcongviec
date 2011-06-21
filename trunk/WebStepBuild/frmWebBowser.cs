@@ -42,7 +42,7 @@ namespace CreateWebStep
             Settings.WaitForCompleteTimeOut = 120000;
             Settings.AttachToBrowserTimeOut = 120000;
            
-            webBrowser1.ScriptErrorsSuppressed = true;
+            webBrowser1.ScriptErrorsSuppressed = false;
 
             Settings.AutoStartDialogWatcher = false;
             ie = new IE(webBrowser1.ActiveXInstance);
